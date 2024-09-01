@@ -55,7 +55,7 @@
                     <input type="submit" class="btn" name="submit" value="Login">
                 </div>
                 <div class="links">
-                    Don't have an account? <a href="register.php">Sign Up Now</a>
+                    Don't have an account? <a href="register.php">Sign Up here</a>
                 </div>
             </form>
         </div>
