@@ -24,7 +24,7 @@
 
          if(mysqli_num_rows($verify_query) !=0 ){
             echo "<div class='message'>
-                      <p>This email is used, Try another One Please!</p>
+                      <p>This email is already taken</p>
                   </div> <br>";
             echo "<a href='javascript:self.history.back()'><button class='btn'>Go Back</button>";
          }
@@ -33,7 +33,7 @@
             mysqli_query($con,"INSERT INTO users(name,username,email,Password) VALUES('$name','$username','$email','$password')") or die("Erroe Occured");
 
             echo "<div class='message'>
-                      <p>Registration successfully!</p>
+                      <p>Created account successfully</p>
                   </div> <br>";
             echo "<a href='login.php'><button class='btn'>Login Now</button>";
          

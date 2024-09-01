@@ -35,10 +35,11 @@
                     echo "<div class='message'>
                       <p>Wrong Username or Password</p>
                        </div> <br>";
-                   echo "<a href='login.php'><button class='btn'>Go Back</button>";
+                   echo "<a href='login.php'><button class='btn'>Back</button>";
                 }
               }else{
             ?>
+
             <header>Login</header>
             <form action="" method="post">
                 <div class="field input">
