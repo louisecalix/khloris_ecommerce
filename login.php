@@ -29,7 +29,7 @@
                     $_SESSION['name'] = $row['name'];
                     $_SESSION['ID'] = $row['ID'];
                     
-                    header("Location: mainpage.html");
+                    header("Location: mainpage.php");
                     exit();
                 }else{
                     echo "<div class='message'>
