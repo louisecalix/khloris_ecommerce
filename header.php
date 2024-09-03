@@ -14,6 +14,6 @@
 
     <div class="icons">
         <a href="" class="fas fa-shopping-cart"></a>
-        <a href="logout.php" class="fas fa-user" onclick="return confirmLogout()">Logout</a>
+        <a href="logout.php" class="fa-solid fa-right-from-bracket" onclick="return confirmLogout()"></a>
     </div>
 </header>

@@ -3,15 +3,39 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+
     <title>Login</title>
 </head>
+
 <body>
-      <div class="container">
+    <header>
+        <input type="checkbox" name="" id="toggler" />
+        <label for="toggler" class="fas fa-bars"></label>
+        <a href="guest.html" class="logo">Khloris<span>.</span></a>
+        <nav class="navbar">
+            <a href="guest.html">Home</a>
+            <a href="#Customization">Customization</a>
+            <a href="flowerpage.html">Flowers</a>
+            <a href="#Occassions">Occassions</a>
+        </nav>
+        <div class="icons">
+            <a href="login.php" class="fas fa-shopping-cart"></a>
+            <a href="login.php" class="fas fa-user"></a>
+        </div>
+    </header>
+    <div class="container">
+        <div class="logo-section">
+            <img src="https://res.cloudinary.com/dogrgo15f/image/upload/v1724128500/images/kk90fhhfsltwy7eqgtfg.png"
+                alt="Shop Logo" class="shop-logo">
+
+        </div>
+        <h2 class="shop-name"><span>Khloris</span><br>Flower Shop</h2>
         <div class="box form-box">
             <?php 
              
@@ -40,16 +64,17 @@
               }else{
             ?>
 
-            <header>Login</header>
+            <h1>Login</h1>
             <form action="" method="post">
                 <div class="field input">
                     <label for="email">Email</label>
-                    <input type="text" name="email" id="email" autocomplete="off" required>
+                    <input type="text" name="email" id="email" placeholder="Email.." autocomplete="off" required>
                 </div>
 
                 <div class="field input">
                     <label for="password">Password</label>
-                    <input type="password" name="password" id="password" autocomplete="off" required>
+                    <input type="password" name="password" id="password" placeholder="Password.." autocomplete="off"
+                        required>
                 </div>
 
                 <div class="field">
@@ -61,6 +86,7 @@
             </form>
         </div>
         <?php } ?>
-      </div>
+    </div>
 </body>
+
 </html>
