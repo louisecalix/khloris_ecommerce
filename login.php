@@ -14,21 +14,8 @@
 </head>
 
 <body>
-    <header>
-        <input type="checkbox" name="" id="toggler" />
-        <label for="toggler" class="fas fa-bars"></label>
-        <a href="guest.html" class="logo">Khloris<span>.</span></a>
-        <nav class="navbar">
-            <a href="guest.html">Home</a>
-            <a href="#Customization">Customization</a>
-            <a href="flowerpage.html">Flowers</a>
-            <a href="#Occassions">Occassions</a>
-        </nav>
-        <div class="icons">
-            <a href="login.php" class="fas fa-shopping-cart"></a>
-            <a href="login.php" class="fas fa-user"></a>
-        </div>
-    </header>
+    <?php include 'header.php'; ?>
+
     <div class="container">
         <div class="logo-section">
             <img src="https://res.cloudinary.com/dogrgo15f/image/upload/v1724128500/images/kk90fhhfsltwy7eqgtfg.png"

@@ -11,22 +11,7 @@
 </head>
 
 <body>
-    <header>
-        <input type="checkbox" name="" id="toggler" />
-        <label for="toggler" class="fas fa-bars"></label>
-        <a href="guest.html" class="logo">Khloris<span>.</span></a>
-        <nav class="navbar">
-            <a href="guest.html">Home</a>
-            <a href="#Customization">Customization</a>
-            <a href="flowerpage.html">Flowers</a>
-            <a href="#Occassions">Occassions</a>
-        </nav>
-        <div class="icons">
-            <a href="login.php" class="fas fa-shopping-cart"></a>
-            <a href="login.php" class="fas fa-user"></a>
-        </div>
-
-    </header>
+    <?php include 'header.php'; ?>
 
     <div class="container">
         <div class="logo-section">
@@ -60,7 +45,7 @@
             mysqli_query($con,"INSERT INTO users(name,username,email,Password) VALUES('$name','$username','$email','$password')") or die("Erroe Occured");
 
             echo "<div class='message'>
-                      <p>Created account successfully</p>
+                      <p>Account Created Successfully</p>
                   </div> <br>";
             echo "<a href='login.php'><button class='btn'>Login Now</button>";
          
