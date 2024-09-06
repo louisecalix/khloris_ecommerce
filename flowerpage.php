@@ -36,7 +36,8 @@
                         <img src="<?php echo $row['image_url'] ?>" alt="sunflower">
                     </div>
                     <div class="icons">
-                        <a href="" class="cart-btn">add to cart</a>
+                        <button type="submit" class="cart-btn">Add To Cart</button>
+                        <!-- <a href="" class="cart-btn">add to cart</a> -->
                     </div>
                     <div class="flower-info">
                         <h3><?php echo $row['name'] ?></h3>
@@ -56,7 +57,8 @@
                         <img src="<?php echo $row['image_url'] ?>" alt="rose">
                     </div>
                     <div class="icons">
-                        <a href="" class="cart-btn">add to cart</a>
+                        <button type="submit" class="cart-btn">Add To Cart</button>
+                        <!-- <a href="" class="cart-btn">add to cart</a> -->
                     </div>
                     <div class="flower-info">
                         <h3><?php echo $row['name'] ?></h3>
@@ -76,7 +78,8 @@
                         <img src="<?php echo $row['image_url'] ?>" alt="lily">
                     </div>
                     <div class="icons">
-                        <a href="" class="cart-btn">add to cart</a>
+                        <button type="submit" class="cart-btn">Add To Cart</button>
+                        <!-- <a href="" class="cart-btn">add to cart</a> -->
                     </div>
                     <div class="flower-info">
                         <h3><?php echo $row['name'] ?></h3>
@@ -96,7 +99,8 @@
                         <img src="<?php echo $row['image_url'] ?>" alt="tulip">
                     </div>
                     <div class="icons">
-                        <a href="" class="cart-btn">add to cart</a>
+                        <button type="submit" class="cart-btn">Add To Cart</button>
+                        <!-- <a href="" class="cart-btn">add to cart</a> -->
                     </div>
                     <div class="flower-info">
                         <h3><?php echo $row['name'] ?></h3>
