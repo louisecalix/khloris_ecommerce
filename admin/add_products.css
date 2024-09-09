@@ -1,0 +1,140 @@
+:root {
+    --strawberry: #e5ada8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    overflow-x: hidden;
+    background: #eeedea;
+}
+
+section {
+    padding: 2rem 9%;
+}
+
+
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #d8d7b2;
+    padding: 2rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: 0.5rem 1rem rgba(0, 0, 0, .1);
+}
+
+header .logo {
+    font-size: 3rem;
+    color: #725c3f;
+    font-weight: lighter;
+    text-shadow: 1px 1px 2px #0000008f;
+    ;
+}
+
+header .logo span {
+    color: var(--strawberry);
+}
+
+header .navbar a {
+    font-size: 2rem;
+    padding: 0 1.5rem;
+    color: #725c3f;
+}
+
+header .navbar a:hover {
+    color: var(--strawberry);
+}
+
+header .icons a {
+    font-size: 2.5rem;
+    color: #d0a77b;
+    margin-left: 2.5rem;
+}
+
+header .icons a:hover {
+    color: var(--strawberry);
+}
+
+header #toggler {
+    display: none;
+}
+
+header .fa-bars {
+    font-size: 3rem;
+    color: #d0a77b;
+    border-radius: .5rem;
+    padding: .5rem 1.5rem;
+    cursor: pointer;
+    border: .1rem solid rgba(0, 0, 0, .3);
+    display: none;
+}
+
+.add_productscontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding-top: 6rem;
+    background: #eeedea;
+}
+
+
+.product-box {
+    width: 50%;
+    max-width: 600px;
+    padding: 2rem;
+    background-color: #fff;
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+    text-align: center;
+}
+
+.product-box h2 {
+    font-size: 2.4rem;
+    color: #725c3f;
+    margin-bottom: 1.5rem;
+}
+
+.product-box input,
+.product-box textarea,
+.product-box select {
+    width: 100%;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    font-size: 1.6rem;
+}
+
+.product-box button {
+    padding: 1rem 2rem;
+    background-color: var(--strawberry);
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+.product-box button:hover {
+    background-color: #d08a7e;
+}
