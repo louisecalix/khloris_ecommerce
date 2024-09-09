@@ -1,9 +1,39 @@
 <?php
-session_start();
+    session_start();
+    include('../php/config.php');
 
-include('../php/config.php');
+    $sql = "SELECT COUNT(*) AS total_users FROM users";
+    $result = mysqli_query($con, $sql);
 
+    if ($result) {
+        $row = mysqli_fetch_assoc($result);
+        $totalUsers = $row['total_users'];
+    } else {
+        $totalUsers = 0; 
+    }
+
+
+    // $sql = "SELECT COUNT(*) AS total_orders FROM orders_user";
+    // $result = mysqli_query($con, $sql);
+    // if ($result) {
+    //     $row = mysqli_fetch_assoc($result);
+    //     $totalOrders = $row['total_oders'];
+    // } else {
+    //     $totalOrders = 0;
+    // }    
+
+
+    $sql = "SELECT COUNT(*) AS total_products FROM products";
+    $result = mysqli_query($con, $sql);
+    if ($result) {
+        $row = mysqli_fetch_assoc($result);
+        $totalProducts = $row['total_products'];
+    } else {
+        $totalProducts = 0;
+    }    
+    
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,7 +54,7 @@ include('../php/config.php');
             <a href="../admin/admin_dashboard.php">Home</a>
             <a href="../admin/add_products.php">Add Products</a>
             <a href="../admin/view_products.php">View Products</a>
-            <a href="#Orders">Orders</a>
+            <a href="../admin/order.php">Orders</a>
         </nav>
         <div class="icons">
             <a href="admin_logout.php" class="fa-solid fa-right-from-bracket" onclick="return confirmLogout()"></a>
@@ -33,17 +63,20 @@ include('../php/config.php');
     <section class="home" id="home">
         <h1 class="dashboard"><span>Khloris</span> Dashboard</h1>
         <div class="box-container">
+
             <div class="box">
-                <p class="totals">0</p>
-                <a href="#" class="link">Total user</a>
+                <p class="totals"><?php echo $totalUsers; ?></p>
+                <a href="../admin/total_users.php" class="link">Total user</a>
             </div>
+
             <div class="box">
                 <p class="totals">0</p>
-                <a href="#" class="link">Order Place</a>
+                <a href="../admin/order.php" class="link">Order Place</a>
             </div>
+
             <div class="box">
-                <p class="totals">0</p>
-                <a href="#" class="link">Products Added</a>
+                <p class="totals"><?php echo $totalProducts; ?></p>
+                <a href="../admin/view_products.php" class="link">Products</a>
             </div>
         </div>
     </section>
