@@ -15,7 +15,6 @@
 
     $sql = "SELECT * FROM products";
     $result = mysqli_query($con, $sql);
-
 ?>
 
 <!DOCTYPE html>
@@ -39,7 +38,7 @@
             <a href="../admin/admin_dashboard.php">Home</a>
             <a href="../admin/add_products.php">Add Products</a>
             <a href="../admin/view_products.php">View Products</a>
-            <a href="#Orders">Orders</a>
+            <a href="../admin/order.php">Orders</a>
         </nav>
         <div class="icons">
             <a href="admin_logout.php" class="fa-solid fa-right-from-bracket" onclick="return confirmLogout()"></a>
