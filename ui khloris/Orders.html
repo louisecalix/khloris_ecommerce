@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Orders</title>
+    <link rel="stylesheet" href="orders_admin.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <header>
+      <input type="checkbox" name="" id="toggler" />
+      <label for="toggler" class="fas fa-bars"></label>
+      <a href="../admin/admin_dashboard.php" class="logo"
+        >Khloris<span>.</span></a
+      >
+      <nav class="navbar">
+        <a href="../admin/admin_dashboard.php">Home</a>
+        <a href="../admin/add_products.php">Add Products</a>
+        <a href="../admin/view_products.php">View Products</a>
+        <a href="../admin/orders.php">Orders</a>
+        <a href="#Orders">Users</a>
+      </nav>
+      <div class="icons">
+        <a
+          href="admin_logout.php"
+          class="fa-solid fa-right-from-bracket"
+          onclick="return confirmLogout()"
+        ></a>
+      </div>
+    </header>
+
+    <div class="info_orders">
+      <h1>Orders <span>Placed</span></h1>
+
+      <table>
+        <tr>
+          <th>Order Id</th>
+          <th>User Id</th>
+          <th>Total</th>
+          <th>Delivery Option</th>
+          <th>Date of<br />Order</th>
+          <th>Date of<br />Delivery</th>
+          <th>Status</th>
+          <th>Cancel</th>
+        </tr>
+
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+
+    <script>
+      function confirmLogout() {
+        return confirm("Are you sure you want to log out?");
+      }
+    </script>
+  </body>
+</html>
