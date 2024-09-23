@@ -233,6 +233,7 @@ INSERT INTO `users` (`ID`, `name`, `username`, `email`, `password`) VALUES
 (16, 'qqqq', 'qqqq', 'qqqq', 'qqqq'),
 (17, 'new', 'new', 'new', 'new'),
 (18, 'qq', 'qq', 'qq', 'qq');
+(19, 'jns', 'sxs', 'ss', 'xsxsx');
 
 --
 -- Indexes for dumped tables
