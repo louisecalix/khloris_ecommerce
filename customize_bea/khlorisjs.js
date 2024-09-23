@@ -106,8 +106,29 @@ document.getElementById('left').addEventListener('click', ()=> {
 update_flower();
 
 
+//Total
+let curr_total=0.0;
+let curr_flower_price=0.0;
 
-const roseClick = async () => {
+
+const updateFlowerSelection = (flower) => {
+    let flowerElement = document.getElementById(flwrs[curr_flower].id);
+    if (flowerElement) {
+        flowerElement.src = flower.image_url;
+        flowerElement.style.display = "block";
+        const flowerPrice = parseFloat(flower.price) || 0;
+      
+        curr_flower_price =flowerPrice;
+        curr_total+=flowerPrice;
+        
+        updateTotalPrice(); 
+    } else {
+        console.error(`${flower.name} not found`);
+    }
+};
+
+
+const flowerClick = async (flowerName) => {
     try {
         const response = await fetch('http://localhost/khloris_/fetching.php');
 
@@ -116,463 +137,46 @@ const roseClick = async () => {
         }
 
         const products = await response.json();
-        
-        const redRose= products.find(product=>product.name ==="Red Rose");
-        
+        const selectedFlower = products.find(product => product.name === flowerName);
 
-        if (redRose){
-
-            let flowerElement = document.getElementById(flwrs[curr_flower].id);
-            if (flowerElement) {
-                flowerElement.src = redRose.image_url; // Update image
-                flowerElement.style.display = "block";
-            }
-            else{
-                console.error('Red Rose not found');
-
-            }
-       
-
-        } else{
-            console.error('nope!');
+        if (selectedFlower) {
+            updateFlowerSelection(selectedFlower);
+           
+        } else {
+            console.error('Flower not found');
         }
 
-
-        
-
-    }catch (error) {
-        console.error('Error fetching products:', error);
-    }
-};
-
-const TulipsClick = async () => {
-    try {
-        const response = await fetch('http://localhost/khloris_/fetching.php');
-
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
-        const products = await response.json();
-        
-        const redTulip= products.find(product=>product.name ==="Red Tulip");
-        
-
-        if (redTulip){
-
-            let flowerElement = document.getElementById(flwrs[curr_flower].id);
-            if (flowerElement) {
-                flowerElement.src = redTulip.image_url; // Update image
-                flowerElement.style.display = "block";
-            }
-            else{
-                console.error('Red Rose not found');
-
-            }
-       
-
-        } else{
-            console.error('nope!');
-        }
-
-
-        
-
-    }catch (error) {
-        console.error('Error fetching products:', error);
-    }
-};
-
-
-const LilyClick = async () => {
-    try {
-        const response = await fetch('http://localhost/khloris_/fetching.php');
-
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
-        const products = await response.json();
-        
-        const whitelily= products.find(product=>product.name ==="White Lily");
-        
-
-        if (whitelily){
-
-            let flowerElement = document.getElementById(flwrs[curr_flower].id);
-            if (flowerElement) {
-                flowerElement.src = whitelily.image_url; 
-                flowerElement.style.display = "block";
-            }
-            else{
-                console.error('lily not found');
-
-            }
-       
-
-        } else{
-            console.error('nope!');
-        }
-
-
-        
-
-    }catch (error) {
-        console.error('Error fetching products:', error);
-    }
-};
-
-
-const SunflowerClick = async () => {
-    try {
-        const response = await fetch('http://localhost/khloris_/fetching.php');
-
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
-        const products = await response.json();
-        
-        const sunflower= products.find(product=>product.name ==="Sunflower");
-        
-
-        if (sunflower){
-
-            let flowerElement = document.getElementById(flwrs[curr_flower].id);
-            if (flowerElement) {
-                flowerElement.src =sunflower.image_url; 
-                flowerElement.style.display = "block";
-            }
-            else{
-                console.error('lily not found');
-
-            }
-       
-
-        } else{
-            console.error('nope!');
-        }
-
-
-        
-
-    }catch (error) {
-        console.error('Error fetching products:', error);
-    }
-};
-
-
-const DahliaClick = async () => {
-    try {
-        const response = await fetch('http://localhost/khloris_/fetching.php');
-
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
-        const products = await response.json();
-        
-        const pinkdahlia= products.find(product=>product.name ==="Pink Dahlia");
-        
-
-        if (pinkdahlia){
-
-            let flowerElement = document.getElementById(flwrs[curr_flower].id);
-            if (flowerElement) {
-                flowerElement.src = pinkdahlia.image_url; 
-                flowerElement.style.display = "block";
-            }
-            else{
-                console.error('redcarnation not found');
-
-            }
-       
-
-        } else{
-            console.error('nope!');
-        }
-
-
-        
-
-    }catch (error) {
-        console.error('Error fetching products:', error);
-    }
-};
-
-
-const RedCarnationClick = async () => {
-    try {
-        const response = await fetch('http://localhost/khloris_/fetching.php');
-
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
-        const products = await response.json();
-        
-        const redcarnation= products.find(product=>product.name ==="Red Carnation");
-        
-
-        if (redcarnation){
-
-            let flowerElement = document.getElementById(flwrs[curr_flower].id);
-            if (flowerElement) {
-                flowerElement.src = redcarnation.image_url; 
-                flowerElement.style.display = "block";
-            }
-            else{
-                console.error('redcarnation not found');
-
-            }
-       
-
-        } else{
-            console.error('nope!');
-        }
-
-
-        
-
-    }catch (error) {
+    } catch (error) {
         console.error('Error fetching products:', error);
     }
 };
 
 
 
-const IrisClick = async () => {
-    try {
-        const response = await fetch('http://localhost/khloris_/fetching.php');
 
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
 
-        const products = await response.json();
-        
-        const violetiris= products.find(product=>product.name ==="Violet Iris");
-        
+const roseClick = () => flowerClick("Red Rose");
+const TulipsClick = () => flowerClick("Red Tulip");
+const LilyClick = () => flowerClick("White Lily");
+const SunflowerClick = () => flowerClick("Sunflower");
+const DahliaClick = () => flowerClick("Pink Dahlia");
+const RedCarnationClick = () => flowerClick("Red Carnation");
+const IrisClick = () => flowerClick("Violet Iris");
+const PeonyClick = () => flowerClick("Pink Peony");
+const DaisyClick = () => flowerClick("Daisy");
+const AnemoneClick = () => flowerClick("Purple Anemone");
+const HydrangeaClick = () => flowerClick("Blue Hydrangea");
+const LilacClick = () => flowerClick("Lilac");
 
-        if (violetiris){
 
-            let flowerElement = document.getElementById(flwrs[curr_flower].id);
-            if (flowerElement) {
-                flowerElement.src = violetiris.image_url; 
-                flowerElement.style.display = "block";
-            }
-            else{
-                console.error('violetiris not found');
 
-            }
-       
 
-        } else{
-            console.error('nope!');
-        }
+const updateTotalPrice =() =>{
+    const TotalPricespan=document.getElementById('ttl');
 
+    TotalPricespan.textContent = `₱${curr_total.toFixed(2)}`;
 
-        
-
-    }catch (error) {
-        console.error('Error fetching products:', error);
-    }
-};
-
-
-const PeonyClick = async () => {
-    try {
-        const response = await fetch('http://localhost/khloris_/fetching.php');
-
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
-        const products = await response.json();
-        
-        const pinkpeony= products.find(product=>product.name ==="Pink Peony");
-        
-
-        if (pinkpeony){
-
-            let flowerElement = document.getElementById(flwrs[curr_flower].id);
-            if (flowerElement) {
-                flowerElement.src = pinkpeony.image_url; 
-                flowerElement.style.display = "block";
-            }
-            else{
-                console.error('peony not found');
-
-            }
-       
-
-        } else{
-            console.error('nope!');
-        }
-
-
-        
-
-    }catch (error) {
-        console.error('Error fetching products:', error);
-    }
-};
-
-
-const DaisyClick = async () => {
-    try {
-        const response = await fetch('http://localhost/khloris_/fetching.php');
-
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
-        const products = await response.json();
-        
-        const daisy= products.find(product=>product.name ==="Daisy");
-        
-
-        if (daisy){
-
-            let flowerElement = document.getElementById(flwrs[curr_flower].id);
-            if (flowerElement) {
-                flowerElement.src = daisy.image_url; 
-                flowerElement.style.display = "block";
-            }
-            else{
-                console.error('daisy not found');
-
-            }
-       
-
-        } else{
-            console.error('nope!');
-        }
-
-
-        
-
-    }catch (error) {
-        console.error('Error fetching products:', error);
-    }
-};
-
-
-const AnemoneClick = async () => {
-    try {
-        const response = await fetch('http://localhost/khloris_/fetching.php');
-
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
-        const products = await response.json();
-        
-        const purpleanemone= products.find(product=>product.name ==="Purple Anemone");
-        
-
-        if (purpleanemone){
-
-            let flowerElement = document.getElementById(flwrs[curr_flower].id);
-            if (flowerElement) {
-                flowerElement.src = purpleanemone.image_url; 
-                flowerElement.style.display = "block";
-            }
-            else{
-                console.error('purpleanemone not found');
-
-            }
-       
-
-        } else{
-            console.error('nope!');
-        }
-
-
-        
-
-    }catch (error) {
-        console.error('Error fetching products:', error);
-    }
-};
-
-
-const HydrangeaClick = async () => {
-    try {
-        const response = await fetch('http://localhost/khloris_/fetching.php');
-
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
-        const products = await response.json();
-        
-        const bluehy= products.find(product=>product.name ==="Blue Hydrangea");
-        
-
-        if (bluehy){
-
-            let flowerElement = document.getElementById(flwrs[curr_flower].id);
-            if (flowerElement) {
-                flowerElement.src = bluehy.image_url; 
-                flowerElement.style.display = "block";
-            }
-            else{
-                console.error('peony not found');
-
-            }
-       
-
-        } else{
-            console.error('nope!');
-        }
-
-
-        
-
-    }catch (error) {
-        console.error('Error fetching products:', error);
-    }
-};
-
-
-const LilacClick = async () => {
-    try {
-        const response = await fetch('http://localhost/khloris_/fetching.php');
-
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
-        const products = await response.json();
-        
-        const lilac= products.find(product=>product.id ==="54");
-        
-
-        if (lilac){
-
-            let flowerElement = document.getElementById(flwrs[curr_flower].id);
-            if (flowerElement) {
-                flowerElement.src = lilac.image_url; 
-                flowerElement.style.display = "block";
-            }
-            else{
-                console.error('peony not found');
-
-            }
-       
-
-        } else{
-            console.error('nope!');
-        }
-
-
-        
-
-    }catch (error) {
-        console.error('Error fetching products:', error);
-    }
-};
+}
 
 
 
