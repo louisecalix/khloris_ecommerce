@@ -1,0 +1,1445 @@
+{
+    "status": "OK",
+    "copyright": "Copyright (c) 2024 The New York Times Company. All Rights Reserved.",
+    "section": "home",
+    "last_updated": "2024-09-20T04:54:37-04:00",
+    "num_results": 23,
+    "results": [
+        {
+            "section": "world",
+            "subsection": "middleeast",
+            "title": "Israel Bombards Hezbollah as Group’s Leader Vows Retaliation",
+            "abstract": "The Hezbollah leader, Hassan Nasrallah, did not say how his group would respond to attacks on hand-held devices, which killed dozens when pagers and walkie-talkies exploded.",
+            "url": "https://www.nytimes.com/2024/09/19/world/middleeast/israel-lebanon-hezbollah-strikes.html",
+            "uri": "nyt://article/e15700c7-58e7-530d-ba69-1b7910d3b4e2",
+            "byline": "By Aaron Boxerman and Euan Ward",
+            "item_type": "Article",
+            "updated_date": "2024-09-19T23:42:24-04:00",
+            "created_date": "2024-09-19T18:14:27-04:00",
+            "published_date": "2024-09-19T18:14:27-04:00",
+            "material_type_facet": "",
+            "kicker": "",
+            "des_facet": [
+                "Israel-Gaza War (2023- )",
+                "Bombs and Explosives",
+                "Iran-Israel Proxy Conflict"
+            ],
+            "org_facet": [
+                "Hezbollah"
+            ],
+            "per_facet": [
+                "Nasrallah, Hassan"
+            ],
+            "geo_facet": [
+                "Israel",
+                "Lebanon",
+                "Iran"
+            ],
+            "multimedia": [
+                {
+                    "url": "https://static01.nyt.com/images/2024/09/19/multimedia/19mideast-crisis-leadall-01-vwgj/19mideast-crisis-leadall-01-vwgj-superJumbo.jpg",
+                    "format": "Super Jumbo",
+                    "height": 1365,
+                    "width": 2048,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "Hezbollah supporters in Beirut on Thursday mourned the deaths of two of their members in a second wave of explosions that struck Lebanon.",
+                    "copyright": "Diego Ibarra Sanchez for The New York Times"
+                },
+                {
+                    "url": "https://static01.nyt.com/images/2024/09/19/multimedia/19mideast-crisis-leadall-01-vwgj/19mideast-crisis-leadall-01-vwgj-threeByTwoSmallAt2X.jpg",
+                    "format": "threeByTwoSmallAt2X",
+                    "height": 400,
+                    "width": 600,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "Hezbollah supporters in Beirut on Thursday mourned the deaths of two of their members in a second wave of explosions that struck Lebanon.",
+                    "copyright": "Diego Ibarra Sanchez for The New York Times"
+                },
+                {
+                    "url": "https://static01.nyt.com/images/2024/09/19/multimedia/19mideast-crisis-leadall-01-vwgj/19mideast-crisis-leadall-01-vwgj-thumbLarge.jpg",
+                    "format": "Large Thumbnail",
+                    "height": 150,
+                    "width": 150,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "Hezbollah supporters in Beirut on Thursday mourned the deaths of two of their members in a second wave of explosions that struck Lebanon.",
+                    "copyright": "Diego Ibarra Sanchez for The New York Times"
+                }
+            ],
+            "short_url": ""
+        },
+        {
+            "section": "us",
+            "subsection": "politics",
+            "title": "A New Era in Sabotage: Turning Ordinary Devices Into Grenades, on a Mass Scale",
+            "abstract": "The attacks in Lebanon required getting deep into the supply chain, which is difficult to do. But the sabotage contributes to a sense of vulnerability that ordinary devices can become a source of danger.",
+            "url": "https://www.nytimes.com/2024/09/19/us/politics/israel-hezbollah-pager-attacks.html",
+            "uri": "nyt://article/f420568a-79c7-5a03-ab82-628c1c8d6c4a",
+            "byline": "By David E. Sanger",
+            "item_type": "Article",
+            "updated_date": "2024-09-19T21:19:16-04:00",
+            "created_date": "2024-09-19T12:28:46-04:00",
+            "published_date": "2024-09-19T12:28:46-04:00",
+            "material_type_facet": "",
+            "kicker": "News Analysis",
+            "des_facet": [
+                "Bombs and Explosives",
+                "Israel-Gaza War (2023- )",
+                "Cyberwarfare and Defense",
+                "International Relations",
+                "Wireless Communications",
+                "Cellular Telephones"
+            ],
+            "org_facet": [
+                "Hezbollah"
+            ],
+            "per_facet": [],
+            "geo_facet": [
+                "Israel",
+                "Lebanon"
+            ],
+            "multimedia": [
+                {
+                    "url": "https://static01.nyt.com/images/2024/09/19/multimedia/19DC-ASSESS-SABOTAGE-01-zvml/19DC-ASSESS-SABOTAGE-01-zvml-superJumbo.jpg",
+                    "format": "Super Jumbo",
+                    "height": 1365,
+                    "width": 2048,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "A portable radio with the battery removed during a funeral in Beirut, Lebanon, on Wednesday. The presumed Israeli sabotage of wireless devices used by Hezbollah turned ordinary communication devices into miniature grenades.",
+                    "copyright": "Anwar Amro/Agence France-Presse — Getty Images"
+                },
+                {
+                    "url": "https://static01.nyt.com/images/2024/09/19/multimedia/19DC-ASSESS-SABOTAGE-01-zvml/19DC-ASSESS-SABOTAGE-01-zvml-threeByTwoSmallAt2X.jpg",
+                    "format": "threeByTwoSmallAt2X",
+                    "height": 400,
+                    "width": 600,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "A portable radio with the battery removed during a funeral in Beirut, Lebanon, on Wednesday. The presumed Israeli sabotage of wireless devices used by Hezbollah turned ordinary communication devices into miniature grenades.",
+                    "copyright": "Anwar Amro/Agence France-Presse — Getty Images"
+                },
+                {
+                    "url": "https://static01.nyt.com/images/2024/09/19/multimedia/19DC-ASSESS-SABOTAGE-01-zvml/19DC-ASSESS-SABOTAGE-01-zvml-thumbLarge.jpg",
+                    "format": "Large Thumbnail",
+                    "height": 150,
+                    "width": 150,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "A portable radio with the battery removed during a funeral in Beirut, Lebanon, on Wednesday. The presumed Israeli sabotage of wireless devices used by Hezbollah turned ordinary communication devices into miniature grenades.",
+                    "copyright": "Anwar Amro/Agence France-Presse — Getty Images"
+                }
+            ],
+            "short_url": ""
+        },
+        {
+            "section": "us",
+            "subsection": "politics",
+            "title": "North Carolina Governor Race Jolted by Report That G.O.P. Nominee Called Himself a ‘Black Nazi’",
+            "abstract": "Mr. Robinson, the Republican nominee for governor of North Carolina, vowed to stay in the race and sought to deny the report, which also said he had defended slavery in online posts years ago.",
+            "url": "https://www.nytimes.com/2024/09/19/us/politics/mark-robinson-north-carolina-gubernatorial-race.html",
+            "uri": "nyt://article/8066b523-8182-509d-90ad-c436d29f72c2",
+            "byline": "By Shane Goldmacher, Maggie Haberman, Jonathan Swan and Nicholas Nehamas",
+            "item_type": "Article",
+            "updated_date": "2024-09-19T22:26:45-04:00",
+            "created_date": "2024-09-19T15:59:16-04:00",
+            "published_date": "2024-09-19T15:59:16-04:00",
+            "material_type_facet": "",
+            "kicker": "",
+            "des_facet": [
+                "Elections, Governors",
+                "United States Politics and Government"
+            ],
+            "org_facet": [
+                "Republican Party",
+                "CNN"
+            ],
+            "per_facet": [
+                "Robinson, Mark K (1968- )"
+            ],
+            "geo_facet": [
+                "North Carolina"
+            ],
+            "multimedia": [
+                {
+                    "url": "https://static01.nyt.com/images/2024/09/19/multimedia/19election-live-robinson-2-cqwt/19election-live-robinson-2-cqwt-superJumbo.jpg",
+                    "format": "Super Jumbo",
+                    "height": 1365,
+                    "width": 2048,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "Lt. Gov. Mark Robinson of North Carolina spoke at the Republican National Convention in July.",
+                    "copyright": "Haiyun Jiang for The New York Times"
+                },
+                {
+                    "url": "https://static01.nyt.com/images/2024/09/19/multimedia/19election-live-robinson-2-cqwt/19election-live-robinson-2-cqwt-threeByTwoSmallAt2X.jpg",
+                    "format": "threeByTwoSmallAt2X",
+                    "height": 400,
+                    "width": 600,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "Lt. Gov. Mark Robinson of North Carolina spoke at the Republican National Convention in July.",
+                    "copyright": "Haiyun Jiang for The New York Times"
+                },
+                {
+                    "url": "https://static01.nyt.com/images/2024/09/19/multimedia/19election-live-robinson-2-cqwt/19election-live-robinson-2-cqwt-thumbLarge.jpg",
+                    "format": "Large Thumbnail",
+                    "height": 150,
+                    "width": 150,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "Lt. Gov. Mark Robinson of North Carolina spoke at the Republican National Convention in July.",
+                    "copyright": "Haiyun Jiang for The New York Times"
+                }
+            ],
+            "short_url": ""
+        },
+        {
+            "section": "us",
+            "subsection": "politics",
+            "title": "How the Robinson Report Could Affect the Presidential Race in North Carolina",
+            "abstract": "A Democratic presidential candidate has not won North Carolina since 2008. But the drama around Lt. Gov. Mark Robinson, the Republican nominee for governor, is sure to bolster their hopes.",
+            "url": "https://www.nytimes.com/2024/09/19/us/politics/mark-robinson-cnn-report-presidential-race.html",
+            "uri": "nyt://article/d3784c50-6e1b-59f0-83d1-91270822877c",
+            "byline": "By Maya King",
+            "item_type": "Article",
+            "updated_date": "2024-09-19T18:14:58-04:00",
+            "created_date": "2024-09-19T18:08:39-04:00",
+            "published_date": "2024-09-19T18:08:39-04:00",
+            "material_type_facet": "",
+            "kicker": "",
+            "des_facet": [
+                "Presidential Election of 2024",
+                "Elections, Governors",
+                "News and News Media"
+            ],
+            "org_facet": [],
+            "per_facet": [
+                "Robinson, Mark K (1968- )"
+            ],
+            "geo_facet": [
+                "North Carolina"
+            ],
+            "multimedia": [
+                {
+                    "url": "https://static01.nyt.com/images/2024/09/19/multimedia/19election-live-nc-presidential-race-hgbt/19election-live-nc-presidential-race-hgbt-superJumbo.jpg",
+                    "format": "Super Jumbo",
+                    "height": 1365,
+                    "width": 2048,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "Lt. Gov. Mark Robinson, who is running for governor of North Carolina, has a history of making inflammatory remarks. ",
+                    "copyright": "Veasey Conway for The New York Times"
+                },
+                {
+                    "url": "https://static01.nyt.com/images/2024/09/19/multimedia/19election-live-nc-presidential-race-hgbt/19election-live-nc-presidential-race-hgbt-threeByTwoSmallAt2X.jpg",
+                    "format": "threeByTwoSmallAt2X",
+                    "height": 400,
+                    "width": 600,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "Lt. Gov. Mark Robinson, who is running for governor of North Carolina, has a history of making inflammatory remarks. ",
+                    "copyright": "Veasey Conway for The New York Times"
+                },
+                {
+                    "url": "https://static01.nyt.com/images/2024/09/19/multimedia/19election-live-nc-presidential-race-hgbt/19election-live-nc-presidential-race-hgbt-thumbLarge.jpg",
+                    "format": "Large Thumbnail",
+                    "height": 150,
+                    "width": 150,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "Lt. Gov. Mark Robinson, who is running for governor of North Carolina, has a history of making inflammatory remarks. ",
+                    "copyright": "Veasey Conway for The New York Times"
+                }
+            ],
+            "short_url": ""
+        },
+        {
+            "section": "us",
+            "subsection": "politics",
+            "title": "How North Carolina Republicans Could Replace Their Governor Nominee",
+            "abstract": "The deadline for a candidate to withdraw is midnight tonight, but Lt. Gov. Mark Robinson has vowed to stay in the race.",
+            "url": "https://www.nytimes.com/2024/09/19/us/politics/replace-governor-nominee-north-carolina.html",
+            "uri": "nyt://article/2e98a794-0ac2-5bd4-a9ab-4be6ae60fb65",
+            "byline": "By Eduardo Medina",
+            "item_type": "Article",
+            "updated_date": "2024-09-19T17:25:36-04:00",
+            "created_date": "2024-09-19T16:59:21-04:00",
+            "published_date": "2024-09-19T16:59:21-04:00",
+            "material_type_facet": "",
+            "kicker": "",
+            "des_facet": [
+                "Elections, Governors",
+                "United States Politics and Government"
+            ],
+            "org_facet": [
+                "Republican Party"
+            ],
+            "per_facet": [
+                "Robinson, Mark K (1968- )"
+            ],
+            "geo_facet": [
+                "North Carolina"
+            ],
+            "multimedia": [
+                {
+                    "url": "https://static01.nyt.com/images/2024/09/19/us/politics/19election-live-nc-gov-process-1/19election-live-nc-gov-process-1-superJumbo.jpg",
+                    "format": "Super Jumbo",
+                    "height": 1366,
+                    "width": 2048,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "The stage for Mark Robinson’s primary election victory speech in March.",
+                    "copyright": "Travis Dove for The New York Times"
+                },
+                {
+                    "url": "https://static01.nyt.com/images/2024/09/19/us/politics/19election-live-nc-gov-process-1/19election-live-nc-gov-process-1-threeByTwoSmallAt2X.jpg",
+                    "format": "threeByTwoSmallAt2X",
+                    "height": 400,
+                    "width": 600,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "The stage for Mark Robinson’s primary election victory speech in March.",
+                    "copyright": "Travis Dove for The New York Times"
+                },
+                {
+                    "url": "https://static01.nyt.com/images/2024/09/19/us/politics/19election-live-nc-gov-process-1/19election-live-nc-gov-process-1-thumbLarge.jpg",
+                    "format": "Large Thumbnail",
+                    "height": 150,
+                    "width": 150,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "The stage for Mark Robinson’s primary election victory speech in March.",
+                    "copyright": "Travis Dove for The New York Times"
+                }
+            ],
+            "short_url": ""
+        },
+        {
+            "section": "us",
+            "subsection": "politics",
+            "title": "Harris Hits Core Campaign Themes in Emotional Forum With Oprah Winfrey",
+            "abstract": "Vice President Kamala Harris spoke off the cuff, as guests included a teenager shot at her school and the family of a woman in Georgia who died as a result of the state’s abortion ban.",
+            "url": "https://www.nytimes.com/2024/09/20/us/politics/kamala-harris-oprah-winfrey-event.html",
+            "uri": "nyt://article/0baa1012-38a8-5b49-a44f-8218c91525b3",
+            "byline": "By Erica L. Green",
+            "item_type": "Article",
+            "updated_date": "2024-09-20T01:09:44-04:00",
+            "created_date": "2024-09-20T00:51:21-04:00",
+            "published_date": "2024-09-20T00:51:21-04:00",
+            "material_type_facet": "",
+            "kicker": "",
+            "des_facet": [
+                "Presidential Election of 2024",
+                "United States Politics and Government"
+            ],
+            "org_facet": [
+                "Democratic Party"
+            ],
+            "per_facet": [
+                "Harris, Kamala D",
+                "Winfrey, Oprah",
+                "Whitmer, Gretchen"
+            ],
+            "geo_facet": [
+                "Michigan"
+            ],
+            "multimedia": [
+                {
+                    "url": "https://static01.nyt.com/images/2024/09/19/multimedia/19election-live-harris-michigan2-blzp/19election-live-harris-michigan2-blzp-superJumbo.jpg",
+                    "format": "Super Jumbo",
+                    "height": 1366,
+                    "width": 2048,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "",
+                    "copyright": "Kenny Holston/The New York Times"
+                },
+                {
+                    "url": "https://static01.nyt.com/images/2024/09/19/multimedia/19election-live-harris-michigan2-blzp/19election-live-harris-michigan2-blzp-threeByTwoSmallAt2X.jpg",
+                    "format": "threeByTwoSmallAt2X",
+                    "height": 400,
+                    "width": 600,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "",
+                    "copyright": "Kenny Holston/The New York Times"
+                },
+                {
+                    "url": "https://static01.nyt.com/images/2024/09/19/multimedia/19election-live-harris-michigan2-blzp/19election-live-harris-michigan2-blzp-thumbLarge.jpg",
+                    "format": "Large Thumbnail",
+                    "height": 150,
+                    "width": 150,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "",
+                    "copyright": "Kenny Holston/The New York Times"
+                }
+            ],
+            "short_url": ""
+        },
+        {
+            "section": "us",
+            "subsection": "politics",
+            "title": "Trump Says That if He Loses, ‘the Jewish People Would Have a Lot to Do’ With It",
+            "abstract": "Speaking at a campaign event denouncing antisemitism in America, Donald Trump again attacked Jews who vote for Democrats, saying that the party had a “hold, or curse, on you.”",
+            "url": "https://www.nytimes.com/2024/09/19/us/politics/trump-jews-antisemitism-israel.html",
+            "uri": "nyt://article/23591c4b-d464-5137-b827-2b69229ca8b0",
+            "byline": "By Chris Cameron and Michael Gold",
+            "item_type": "Article",
+            "updated_date": "2024-09-19T23:10:16-04:00",
+            "created_date": "2024-09-19T21:49:08-04:00",
+            "published_date": "2024-09-19T21:49:08-04:00",
+            "material_type_facet": "",
+            "kicker": "",
+            "des_facet": [
+                "United States Politics and Government",
+                "Jews and Judaism",
+                "Presidential Election of 2024",
+                "Anti-Semitism",
+                "United States International Relations"
+            ],
+            "org_facet": [
+                "Republican Party"
+            ],
+            "per_facet": [
+                "Trump, Donald J"
+            ],
+            "geo_facet": [],
+            "multimedia": [
+                {
+                    "url": "https://static01.nyt.com/images/2024/09/19/multimedia/19election-live-trump-jews-1-qklp/19election-live-trump-jews-1-qklp-superJumbo.jpg",
+                    "format": "Super Jumbo",
+                    "height": 1365,
+                    "width": 2048,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "“With all I have done for Israel, I received only 24 percent of the Jewish vote,” former President Donald J. Trump said on Thursday at an event about fighting antisemitism. He added that “I really haven’t been treated very well, but it’s the story of my life.”",
+                    "copyright": "Kent Nishimura for The New York Times"
+                },
+                {
+                    "url": "https://static01.nyt.com/images/2024/09/19/multimedia/19election-live-trump-jews-1-qklp/19election-live-trump-jews-1-qklp-threeByTwoSmallAt2X.jpg",
+                    "format": "threeByTwoSmallAt2X",
+                    "height": 400,
+                    "width": 600,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "“With all I have done for Israel, I received only 24 percent of the Jewish vote,” former President Donald J. Trump said on Thursday at an event about fighting antisemitism. He added that “I really haven’t been treated very well, but it’s the story of my life.”",
+                    "copyright": "Kent Nishimura for The New York Times"
+                },
+                {
+                    "url": "https://static01.nyt.com/images/2024/09/19/multimedia/19election-live-trump-jews-1-qklp/19election-live-trump-jews-1-qklp-thumbLarge.jpg",
+                    "format": "Large Thumbnail",
+                    "height": 150,
+                    "width": 150,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "“With all I have done for Israel, I received only 24 percent of the Jewish vote,” former President Donald J. Trump said on Thursday at an event about fighting antisemitism. He added that “I really haven’t been treated very well, but it’s the story of my life.”",
+                    "copyright": "Kent Nishimura for The New York Times"
+                }
+            ],
+            "short_url": ""
+        },
+        {
+            "section": "climate",
+            "subsection": "",
+            "title": "Prehistoric Earth Was Very Hot. That Offers Clues About Future Earth.",
+            "abstract": "At times during the past half-billion years, carbon dioxide warmed our planet more than previously thought, according to a new reconstruction of Earth’s deep past.",
+            "url": "https://www.nytimes.com/2024/09/19/climate/prehistoric-earth-temperatures.html",
+            "uri": "nyt://article/68499fc1-c77d-551a-8410-c18f231736e5",
+            "byline": "By Raymond Zhong",
+            "item_type": "Article",
+            "updated_date": "2024-09-19T21:12:40-04:00",
+            "created_date": "2024-09-19T14:00:07-04:00",
+            "published_date": "2024-09-19T14:00:07-04:00",
+            "material_type_facet": "",
+            "kicker": "",
+            "des_facet": [
+                "Global Warming",
+                "Greenhouse Gas Emissions",
+                "Research",
+                "Carbon Dioxide",
+                "Paleontology",
+                "Earth"
+            ],
+            "org_facet": [
+                "Science (Journal)",
+                "Smithsonian Institution"
+            ],
+            "per_facet": [],
+            "geo_facet": [],
+            "multimedia": [
+                {
+                    "url": "https://static01.nyt.com/images/2024/09/19/climate/19cli-EARTH-TEMPS/19cli-EARTH-TEMPS-superJumbo.jpg",
+                    "format": "Super Jumbo",
+                    "height": 1366,
+                    "width": 2048,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "An artist’s impression of life on Earth during the Carboniferous Period, 300 million years ago.",
+                    "copyright": "Felix Images/Alamy"
+                },
+                {
+                    "url": "https://static01.nyt.com/images/2024/09/19/climate/19cli-EARTH-TEMPS/19cli-EARTH-TEMPS-threeByTwoSmallAt2X.jpg",
+                    "format": "threeByTwoSmallAt2X",
+                    "height": 400,
+                    "width": 600,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "An artist’s impression of life on Earth during the Carboniferous Period, 300 million years ago.",
+                    "copyright": "Felix Images/Alamy"
+                },
+                {
+                    "url": "https://static01.nyt.com/images/2024/09/19/climate/19cli-EARTH-TEMPS/19cli-EARTH-TEMPS-thumbLarge.jpg",
+                    "format": "Large Thumbnail",
+                    "height": 150,
+                    "width": 150,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "An artist’s impression of life on Earth during the Carboniferous Period, 300 million years ago.",
+                    "copyright": "Felix Images/Alamy"
+                }
+            ],
+            "short_url": ""
+        },
+        {
+            "section": "business",
+            "subsection": "",
+            "title": "Stocks Hit Record High a Day After Fed’s Big Interest Rate Cut",
+            "abstract": "The S&P 500 rose 1.7 percent on Thursday, rallying a day after the Federal Reserve cut interest rates by half a percentage point.",
+            "url": "https://www.nytimes.com/2024/09/19/business/stock-market-federal-reserve.html",
+            "uri": "nyt://article/133eb37c-b141-500f-8a55-2f1cb0f1be32",
+            "byline": "By Joe Rennison and Danielle Kaye",
+            "item_type": "Article",
+            "updated_date": "2024-09-19T21:25:13-04:00",
+            "created_date": "2024-09-19T12:28:32-04:00",
+            "published_date": "2024-09-19T12:28:32-04:00",
+            "material_type_facet": "",
+            "kicker": "",
+            "des_facet": [
+                "Banking and Financial Institutions",
+                "Standard & Poor's 500-Stock Index",
+                "Regulation and Deregulation of Industry",
+                "United States Economy",
+                "Stocks and Bonds",
+                "Russell 2,000 Stock Index"
+            ],
+            "org_facet": [
+                "Federal Reserve System"
+            ],
+            "per_facet": [
+                "Powell, Jerome H"
+            ],
+            "geo_facet": [],
+            "multimedia": [
+                {
+                    "url": "https://static01.nyt.com/images/2024/09/19/multimedia/2024-09-19-s-and-p-500-new-peak-index/2024-09-19-s-and-p-500-new-peak-index-superJumbo-v3.png",
+                    "format": "Super Jumbo",
+                    "height": 1333,
+                    "width": 2000,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "",
+                    "copyright": "Karl Russell"
+                },
+                {
+                    "url": "https://static01.nyt.com/images/2024/09/19/multimedia/2024-09-19-s-and-p-500-new-peak-index/2024-09-19-s-and-p-500-new-peak-index-threeByTwoSmallAt2X-v4.png",
+                    "format": "threeByTwoSmallAt2X",
+                    "height": 400,
+                    "width": 600,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "",
+                    "copyright": "Karl Russell"
+                },
+                {
+                    "url": "https://static01.nyt.com/images/2024/09/19/multimedia/2024-09-19-s-and-p-500-new-peak-index/2024-09-19-s-and-p-500-new-peak-index-thumbLarge-v3.png",
+                    "format": "Large Thumbnail",
+                    "height": 150,
+                    "width": 150,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "",
+                    "copyright": "Karl Russell"
+                }
+            ],
+            "short_url": ""
+        },
+        {
+            "section": "world",
+            "subsection": "europe",
+            "title": "Europe’s New Defense Chief: ‘A King Without a Kingdom’?",
+            "abstract": "The European Union has vowed to enhance its military capability. But money is scarce, responsibilities overlap and the new job is less about soldiers than arms manufacturers.",
+            "url": "https://www.nytimes.com/2024/09/20/world/europe/europes-new-defense-chief-a-king-without-a-kingdom.html",
+            "uri": "nyt://article/8f9c4800-5bd5-5a8b-8626-5476e920981b",
+            "byline": "By Steven Erlanger and Jenny Gross",
+            "item_type": "Article",
+            "updated_date": "2024-09-20T04:02:19-04:00",
+            "created_date": "2024-09-20T00:01:15-04:00",
+            "published_date": "2024-09-20T00:01:15-04:00",
+            "material_type_facet": "",
+            "kicker": "news analysis",
+            "des_facet": [
+                "Politics and Government",
+                "International Relations",
+                "Appointments and Executive Changes",
+                "United States International Relations",
+                "Defense and Military Forces",
+                "Russian Invasion of Ukraine (2022)",
+                "Missiles and Missile Defense Systems",
+                "Arms Trade",
+                "Drones (Pilotless Planes)"
+            ],
+            "org_facet": [
+                "European Commission",
+                "European Union",
+                "North Atlantic Treaty Organization"
+            ],
+            "per_facet": [
+                "Breton, Thierry (1955- )",
+                "Draghi, Mario",
+                "Kallas, Kaja (1977- )",
+                "Sejourne, Stephane",
+                "von der Leyen, Ursula"
+            ],
+            "geo_facet": [],
+            "multimedia": [
+                {
+                    "url": "https://static01.nyt.com/images/2024/09/20/arts/20eu-defense-afwe/20eu-defense-afwe-superJumbo.jpg",
+                    "format": "Super Jumbo",
+                    "height": 1366,
+                    "width": 2048,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "Andrius Kubilius, a former prime minister of Lithuania, has been named as the European Union commissioner for defense.",
+                    "copyright": "Philipp von Ditfurth/Picture Alliance, via Getty Images"
+                },
+                {
+                    "url": "https://static01.nyt.com/images/2024/09/20/arts/20eu-defense-afwe/20eu-defense-afwe-threeByTwoSmallAt2X.jpg",
+                    "format": "threeByTwoSmallAt2X",
+                    "height": 400,
+                    "width": 600,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "Andrius Kubilius, a former prime minister of Lithuania, has been named as the European Union commissioner for defense.",
+                    "copyright": "Philipp von Ditfurth/Picture Alliance, via Getty Images"
+                },
+                {
+                    "url": "https://static01.nyt.com/images/2024/09/20/arts/20eu-defense-afwe/20eu-defense-afwe-thumbLarge.jpg",
+                    "format": "Large Thumbnail",
+                    "height": 150,
+                    "width": 150,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "Andrius Kubilius, a former prime minister of Lithuania, has been named as the European Union commissioner for defense.",
+                    "copyright": "Philipp von Ditfurth/Picture Alliance, via Getty Images"
+                }
+            ],
+            "short_url": ""
+        },
+        {
+            "section": "us",
+            "subsection": "",
+            "title": "Kentucky Sheriff Arrested in Shooting Death of Judge",
+            "abstract": "The police say a sheriff shot District Judge Kevin Mullins inside the courthouse on Thursday afternoon before turning himself in.",
+            "url": "https://www.nytimes.com/2024/09/19/us/sheriff-judge-shooting-kentucky.html",
+            "uri": "nyt://article/bd78cb99-869f-5d23-8946-d2e99533e7c5",
+            "byline": "By Emmett Lindner and Orlando Mayorquín",
+            "item_type": "Article",
+            "updated_date": "2024-09-19T22:32:30-04:00",
+            "created_date": "2024-09-19T20:48:14-04:00",
+            "published_date": "2024-09-19T20:48:14-04:00",
+            "material_type_facet": "",
+            "kicker": "",
+            "des_facet": [
+                "Deaths (Fatalities)",
+                "Courts and the Judiciary",
+                "Police"
+            ],
+            "org_facet": [
+                "Kentucky State Police"
+            ],
+            "per_facet": [
+                "Beshear, Andrew G (1977- )"
+            ],
+            "geo_facet": [],
+            "multimedia": [
+                {
+                    "url": "https://static01.nyt.com/images/2024/09/19/multimedia/19xp-kentucky/19xp-kentucky-superJumbo.jpg",
+                    "format": "Super Jumbo",
+                    "height": 1250,
+                    "width": 1875,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "A sheriff shot a judge in his office at the Letcher County Courthouse in Whitesburg, Ky., on Thursday.",
+                    "copyright": "Google Maps"
+                },
+                {
+                    "url": "https://static01.nyt.com/images/2024/09/19/multimedia/19xp-kentucky/19xp-kentucky-threeByTwoSmallAt2X.jpg",
+                    "format": "threeByTwoSmallAt2X",
+                    "height": 400,
+                    "width": 600,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "A sheriff shot a judge in his office at the Letcher County Courthouse in Whitesburg, Ky., on Thursday.",
+                    "copyright": "Google Maps"
+                },
+                {
+                    "url": "https://static01.nyt.com/images/2024/09/19/multimedia/19xp-kentucky/19xp-kentucky-thumbLarge.jpg",
+                    "format": "Large Thumbnail",
+                    "height": 150,
+                    "width": 150,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "A sheriff shot a judge in his office at the Letcher County Courthouse in Whitesburg, Ky., on Thursday.",
+                    "copyright": "Google Maps"
+                }
+            ],
+            "short_url": ""
+        },
+        {
+            "section": "us",
+            "subsection": "politics",
+            "title": "Inside the Secretive Facility Housing Migrants at Guantánamo Bay",
+            "abstract": "Reports and interviews shed new light on the holding center, where migrants’ calls with lawyers are monitored and some say they’ve been forced to wear blackout goggles.",
+            "url": "https://www.nytimes.com/2024/09/19/us/politics/migrants-guantanamo-bay-cuba-detention.html",
+            "uri": "nyt://article/c65baa67-64ae-509c-b0e6-ed492d88049f",
+            "byline": "By Hamed Aleaziz",
+            "item_type": "Article",
+            "updated_date": "2024-09-19T21:44:30-04:00",
+            "created_date": "2024-09-19T15:42:39-04:00",
+            "published_date": "2024-09-19T15:42:39-04:00",
+            "material_type_facet": "",
+            "kicker": "",
+            "des_facet": [
+                "Illegal Immigration",
+                "Asylum, Right of",
+                "Immigration Detention"
+            ],
+            "org_facet": [
+                "Homeland Security Department",
+                "Immigration and Customs Enforcement (US)",
+                "International Refugee Assistance Project"
+            ],
+            "per_facet": [],
+            "geo_facet": [
+                "Guantanamo Bay Naval Base (Cuba)",
+                "Cuba"
+            ],
+            "multimedia": [
+                {
+                    "url": "https://static01.nyt.com/images/2024/09/13/multimedia/00dc-gitmo-01-hvwc/00dc-gitmo-01-hvwc-superJumbo.jpg",
+                    "format": "Super Jumbo",
+                    "height": 2048,
+                    "width": 1397,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "Alberto Corzo and his family spent five months at a detention facility for migrants at Guantánamo Bay, Cuba, after attempting to flee the country.",
+                    "copyright": "Tara Walton for The New York Times"
+                },
+                {
+                    "url": "https://static01.nyt.com/images/2024/09/13/multimedia/00dc-gitmo-01-hvwc/00dc-gitmo-01-hvwc-threeByTwoSmallAt2X.jpg",
+                    "format": "threeByTwoSmallAt2X",
+                    "height": 400,
+                    "width": 600,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "Alberto Corzo and his family spent five months at a detention facility for migrants at Guantánamo Bay, Cuba, after attempting to flee the country.",
+                    "copyright": "Tara Walton for The New York Times"
+                },
+                {
+                    "url": "https://static01.nyt.com/images/2024/09/13/multimedia/00dc-gitmo-01-hvwc/00dc-gitmo-01-hvwc-thumbLarge.jpg",
+                    "format": "Large Thumbnail",
+                    "height": 150,
+                    "width": 150,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "Alberto Corzo and his family spent five months at a detention facility for migrants at Guantánamo Bay, Cuba, after attempting to flee the country.",
+                    "copyright": "Tara Walton for The New York Times"
+                }
+            ],
+            "short_url": ""
+        },
+        {
+            "section": "nyregion",
+            "subsection": "",
+            "title": "Former N.Y.C. Covid Czar Partied While Preaching Social Distancing",
+            "abstract": "In a hidden-camera video posted by a conservative podcaster, Dr. Jay K. Varma boasts about flouting the public health guidelines he insisted others follow.",
+            "url": "https://www.nytimes.com/2024/09/19/nyregion/dr-jay-varma-nyc-covid.html",
+            "uri": "nyt://article/7468ac5a-968f-5112-b7d2-e5e0221c25bb",
+            "byline": "By Sarah Maslin Nir",
+            "item_type": "Article",
+            "updated_date": "2024-09-19T21:27:47-04:00",
+            "created_date": "2024-09-19T20:54:47-04:00",
+            "published_date": "2024-09-19T20:54:47-04:00",
+            "material_type_facet": "",
+            "kicker": "",
+            "des_facet": [
+                "Coronavirus (2019-nCoV)",
+                "Quarantines",
+                "Video Recordings, Downloads and Streaming",
+                "Ethics and Official Misconduct",
+                "Government Employees"
+            ],
+            "org_facet": [],
+            "per_facet": [
+                "Varma, Jay K",
+                "Steven Crowder"
+            ],
+            "geo_facet": [
+                "New York City"
+            ],
+            "multimedia": [
+                {
+                    "url": "https://static01.nyt.com/images/2024/09/20/multimedia/20ny-varma-01-mvqz/20ny-varma-01-mvqz-superJumbo.jpg",
+                    "format": "Super Jumbo",
+                    "height": 1367,
+                    "width": 2048,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "Dr. Jay K. Varma was the senior public health adviser under Mayor Bill de Blasio during the first year of the Covid pandemic.",
+                    "copyright": "Bryan Thomas/Getty Images"
+                },
+                {
+                    "url": "https://static01.nyt.com/images/2024/09/20/multimedia/20ny-varma-01-mvqz/20ny-varma-01-mvqz-threeByTwoSmallAt2X-v2.jpg",
+                    "format": "threeByTwoSmallAt2X",
+                    "height": 400,
+                    "width": 600,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "Dr. Jay K. Varma was the senior public health adviser under Mayor Bill de Blasio during the first year of the Covid pandemic.",
+                    "copyright": "Bryan Thomas/Getty Images"
+                },
+                {
+                    "url": "https://static01.nyt.com/images/2024/09/20/multimedia/20ny-varma-01-mvqz/20ny-varma-01-mvqz-thumbLarge-v2.jpg",
+                    "format": "Large Thumbnail",
+                    "height": 150,
+                    "width": 150,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "Dr. Jay K. Varma was the senior public health adviser under Mayor Bill de Blasio during the first year of the Covid pandemic.",
+                    "copyright": "Bryan Thomas/Getty Images"
+                }
+            ],
+            "short_url": ""
+        },
+        {
+            "section": "world",
+            "subsection": "europe",
+            "title": "They Said the Virgin Mary Appeared. The Vatican Is Finally Weighing In.",
+            "abstract": "After decades, and controversy, the Vatican has authorized public worship at a shrine in Bosnia, where a once tranquil village has become a major pilgrimage site.",
+            "url": "https://www.nytimes.com/2024/09/19/world/europe/medjugorje-virgin-mary-vatican.html",
+            "uri": "nyt://article/5962a870-e60a-5dca-86db-8d73b0e321e0",
+            "byline": "By Elisabetta Povoledo",
+            "item_type": "Article",
+            "updated_date": "2024-09-19T21:24:34-04:00",
+            "created_date": "2024-09-19T05:59:16-04:00",
+            "published_date": "2024-09-19T05:59:16-04:00",
+            "material_type_facet": "",
+            "kicker": "",
+            "des_facet": [
+                "Pilgrimages",
+                "Cardinals (Roman Catholic Prelates)",
+                "Religion and Belief"
+            ],
+            "org_facet": [
+                "Roman Catholic Church"
+            ],
+            "per_facet": [
+                "Benedict XVI",
+                "Francis"
+            ],
+            "geo_facet": [
+                "Bosnia and Herzegovina",
+                "Medjugorje (Bosnia and Herzegovina)"
+            ],
+            "multimedia": [
+                {
+                    "url": "https://static01.nyt.com/images/2024/09/19/multimedia/19vatican-virgin-01-wlzk/19vatican-virgin-01-wlzk-superJumbo.jpg",
+                    "format": "Super Jumbo",
+                    "height": 1534,
+                    "width": 2048,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "Pilgrims gathered in 2015 above the Bosnian village of Medjugorje to pray to the Virgin Mary.",
+                    "copyright": "Ziyah Gafic for The New York Times"
+                },
+                {
+                    "url": "https://static01.nyt.com/images/2024/09/19/multimedia/19vatican-virgin-01-wlzk/19vatican-virgin-01-wlzk-threeByTwoSmallAt2X.jpg",
+                    "format": "threeByTwoSmallAt2X",
+                    "height": 400,
+                    "width": 600,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "Pilgrims gathered in 2015 above the Bosnian village of Medjugorje to pray to the Virgin Mary.",
+                    "copyright": "Ziyah Gafic for The New York Times"
+                },
+                {
+                    "url": "https://static01.nyt.com/images/2024/09/19/multimedia/19vatican-virgin-01-wlzk/19vatican-virgin-01-wlzk-thumbLarge.jpg",
+                    "format": "Large Thumbnail",
+                    "height": 150,
+                    "width": 150,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "Pilgrims gathered in 2015 above the Bosnian village of Medjugorje to pray to the Virgin Mary.",
+                    "copyright": "Ziyah Gafic for The New York Times"
+                }
+            ],
+            "short_url": ""
+        },
+        {
+            "section": "opinion",
+            "subsection": "",
+            "title": "Dictators Die, but Their Legacies Live on Much Longer",
+            "abstract": "Fujimori’s authoritarian streak lives on in Peru, even in those who claim to be against the former leader’s political movement.",
+            "url": "https://www.nytimes.com/2024/09/20/opinion/fujimori-peru-dictator-authoritarian.html",
+            "uri": "nyt://article/1a231c3d-027c-52af-92c0-7e23636003c1",
+            "byline": "By Fernando J. Loayza Jordán",
+            "item_type": "Article",
+            "updated_date": "2024-09-20T02:09:53-04:00",
+            "created_date": "2024-09-20T01:00:08-04:00",
+            "published_date": "2024-09-20T01:00:08-04:00",
+            "material_type_facet": "",
+            "kicker": "Guest Essay",
+            "des_facet": [],
+            "org_facet": [
+                "Shining Path",
+                "Fujimorism"
+            ],
+            "per_facet": [
+                "Fujimori, Alberto K",
+                "Fujimori, Keiko",
+                "Fujimori, Kenji"
+            ],
+            "geo_facet": [
+                "Peru"
+            ],
+            "multimedia": [
+                {
+                    "url": "https://static01.nyt.com/images/2024/09/20/multimedia/20loayza-lvqc/20loayza-lvqc-superJumbo.jpg",
+                    "format": "Super Jumbo",
+                    "height": 2048,
+                    "width": 1639,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "",
+                    "copyright": "Juan Carlos Cisneros/Agence France-Presse &mdash; Getty Images"
+                },
+                {
+                    "url": "https://static01.nyt.com/images/2024/09/20/multimedia/20loayza-lvqc/20loayza-lvqc-threeByTwoSmallAt2X.jpg",
+                    "format": "threeByTwoSmallAt2X",
+                    "height": 400,
+                    "width": 600,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "",
+                    "copyright": "Juan Carlos Cisneros/Agence France-Presse &mdash; Getty Images"
+                },
+                {
+                    "url": "https://static01.nyt.com/images/2024/09/20/multimedia/20loayza-lvqc/20loayza-lvqc-thumbLarge.jpg",
+                    "format": "Large Thumbnail",
+                    "height": 150,
+                    "width": 150,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "",
+                    "copyright": "Juan Carlos Cisneros/Agence France-Presse &mdash; Getty Images"
+                }
+            ],
+            "short_url": ""
+        },
+        {
+            "section": "opinion",
+            "subsection": "",
+            "title": "The Fed’s Big Rate Cut Wasn’t Political. It Was an Economic No-Brainer.",
+            "abstract": "The cut was “jumbo.” The implications are bigger.",
+            "url": "https://www.nytimes.com/2024/09/19/opinion/interest-rates-federal-reserve.html",
+            "uri": "nyt://article/2407b5d7-7a86-599d-a299-ff0d4e0c3d4c",
+            "byline": "By Paul Krugman",
+            "item_type": "Article",
+            "updated_date": "2024-09-19T21:11:27-04:00",
+            "created_date": "2024-09-19T15:03:29-04:00",
+            "published_date": "2024-09-19T15:03:29-04:00",
+            "material_type_facet": "",
+            "kicker": "Paul Krugman",
+            "des_facet": [
+                "United States Economy",
+                "Interest Rates",
+                "Inflation (Economics)"
+            ],
+            "org_facet": [
+                "Federal Reserve System"
+            ],
+            "per_facet": [
+                "Trump, Donald J",
+                "Harris, Kamala D",
+                "Powell, Jerome H",
+                "Biden, Joseph R Jr"
+            ],
+            "geo_facet": [],
+            "multimedia": [
+                {
+                    "url": "https://static01.nyt.com/images/2024/09/19/multimedia/19krugman-tjfq/19krugman-tjfq-superJumbo.jpg",
+                    "format": "Super Jumbo",
+                    "height": 1365,
+                    "width": 2048,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "",
+                    "copyright": "Andrew Kelly/Reuters"
+                },
+                {
+                    "url": "https://static01.nyt.com/images/2024/09/19/multimedia/19krugman-tjfq/19krugman-tjfq-threeByTwoSmallAt2X.jpg",
+                    "format": "threeByTwoSmallAt2X",
+                    "height": 400,
+                    "width": 600,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "",
+                    "copyright": "Andrew Kelly/Reuters"
+                },
+                {
+                    "url": "https://static01.nyt.com/images/2024/09/19/multimedia/19krugman-tjfq/19krugman-tjfq-thumbLarge.jpg",
+                    "format": "Large Thumbnail",
+                    "height": 150,
+                    "width": 150,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "",
+                    "copyright": "Andrew Kelly/Reuters"
+                }
+            ],
+            "short_url": ""
+        },
+        {
+            "section": "opinion",
+            "subsection": "",
+            "title": "Why JD Vance Dropped Into My Inbox",
+            "abstract": "I used to think I knew him. History has proved me wrong.",
+            "url": "https://www.nytimes.com/2024/09/19/opinion/jd-vance-hillbilly-elegy.html",
+            "uri": "nyt://article/a98badfa-ddd0-541d-9e06-ad74cb58fadc",
+            "byline": "By John McWhorter",
+            "item_type": "Article",
+            "updated_date": "2024-09-19T15:00:12-04:00",
+            "created_date": "2024-09-19T14:28:06-04:00",
+            "published_date": "2024-09-19T14:28:06-04:00",
+            "material_type_facet": "",
+            "kicker": "John McWhorter",
+            "des_facet": [
+                "Presidential Election of 2024",
+                "Hillbilly Elegy: A Memoir of a Family and Culture in Crisis (Book)"
+            ],
+            "org_facet": [],
+            "per_facet": [
+                "Vance, J D"
+            ],
+            "geo_facet": [],
+            "multimedia": [
+                {
+                    "url": "https://static01.nyt.com/images/2024/09/19/opinion/19mcwhorter-newsletter-art/19mcwhorter-newsletter-art-superJumbo.jpg",
+                    "format": "Super Jumbo",
+                    "height": 2048,
+                    "width": 2048,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "",
+                    "copyright": "Photo illustration by Sam Whitney/The New York Times; source photograph by Isaac Ritchey/The Grand Rapids Press, via Associated Press"
+                },
+                {
+                    "url": "https://static01.nyt.com/images/2024/09/19/opinion/19mcwhorter-newsletter-art/19mcwhorter-newsletter-art-threeByTwoSmallAt2X.jpg",
+                    "format": "threeByTwoSmallAt2X",
+                    "height": 400,
+                    "width": 600,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "",
+                    "copyright": "Photo illustration by Sam Whitney/The New York Times; source photograph by Isaac Ritchey/The Grand Rapids Press, via Associated Press"
+                },
+                {
+                    "url": "https://static01.nyt.com/images/2024/09/19/opinion/19mcwhorter-newsletter-art/19mcwhorter-newsletter-art-thumbLarge.jpg",
+                    "format": "Large Thumbnail",
+                    "height": 150,
+                    "width": 150,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "",
+                    "copyright": "Photo illustration by Sam Whitney/The New York Times; source photograph by Isaac Ritchey/The Grand Rapids Press, via Associated Press"
+                }
+            ],
+            "short_url": ""
+        },
+        {
+            "section": "opinion",
+            "subsection": "",
+            "title": "Why Can’t Kamala Harris Just Say This?",
+            "abstract": "Here’s a script with which she could explain her evolution.",
+            "url": "https://www.nytimes.com/2024/09/19/opinion/kamala-harris-positions.html",
+            "uri": "nyt://article/5ee59dbd-1adb-5153-affc-0882007e44fc",
+            "byline": "By Frank Bruni",
+            "item_type": "Article",
+            "updated_date": "2024-09-19T12:23:38-04:00",
+            "created_date": "2024-09-19T12:00:09-04:00",
+            "published_date": "2024-09-19T12:00:09-04:00",
+            "material_type_facet": "",
+            "kicker": "Frank Bruni",
+            "des_facet": [
+                "Presidential Election of 2024"
+            ],
+            "org_facet": [],
+            "per_facet": [
+                "Harris, Kamala D"
+            ],
+            "geo_facet": [],
+            "multimedia": [
+                {
+                    "url": "https://static01.nyt.com/images/2024/09/19/opinion/19bruni-newsletter-image/19bruni-newsletter-image-superJumbo.jpg",
+                    "format": "Super Jumbo",
+                    "height": 2048,
+                    "width": 2048,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "",
+                    "copyright": "Ben Wiseman"
+                },
+                {
+                    "url": "https://static01.nyt.com/images/2024/09/19/opinion/19bruni-newsletter-image/19bruni-newsletter-image-threeByTwoSmallAt2X.jpg",
+                    "format": "threeByTwoSmallAt2X",
+                    "height": 400,
+                    "width": 600,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "",
+                    "copyright": "Ben Wiseman"
+                },
+                {
+                    "url": "https://static01.nyt.com/images/2024/09/19/opinion/19bruni-newsletter-image/19bruni-newsletter-image-thumbLarge.jpg",
+                    "format": "Large Thumbnail",
+                    "height": 150,
+                    "width": 150,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "",
+                    "copyright": "Ben Wiseman"
+                }
+            ],
+            "short_url": ""
+        },
+        {
+            "section": "business",
+            "subsection": "",
+            "title": "Nike C.E.O. John Donahoe Abruptly Retires Amid Declining Sales",
+            "abstract": "Elliott Hill, an executive who left the company after Donahoe’s appointment in 2020, will return as chief executive, Nike’s board said.",
+            "url": "https://www.nytimes.com/2024/09/19/business/nike-elliott-hill-john-donahoe.html",
+            "uri": "nyt://article/e358fc76-f664-5006-8d7a-c77498377aaa",
+            "byline": "By Jordyn Holman and Julie Creswell",
+            "item_type": "Article",
+            "updated_date": "2024-09-19T23:24:00-04:00",
+            "created_date": "2024-09-19T18:38:44-04:00",
+            "published_date": "2024-09-19T18:38:44-04:00",
+            "material_type_facet": "",
+            "kicker": "",
+            "des_facet": [
+                "Appointments and Executive Changes",
+                "Company Reports"
+            ],
+            "org_facet": [
+                "NIKE Inc"
+            ],
+            "per_facet": [
+                "Hill, Elliott",
+                "Donahoe, John"
+            ],
+            "geo_facet": [],
+            "multimedia": [
+                {
+                    "url": "https://static01.nyt.com/images/2024/09/19/business/19Nike-CEO/19Nike-CEO-superJumbo.jpg",
+                    "format": "Super Jumbo",
+                    "height": 1365,
+                    "width": 2048,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "Elliott Hill is returning to Nike, this time as chief executive.",
+                    "copyright": "Nike"
+                },
+                {
+                    "url": "https://static01.nyt.com/images/2024/09/19/business/19Nike-CEO/19Nike-CEO-threeByTwoSmallAt2X.jpg",
+                    "format": "threeByTwoSmallAt2X",
+                    "height": 400,
+                    "width": 600,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "Elliott Hill is returning to Nike, this time as chief executive.",
+                    "copyright": "Nike"
+                },
+                {
+                    "url": "https://static01.nyt.com/images/2024/09/19/business/19Nike-CEO/19Nike-CEO-thumbLarge.jpg",
+                    "format": "Large Thumbnail",
+                    "height": 150,
+                    "width": 150,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "Elliott Hill is returning to Nike, this time as chief executive.",
+                    "copyright": "Nike"
+                }
+            ],
+            "short_url": ""
+        },
+        {
+            "section": "us",
+            "subsection": "",
+            "title": "Officials Open Criminal Inquiry Into Crash That Caused Pipeline Fire Near Houston",
+            "abstract": "A vehicle crashed into a gas pipeline valve, exploding into a tower of flame that has burned for days. Investigators are now looking into whether it was more than an accident.",
+            "url": "https://www.nytimes.com/2024/09/19/us/houston-pipeline-fire-human-remains.html",
+            "uri": "nyt://article/8f40ca5f-b86b-5ab2-8e5b-0c6c6294b06c",
+            "byline": "By J. David Goodman",
+            "item_type": "Article",
+            "updated_date": "2024-09-19T19:37:20-04:00",
+            "created_date": "2024-09-19T17:08:18-04:00",
+            "published_date": "2024-09-19T17:08:18-04:00",
+            "material_type_facet": "",
+            "kicker": "",
+            "des_facet": [
+                "Fires and Firefighters",
+                "Explosions (Accidental)",
+                "Natural Gas",
+                "Oil (Petroleum) and Gasoline",
+                "Pipelines"
+            ],
+            "org_facet": [],
+            "per_facet": [],
+            "geo_facet": [
+                "Deer Park (Tex)",
+                "Houston (Tex)",
+                "Texas"
+            ],
+            "multimedia": [
+                {
+                    "url": "https://static01.nyt.com/images/2024/09/19/autossell/sipausa_55983289/sipausa_55983289-superJumbo.jpg",
+                    "format": "Super Jumbo",
+                    "height": 1363,
+                    "width": 2048,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "",
+                    "copyright": "Jennifer Lake/Sipa, via, Associated Press"
+                },
+                {
+                    "url": "https://static01.nyt.com/images/2024/09/19/autossell/sipausa_55983289/sipausa_55983289-threeByTwoSmallAt2X.jpg",
+                    "format": "threeByTwoSmallAt2X",
+                    "height": 400,
+                    "width": 600,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "",
+                    "copyright": "Jennifer Lake/Sipa, via, Associated Press"
+                },
+                {
+                    "url": "https://static01.nyt.com/images/2024/09/19/autossell/sipausa_55983289/sipausa_55983289-thumbLarge.jpg",
+                    "format": "Large Thumbnail",
+                    "height": 150,
+                    "width": 150,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "",
+                    "copyright": "Jennifer Lake/Sipa, via, Associated Press"
+                }
+            ],
+            "short_url": ""
+        },
+        {
+            "section": "us",
+            "subsection": "politics",
+            "title": "Alaska Man Charged With Threatening 6 Supreme Court Justices",
+            "abstract": "It remained unclear whether the man, Panos Anastasiou, came close to carrying out his threats, and public records indicate that he is not affiliated with any political party.",
+            "url": "https://www.nytimes.com/2024/09/19/us/politics/supreme-court-justices-threats-fbi.html",
+            "uri": "nyt://article/ae1357d4-8a45-5ba5-b239-cac16bad185f",
+            "byline": "By Eileen Sullivan",
+            "item_type": "Article",
+            "updated_date": "2024-09-19T22:04:01-04:00",
+            "created_date": "2024-09-19T16:36:21-04:00",
+            "published_date": "2024-09-19T16:36:21-04:00",
+            "material_type_facet": "",
+            "kicker": "",
+            "des_facet": [
+                "Threats and Threatening Messages"
+            ],
+            "org_facet": [
+                "Justice Department",
+                "Supreme Court (US)"
+            ],
+            "per_facet": [
+                "Alito, Samuel A Jr",
+                "Kavanaugh, Brett M",
+                "Roberts, John G Jr",
+                "Thomas, Clarence",
+                "Trump, Donald J"
+            ],
+            "geo_facet": [
+                "Alaska"
+            ],
+            "multimedia": [
+                {
+                    "url": "https://static01.nyt.com/images/2024/09/19/multimedia/19dc-threats-khvf/19dc-threats-khvf-superJumbo.jpg",
+                    "format": "Super Jumbo",
+                    "height": 2048,
+                    "width": 2048,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "A 76-year-old man was arrested Wednesday in Alaska for sending hundreds of threatening messages to members of the Supreme Court.",
+                    "copyright": "Tierney L. Cross for The New York Times"
+                },
+                {
+                    "url": "https://static01.nyt.com/images/2024/09/19/multimedia/19dc-threats-khvf/19dc-threats-khvf-threeByTwoSmallAt2X.jpg",
+                    "format": "threeByTwoSmallAt2X",
+                    "height": 400,
+                    "width": 600,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "A 76-year-old man was arrested Wednesday in Alaska for sending hundreds of threatening messages to members of the Supreme Court.",
+                    "copyright": "Tierney L. Cross for The New York Times"
+                },
+                {
+                    "url": "https://static01.nyt.com/images/2024/09/19/multimedia/19dc-threats-khvf/19dc-threats-khvf-thumbLarge.jpg",
+                    "format": "Large Thumbnail",
+                    "height": 150,
+                    "width": 150,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "A 76-year-old man was arrested Wednesday in Alaska for sending hundreds of threatening messages to members of the Supreme Court.",
+                    "copyright": "Tierney L. Cross for The New York Times"
+                }
+            ],
+            "short_url": ""
+        },
+        {
+            "section": "us",
+            "subsection": "",
+            "title": "Goon Squad Violence Leads to Federal Investigation of Mississippi Sheriff’s Office",
+            "abstract": "The Justice Department will determine if allegations of widespread violence and improper searches amount to a pattern  of discrimination in the department.",
+            "url": "https://www.nytimes.com/2024/09/19/us/goon-squad-mississippi-sheriffs-office.html",
+            "uri": "nyt://article/6ea70fbf-d48f-52d3-ba69-a6d16cc4c55e",
+            "byline": "By Jerry Mitchell, Brian Howey and Nate Rosenfield",
+            "item_type": "Article",
+            "updated_date": "2024-09-19T18:45:30-04:00",
+            "created_date": "2024-09-19T18:45:30-04:00",
+            "published_date": "2024-09-19T18:45:30-04:00",
+            "material_type_facet": "",
+            "kicker": "",
+            "des_facet": [
+                "internal-open-access",
+                "Sheriffs",
+                "Police Brutality, Misconduct and Shootings",
+                "Stun Guns",
+                "Torture",
+                "Civil Rights and Liberties"
+            ],
+            "org_facet": [
+                "Justice Department"
+            ],
+            "per_facet": [
+                "Bailey, Bryan (Rankin County, Miss, Sheriff)"
+            ],
+            "geo_facet": [
+                "Rankin County (Miss)"
+            ],
+            "multimedia": [
+                {
+                    "url": "https://static01.nyt.com/images/2024/09/19/multimedia/19goon-squad-mhjp/19goon-squad-mhjp-superJumbo.jpg",
+                    "format": "Super Jumbo",
+                    "height": 1363,
+                    "width": 2048,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "Rankin County came to national attention last year after sheriff’s deputies tortured two Black men in their home and shot one of them, nearly killing him.",
+                    "copyright": "Rory Doyle for The New York Times"
+                },
+                {
+                    "url": "https://static01.nyt.com/images/2024/09/19/multimedia/19goon-squad-mhjp/19goon-squad-mhjp-threeByTwoSmallAt2X.jpg",
+                    "format": "threeByTwoSmallAt2X",
+                    "height": 400,
+                    "width": 600,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "Rankin County came to national attention last year after sheriff’s deputies tortured two Black men in their home and shot one of them, nearly killing him.",
+                    "copyright": "Rory Doyle for The New York Times"
+                },
+                {
+                    "url": "https://static01.nyt.com/images/2024/09/19/multimedia/19goon-squad-mhjp/19goon-squad-mhjp-thumbLarge.jpg",
+                    "format": "Large Thumbnail",
+                    "height": 150,
+                    "width": 150,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "Rankin County came to national attention last year after sheriff’s deputies tortured two Black men in their home and shot one of them, nearly killing him.",
+                    "copyright": "Rory Doyle for The New York Times"
+                }
+            ],
+            "short_url": ""
+        },
+        {
+            "section": "books",
+            "subsection": "",
+            "title": "The Author of ‘Impossible Creatures’ Tucks Big Ideas in Tales of Wonder",
+            "abstract": "Katherine Rundell said children can handle hefty themes, but finds it “bad manners to offer a child a story and give them just a moral.”",
+            "url": "https://www.nytimes.com/2024/09/19/books/katherine-rundell-impossible-creatures.html",
+            "uri": "nyt://article/8102528a-8ee5-52ce-8ac1-615f5efd0d9b",
+            "byline": "By Sarah Lyall",
+            "item_type": "Article",
+            "updated_date": "2024-09-19T09:59:23-04:00",
+            "created_date": "2024-09-19T09:37:35-04:00",
+            "published_date": "2024-09-19T09:37:35-04:00",
+            "material_type_facet": "",
+            "kicker": "",
+            "des_facet": [
+                "Books and Literature",
+                "Writing and Writers",
+                "Content Type: Personal Profile",
+                "Impossible Creatures (Book)"
+            ],
+            "org_facet": [
+                "Oxford University",
+                "Waterstones Booksellers Ltd"
+            ],
+            "per_facet": [
+                "Rundell, Katherine"
+            ],
+            "geo_facet": [
+                "Oxford (England)"
+            ],
+            "multimedia": [
+                {
+                    "url": "https://static01.nyt.com/images/2024/09/19/multimedia/19Rundell2-bwcp/19Rundell2-bwcp-superJumbo.jpg",
+                    "format": "Super Jumbo",
+                    "height": 2048,
+                    "width": 1463,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "Katherine Rundell’s work is infused with both wonder and worry. “The unifying thread is that our world, as chaotic and burning as it is, demands our astonishment because of its beauty, its generosity and its intricate variety,” she said. ",
+                    "copyright": "Ellie Smith for The New York Times"
+                },
+                {
+                    "url": "https://static01.nyt.com/images/2024/09/19/multimedia/19Rundell2-bwcp/19Rundell2-bwcp-threeByTwoSmallAt2X.jpg",
+                    "format": "threeByTwoSmallAt2X",
+                    "height": 400,
+                    "width": 600,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "Katherine Rundell’s work is infused with both wonder and worry. “The unifying thread is that our world, as chaotic and burning as it is, demands our astonishment because of its beauty, its generosity and its intricate variety,” she said. ",
+                    "copyright": "Ellie Smith for The New York Times"
+                },
+                {
+                    "url": "https://static01.nyt.com/images/2024/09/19/multimedia/19Rundell2-bwcp/19Rundell2-bwcp-thumbLarge.jpg",
+                    "format": "Large Thumbnail",
+                    "height": 150,
+                    "width": 150,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "Katherine Rundell’s work is infused with both wonder and worry. “The unifying thread is that our world, as chaotic and burning as it is, demands our astonishment because of its beauty, its generosity and its intricate variety,” she said. ",
+                    "copyright": "Ellie Smith for The New York Times"
+                }
+            ],
+            "short_url": ""
+        }
+    ]
+}
