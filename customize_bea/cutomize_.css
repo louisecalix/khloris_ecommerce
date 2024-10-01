@@ -9,84 +9,414 @@ html, body {
     width: 100%;
     height: 100%;
     margin: 0;
+    background-color: rgb(221, 216, 194);
 }
 
-
-
-.prdctmenu .pr_container{
-    display:flex;
-    flex-wrap: wrap;
-    flex:1 1 30rem;
-    border-radius: 1rem;
-    box-shadow: 0 0.5rem 1.5rem rgba(0,0,0, .1);
-    border: .1rem solid  #725c3f;;
-    position: relative;
-    height: 46rem;
-    width:42rem;
-    top:12rem;
-    left:81rem;
-    background-color: rgba(238, 237, 234, 1);
+.container_grid{
+    display: grid;
+    grid-auto-columns:1fr 3fr 2fr;
+    grid-template-rows: 7.6rem 3fr 1fr;
+    grid-template-areas: 
+    "head head head"
+    "choices main prdct_cont"
+    "t t t";
+    border:1px solid  #271e13;
+    width: 100vw;
+    height: 100vh;
+   
+    
+    
+}
+.head{
+    grid-area: head;
+    background-color: #ccd8ad;
+    
+}
+.choices{
+    grid-area: choices;
+    grid-row-start: 2;
+    grid-row-end: 4;
 
    
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+        "qty_"
+        "wrapper_"
+        "ribbons_"
+        "flowers_";
+
+        z-index: 2;
 }
-.pr_container #flower_num{
-    font-size: 2.5rem;
-    position: relative;
-    top:-4rem;
-    left:10.5rem;
+
+.qty_{
+    grid-area: qty_;
+    /* background-color: rgb(220, 154, 165); */
+    display: grid;
+    justify-content: end;
+    align-items: center;
+}
+
+.wrapper_{
+    grid-area: wrapper_;
+    /* background-color: rgb(212, 136, 149); */
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.ribbons_{
+    grid-area: ribbons_;
+    /* background-color: rgb(208, 113, 129); */
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.flowers_{
+    grid-area: flowers_;
+    /* background-color: rgb(200, 78, 98); */
+    display: grid;
+    justify-content: end;
+    align-items: center;
+}
+
+.main{
+    grid-area: main;
+    display: grid;
+    
+    background-image: url('https://res.cloudinary.com/dsfcl09md/image/upload/v1725816172/flowers/y1yoygv4hch8kkitcf2m.png');
+    background-size: contain;
+    background-position: center 7rem;
+    background-repeat: no-repeat;
+    /* border:1px solid #271e13;
+    */
+    height: 100%;
+    z-index: 2;
+    grid-row-start: 2;
+    grid-row-end: 4;
+    /* padding-left: 16rem; */
+    /* justify-content: center;
+    align-items: center; */
+   
+   
+
+    /* background-color: #9bc337; */
+
+}
+
+
+#wrapper {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    
+   
+    background-image:url("https://res.cloudinary.com/dsfcl09md/image/upload/v1727610825/flowers/vpx3oioy2ic8egownobj.png");
+    background-size: contain;
+    background-position: center 4rem;
+    background-repeat: no-repeat;
+    
+    /* border: 1px solid black; */
+    
+}
+
+.prdct_cont{
+    grid-area: prdct_cont;
+    /* background-color: #486207; */
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    height: 100%;
+    width: 100%;
+    grid-template-rows: 0.6fr 5fr;
+    grid-template-areas: 
+    "label_"
+    "main_div";
+    grid-row-start: 2;
+    grid-row-end: 4;
+    z-index: 2;
+    padding-left: 2rem;
+    padding-top: 2rem;
+
+    
+
+
+}
+
+.t{
+    grid-area: t;
+    background-color: #516b0f;
+    display: grid;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    
+  
+}
+
+/* .prdctmenu{
+    grid-area: prdct_menu;
+    width: 100%;
+    height: 100%;
+    background-color: palevioletred;
+
+    display: grid;
+    grid-template-rows: 1fr 5fr;
+    grid-template-areas: 
+    "label_"
+    "main_div";
+
+} */
+
+.label_{
+    grid-area: label_;
+    /* background-color: rgb(230, 162, 173); */
+    width: 100%;
+    display: grid;
+    grid-template-columns: 0.7fr 1fr 0.7fr;
+    grid-template-areas: "left label_main right";
+    justify-content: center;
+    align-items: center;
     color: #725c3f;
+    padding-bottom: 1rem;
+
 }
 
-.pr_container i{
-    font-size: 3rem;
-    position: relative;
-    color: #c8707b;
+#flower_num{
+    font-size: 2.1em;
+}
+
+.left_div{
+    grid-area: left;
+    /* background-color: #647733; */
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.label_main{
+    grid-area: label_main;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    color: #725c3f;
+    font-size: 2rem;
+
+}
+
+.right_div{
+    grid-area: right;
+    /* background-color: #647733; */
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.main_div{
+    grid-area: main_div;
+    /* background-color: rgb(143, 128, 73); */
+    width: 100%;
+    display: grid;
+    border-radius: 20px;
+    height: 90%;
+    border: 1px solid rgb(75, 54, 25);
+    grid-template-rows: 2fr 1fr;
+    grid-template-areas: 
+        "divs"
+        "totals";
+       
+    
+   
+}
+
+
+.flwr_qty{
+    grid-area: divs;
     display: flex;
-    top:-4rem;
+    flex-wrap: wrap;
+    flex:1 1 30rem;
+    border:none;
+    width: 100%;
+    height: 100%;
+   
+
+    justify-content: space-evenly;
+    align-items: center;
+    border: 1px solid rgb(183, 46, 87);
+  
+}
+.wrppr_cont{
+  
+    grid-area: divs;
+    display: flex;
+    flex-wrap: wrap;
+    flex:1 1 30rem;
+    border:none;
+    width: 100%;
+    height: 100%;
+   
+
+    justify-content: space-evenly;
+    align-items: center;
+    border: 1px solid rgb(183, 46, 87);
+   
+   
+    
+}
+
+
+.rbbn_cont{
+    grid-area: divs;
+    display: flex;
+    flex-wrap: wrap;
+    flex:1 1 30rem;
+    border:none;
+    width: 100%;
+    height: 100%;
+   
+
+    justify-content: space-evenly;
+    align-items: center;
+    border: 1px solid rgb(183, 46, 87);
+   
+  
+    
+}
+
+.flwrs_cont{
+    grid-area: divs;
+    display: flex;
+    flex-wrap: wrap;
+    flex:1 1 30rem;
+    border:none;
+    width: 100%;
+    height: 100%;
+   
+
+    justify-content: space-evenly;
+    align-items: center;
+    border: 1px solid rgb(183, 46, 87);
+   
+
+    
+}
+
+.other{
+    grid-area: totals;
+   
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+    display: grid;
+    grid-template-rows: 0.7fr 0.7fr ;
+    grid-template-areas: 
+        "ttl_"
+        "bttns_";
+    /* justify-content: center;
+    align-items:center ; */
+    
+}
+
+.ttl{
+    grid-area: ttl_;
+  
+    width: 100%;
+    justify-content: center;
+    align-items: end;
+    padding-left: 2rem;
+    background-color: palevioletred;
+}
+
+.bttns_{
+    grid-area: bttns_;
+    /* border:1px solid rgb(63, 32, 4); */
+    border-radius: 15px;
+    display: grid;
+    background-color: pink;
+    bottom: 0;
+   
+}
+
+.add{
+    grid-area: add_;
+    background-color: #a2b378;
+}
+
+.buy{
+    grid-area: buy;
+    background-color: #B8AC8D;
+}
+
+
+
+
+
+
+
+
+/* 
+.prdctmenu .pr_container{
+   
+    display:grid;
+    
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1.5rem rgba(0,0,0, .1);
+    border: 1rem solid  #725c3f;;
+
+    height: 100%;
+    width:100%;
+    
+    background-color: rgb(228, 220, 195);
+    justify-content: center;
+    align-items: center;
+
+   
+} */
+
+.label_ i{
+    font-size: 3rem;
+   
+    color: #ce3547;
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    
 
 }
-#left{
-    left:2rem;
+/* #left{
+    margin-left: 2rem;
 }
 #right{
-    left:18rem;
-}
+    margin-right: 2rem; 
+} */
 
 #left:active , #right:active{
     transform: scale(1.1);
 }
 
 .table_dec{
-    width: 100vw;
-    height: 14.5rem;
-    position: absolute;
-    display: flex;
+    width: 100%;
+    height: 100%;
+   
+    display: grid;
     background-color: rgba(233, 221, 202, 1);
     border: 1px solid rgb(204, 185, 135);
-    bottom: 0;
-    top:46rem;
+
+    
     box-shadow: inset 6px 6px 10px rgba(147, 95, 22, 0.3);
 }
 
-.flower-container {
-    border: none;
-    justify-content: center;
-    align-items: center;
-}
 
-#wrapper {
-      position: absolute;
-      right:0px;
-      left: 34rem;
-      top: 17rem;
-      width: 54rem;
-      height: 39rem;
-      transform: scale(1.2);
-      background-image:url("https://res.cloudinary.com/dsfcl09md/image/upload/v1723359520/flowers/kjy5hmwbf14bxt0c4qox.png");
-      background-size: 35rem 42rem;
-      background-position: center;
-      background-repeat: no-repeat;
-  }
+
 .flower-container img{
     display: none;
     position: absolute;
@@ -217,18 +547,18 @@ html, body {
     width: 8rem;
     height: 7rem;
     position: relative;
-    border: 1rem solid  #271e13;
-    left:13rem;
+ 
+   
     border-radius: 50%;
     cursor: pointer;
     background-color: #fffbf1;
-    border: none;
+   
     display: flex;
     justify-content: center;
     align-items: center;
     border: .1rem solid  #B8AC8D;
     box-shadow: 5px 5px 10px rgb(129, 116, 91);
-    top: 37rem;
+   
 }
 .bttn_main p{
     position: relative;
@@ -240,18 +570,7 @@ html, body {
     transform: scale(1.2);
 }
 
-#wrppr{
-    top:46rem;
-    left:-5rem;
-}
-#rbbn{
-    top:60rem;
-    left:-13rem;
-}
-#flwr{
-    top:48rem;
-    left:14rem;
-}
+
 
 
 .bttn_main img {
@@ -264,20 +583,7 @@ html, body {
 }
 
 
-.flwr_qty{
-    display: none;
-    flex-wrap: wrap;
-    flex:1 1 30rem;
-    border:none;
-    width: 42rem;
-    height: 27rem;
-    position: absolute;
-    top:1rem;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    gap:2rem;
-}
+
 
 .bttn_qty{
    
@@ -291,13 +597,14 @@ html, body {
     border-radius: 20px;
     border: 0.1rem solid rgb(165, 136, 105);
     box-shadow: 2px 4px 4px #c1af81;
+    z-index: 1;
    
 }
 
 .bttn_qty img{
     width: 3rem;
     height: 3rem;
-    transform: scale(3.5);
+    transform: scale(3.6);
     position: absolute;
     left:6rem;
     filter:drop-shadow(1px 1px 1px rgb(147, 111, 49));
@@ -306,6 +613,9 @@ html, body {
 
 .bttn_qty:hover{
     transform: scale(1.1);
+    transition: ease-in-out 3;
+    z-index: 2;
+
 }
 
 .flower-text {
@@ -324,39 +634,6 @@ html, body {
 
 
 
-.wrppr_cont{
-    display: none;
-    border:1px solid rgb(199, 33, 33);
-    width: 42rem;
-    height: 27rem;
-    position: absolute;
-    top:1rem;
-}
-
-.rbbn_cont{
-    display: none;
-    border:1px solid rgb(61, 25, 203);
-    width: 42rem;
-    height: 27rem;
-    position: absolute;
-    top:1rem;
-}
-
-.flwrs_cont{
-    display: flex;
-   
-    width: 42rem;
-    height: 27rem;
-    position: absolute;
-    top:1rem;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 3rem;
-
-
-    
-}
 
 .f_row{
     display: flex;
@@ -436,7 +713,7 @@ html, body {
 }
 
 #lilac{
-    background-image: url("https://media.houseandgarden.co.uk/photos/627251056fc29fccf76590b4/master/w_1600%2Cc_limit/GettyImages-586151848.jpg");
+    background-image: url("https://medi   a.houseandgarden.co.uk/photos/627251056fc29fccf76590b4/master/w_1600%2Cc_limit/GettyImages-586151848.jpg");
 }
 
 
@@ -451,16 +728,15 @@ html, body {
 
 .total_cont{
     display: flex;
-    position: relative;
+   
     border:1px solid #68592c;
     width:95%;
     height: 6rem;
-    top:17rem;
+    
     font-size: 2.3rem;
-    justify-content: left;
+    justify-content: center;
     align-items: center;
-    padding-left: 4rem;
-    margin-left: 1rem ;
+   
     background-color: rgb(232, 230, 197);
     border-radius: 60px;
     color: #6c4224;
@@ -469,9 +745,7 @@ html, body {
 
 .bttn_bc{
     display: flex;
-    position:relative;
-    
-    top:9rem;
+   
     width: 100%;
     justify-content: center;
     align-items: center;
@@ -481,7 +755,7 @@ html, body {
 }
 
 .bc, .bb{
-    position: relative;
+  
     display: flex;
     background-color: var(--strawberry);
     border: 1px solid rgb(224, 147, 160) ;
@@ -502,7 +776,7 @@ html, body {
    
 }
 .bc i, .bb i{
-    position: relative;
+  
     top:0.1rem;
     transform: scale(0.8);
     color: #856045;

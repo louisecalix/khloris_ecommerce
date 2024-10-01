@@ -60,6 +60,30 @@ function flowers(){
 
 }
 
+const flwr3=[
+    {id:'flower1', label:"Flower 1"},
+    {id:'flower2', label:"Flower 2"},
+    {id:'flower3', label:"Flower 3"}
+]
+
+const flwr5=[
+    {id:'flower1', label:"Flower 1"},
+    {id:'flower2', label:"Flower 2"},
+    {id:'flower3', label:"Flower 3"},
+    {id:'flower4', label:"Flower 4"},
+    {id:'flower5', label:"Flower 5"}
+
+]
+const flwr7=[
+    {id:'flower1', label:"Flower 1"},
+    {id:'flower2', label:"Flower 2"},
+    {id:'flower3', label:"Flower 3"},
+    {id:'flower4', label:"Flower 4"},
+    {id:'flower5', label:"Flower 5"},
+    {id:'flower6', label:"Flower 6"},
+    {id:'flower7', label:"Flower 7"}
+
+]
 
 
 
@@ -80,8 +104,25 @@ const flwrs=[
 
 ]
 
-let curr_flower=0
+let curr_flower=0;
+let currlist= flwrs;
 
+let selected_flowers=[]
+
+// function addFlower(){
+//     const f = currlist[curr_flower];
+
+//     if(!selected_flowers.some(selected => selected.id === f.id)){
+//         selected_flowers.push(f);
+//     }else{
+//         console.log(`${f.label} is on the list`);
+//     }
+//     updateselected()
+
+// }
+// function updateselected(){
+//     console.log("Selected:", selected_flowers)
+// }
 
 function update_flower(){
 
@@ -89,21 +130,56 @@ function update_flower(){
         img.classList.remove('active');
     });
 
-    const flower =flwrs[curr_flower];
-    document.getElementById(flower.id).classList.add('active');
-    document.getElementById('flower_num').textContent= flower.label;
+    const flower =currlist[curr_flower];
+    if (flower){
+        document.getElementById(flower.id).classList.add('active');
+        document.getElementById('flower_num').textContent= flower.label;
+    }
 }
 
 document.getElementById('right').addEventListener('click', ()=>{
-    curr_flower=(curr_flower+1)%flwrs.length;
+    curr_flower=(curr_flower+1)%currlist.length;
     update_flower();
 });
 
 document.getElementById('left').addEventListener('click', ()=> {
-    curr_flower=(curr_flower-1+flwrs.length)%flwrs.length;
+    curr_flower=(curr_flower-1+currlist.length)%currlist.length;
     update_flower();
 });
-update_flower();
+
+
+
+
+document.querySelectorAll('.bttn_qty').forEach(button =>{
+    button.addEventListener('click', ()=>{
+        const selected =parseInt(button.getAttribute('data-qty'),10);
+
+        switch(selected){
+                case 3:
+                    currlist = flwr3;
+                    break
+                case 5:
+                    currlist = flwr5;
+                    break;
+                case 7:
+                    currlist = flwr7;
+                    break;
+                case 10:
+                    currlist = flwrs;
+                    break;
+                default:
+                    currlist = flwrs;
+            
+        }
+
+        curr_flower=0;
+        update_flower();
+    });
+
+
+    
+});
+update_flower()
 
 
 //Total
@@ -172,7 +248,7 @@ const LilacClick = () => flowerClick("Lilac");
 
 
 const updateTotalPrice =() =>{
-    const TotalPricespan=document.getElementById('ttl');
+    const TotalPricespan=document.getElementById('ttl_');
 
     TotalPricespan.textContent = `₱${curr_total.toFixed(2)}`;
 
