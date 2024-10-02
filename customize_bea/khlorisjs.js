@@ -190,7 +190,7 @@ let curr_flower_price=0.0;
 const updateFlowerSelection = (flower) => {
     let flowerElement = document.getElementById(flwrs[curr_flower].id);
     if (flowerElement) {
-        flowerElement.src = flower.image_url;
+        flowerElement.style.backgroundImage =  `url(${flower.image_url})`;
         flowerElement.style.display = "block";
         const flowerPrice = parseFloat(flower.price) || 0;
       
