@@ -157,15 +157,51 @@ document.querySelectorAll('.bttn_qty').forEach(button =>{
         switch(selected){
                 case 3:
                     currlist = flwr3;
+                    let three= document.getElementById("three_qty");
+                    document.getElementById("five_qty").style.display='none';
+                    document.getElementById("seven_qty").style.display='none';
+                    document.getElementById("ten_qty").style.display='none';
+
+                    three.style.display='flex';
+                    three.style.transform= 'scale(1.3)';
+
+                    wrpr= document.getElementById("wrapper");
+                    wrpr.style.transform= 'scale(0.85)';
+
+                    
+
+
                     break
                 case 5:
                     currlist = flwr5;
+                    document.getElementById("three_qty").style.display='flex';
+                    document.getElementById("five_qty").style.display='flex';
+                    document.getElementById("seven_qty").style.display='none';
+                    document.getElementById("ten_qty").style.display='none';
+
+                    wrpr= document.getElementById("wrapper");
+                    wrpr.style.transform= 'scale(0.9)';
                     break;
                 case 7:
                     currlist = flwr7;
+                    document.getElementById("three_qty").style.display='flex';
+                    document.getElementById("five_qty").style.display='flex';
+                    document.getElementById("seven_qty").style.display='flex';
+                    document.getElementById("ten_qty").style.display='none';
+
+                    
+                    wrpr= document.getElementById("wrapper");
+                    wrpr.style.transform= 'scale(0.96)';
                     break;
                 case 10:
                     currlist = flwrs;
+                    document.getElementById("three_qty").style.display='flex';
+                    document.getElementById("five_qty").style.display='flex';
+                    document.getElementById("seven_qty").style.display='flex';
+                    document.getElementById("ten_qty").style.display='flex';
+
+                    wrpr= document.getElementById("wrapper");
+                    wrpr.style.transform= 'scale(1)';
                     break;
                 default:
                     currlist = flwrs;
@@ -226,6 +262,7 @@ const flowerClick = async (flowerName) => {
         console.error('Error fetching products:', error);
     }
 };
+
 
 
 
