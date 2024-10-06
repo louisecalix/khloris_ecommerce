@@ -62,7 +62,7 @@ $result = mysqli_query($con, $sql);
           <th>Name</th>
           <th>Description</th>
           <th>Price</th>
-          <th>Quantity</th>
+          <th>Stock</th>
           <th>Image</th>
           <th>Category</th>
           <th>Type</th>
@@ -77,7 +77,7 @@ $result = mysqli_query($con, $sql);
           <td><?php echo $row['name'] ?></td>
           <td><?php echo $row['description'] ?></td>
           <td><?php echo $row['price'] ?></td>
-          <td><?php echo $row['quantity'] ?></td>
+          <td><?php echo $row['stock'] ?></td>
           <td>
             <img src="<?php echo $row['image_url'] ?>" />
           </td>

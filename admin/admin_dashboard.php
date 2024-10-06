@@ -55,6 +55,8 @@
             <a href="../admin/add_products.php">Add Products</a>
             <a href="../admin/view_products.php">View Products</a>
             <a href="../admin/order.php">Orders</a>
+            <a href="../admin/total_users.php">Users</a>
+
         </nav>
         <div class="icons">
             <a href="admin_logout.php" class="fa-solid fa-right-from-bracket" onclick="return confirmLogout()"></a>

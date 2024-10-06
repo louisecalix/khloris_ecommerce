@@ -13,7 +13,7 @@ if (isset($_POST['add_product'])) {
     $category_id = $_POST['category_id'];
     $type_id = $_POST['type_id'];
 
-    $stmt = $con->prepare("INSERT INTO products(name, description, price, quantity, image_url, category_id, type_id) VALUES (?, ?, ?, ?, ?, ?, ?)");
+    $stmt = $con->prepare("INSERT INTO products(name, description, price, stock, image_url, category_id, type_id) VALUES (?, ?, ?, ?, ?, ?, ?)");
     $stmt->bind_param("ssdisii", $title, $description, $price, $quantity, $image_url, $category_id, $type_id);
 
     if ($stmt->execute()) {
@@ -48,6 +48,8 @@ if (isset($_POST['add_product'])) {
             <a href="../admin/add_products.php">Add Products</a>
             <a href="../admin/view_products.php">View Products</a>
             <a href="../admin/order.php">Orders</a>
+            <a href="../admin/total_users.php">Users</a>
+
         </nav>
         <div class="icons">
             <a href="admin_logout.php" class="fa-solid fa-right-from-bracket" onclick="return confirmLogout()"></a>

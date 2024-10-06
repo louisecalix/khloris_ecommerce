@@ -39,6 +39,7 @@
             <a href="../admin/add_products.php">Add Products</a>
             <a href="../admin/view_products.php">View Products</a>
             <a href="../admin/order.php">Orders</a>
+            <a href="../admin/total_users.php">Users</a>
         </nav>
         <div class="icons">
             <a href="admin_logout.php" class="fa-solid fa-right-from-bracket" onclick="return confirmLogout()"></a>
@@ -54,7 +55,7 @@
                 <th>Name</th>
                 <th>Description</th>
                 <th>Price</th>
-                <th>Quantity</th>
+                <th>Stock</th>
                 <th>Image</th>
                 <th>Category</th>
                 <th>Type</th>
@@ -72,18 +73,18 @@
                 <td><?php echo $row['name'] ?></td>
                 <td><?php echo $row['description'] ?></td>
                 <td><?php echo $row['price'] ?></td>
-                <td><?php echo $row['quantity'] ?></td>
+                <td><?php echo $row['stock'] ?></td>
                 <td>
                     <img src="<?php echo $row['image_url'] ?>">
                 </td>
                 <td><?php echo $row['category_id'] ?></td>
                 <td><?php echo $row['type_id'] ?></td>
                 <td>
-                    <a href="../admin/update_product.php?id=<?php echo $row['id'] ?>" class="update-btn">Update</a>
+                    <a href="../admin/update_product.php?id=<?php echo $row['product_id'] ?>" class="update-btn">Update</a>
                 </td>
 
                 <td>
-                    <a href="view_products.php?id=<?php echo $row['id'] ?>" class="delete-btn"
+                    <a href="view_products.php?id=<?php echo $row['product_id'] ?>" class="delete-btn"
                         onclick="return confirm('Are you sure you want to remove this product?')">Remove</a>
                 </td>
 

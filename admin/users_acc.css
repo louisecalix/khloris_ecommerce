@@ -86,15 +86,16 @@ header .fa-bars {
     cursor: pointer;
     border: .1rem solid rgba(0, 0, 0, .3);
     display: none;
+    text-align: center;
 }
 
 
-.info {
+.users_info {
     margin-top: 10rem;
     padding: 2rem 9%;
 }
 
-.info h1 {
+.users_info h1 {
     text-align: center;
     color: #725c3f;
     margin-bottom: 2rem;
@@ -103,7 +104,7 @@ header .fa-bars {
 
 }
 
-.info h1 span {
+.users_info h1 span {
     color: var(--strawberry);
 }
 
@@ -121,7 +122,7 @@ table {
 table th,
 table td {
     padding: 1.5rem;
-    text-align: left;
+    text-align: center;
     color: #725c3f;
     font-size: 1.6rem;
     border-bottom: 0.1rem solid #d8d7b2;
