@@ -20,7 +20,7 @@
         $servername = "localhost";
         $username = "beicoleene";
         $password = "030419061313bei"; 
-        $dbname = "khloris_flowershop";
+        $dbname = "khloris_ecommerce";
 
         $conn = new mysqli($servername, $username, $password, $dbname);
 

@@ -242,7 +242,7 @@ const updateFlowerSelection = (flower) => {
 
 const flowerClick = async (flowerName) => {
     try {
-        const response = await fetch('http://localhost/khloris_/fetching.php');
+        const response = await fetch('http://localhost/khloris_/khloris_ecommerce/customize_bea/fetching.php');
 
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);

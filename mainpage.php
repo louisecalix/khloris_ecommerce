@@ -49,103 +49,49 @@ if(isset($_SESSION['ID'])){
     <section class="prdctsrecommend" id="prdctsrecommend">
       <h1 class="recommend">recommended <span>for you</span></h1>
       <div class="box-container">
-        <div class="flwrbox">
-          <div class="flwrimg">
-            <img
-              src="https://res.cloudinary.com/dogrgo15f/image/upload/v1724141398/images/mx6b6fqvvvhxzgs7hbsn.webp"
-              alt="flower1"
-            />
-            <div class="icons">
-              <a href="#" class="cart-btn">add to cart</a>
-            </div>
-          </div>
-          <div class="imgcontent">
-            <h3>Tullips Bouquet</h3>
-            <div class="price">P 12,000</div>
-          </div>
-        </div>
+      <?php
 
-        <div class="flwrbox">
-          <div class="flwrimg">
-            <img
-              src="https://res.cloudinary.com/dogrgo15f/image/upload/v1724141484/images/n0su07ftcuczkhfo9ktj.webp"
-              alt="flower2"
-            />
-            <div class="icons">
-              <a href="#" class="cart-btn">add to cart</a>
-            </div>
-          </div>
-          <div class="imgcontent">
-            <h3>Tullips Bouquet</h3>
-            <div class="price">P 12,000</div>
-          </div>
-        </div>
+$sql= "SELECT name, price, img_url FROM products";
 
-        <div class="flwrbox">
-          <div class="flwrimg">
-            <img
-              src="https://res.cloudinary.com/dogrgo15f/image/upload/v1724141659/images/bteuqihfewwmxctzzhnd.webp"
-              alt="flower3"
-            />
-            <div class="icons">
-              <a href="#" class="cart-btn">add to cart</a>
-            </div>
-          </div>
-          <div class="imgcontent">
-            <h3>Rose Bouquet</h3>
-            <div class="price">P 12,000</div>
-          </div>
-        </div>
+$result= $conn -> query($sql);
 
-        <div class="flwrbox">
-          <div class="flwrimg">
-            <img
-              src="https://res.cloudinary.com/dogrgo15f/image/upload/v1724141726/images/w0t2rwnzempsx6nsgme8.webp"
-              alt="flower4"
-            />
-            <div class="icons">
-              <a href="#" class="cart-btn">add to cart</a>
-            </div>
-          </div>
-          <div class="imgcontent">
-            <h3>Rose Bouquet</h3>
-            <div class="price">P 12,000</div>
-          </div>
-        </div>
+if ($result -> num_rows > 0){
 
-        <div class="flwrbox">
-          <div class="flwrimg">
-            <img
-              src="https://res.cloudinary.com/dogrgo15f/image/upload/v1724141848/images/wqiijxxltvzrogkypqh7.jpg"
-              alt="flower5"
-            />
-            <div class="icons">
-              <a href="#" class="cart-btn">add to cart</a>
-            </div>
-          </div>
-          <div class="imgcontent">
-            <h3>Sunflower Bouquet</h3>
-            <div class="price">P 12,000</div>
-          </div>
-        </div>
+    while ($row = $result -> fetch_assoc()) {
+      
 
-        <div class="flwrbox">
-          <div class="flwrimg">
-            <img
-              src="https://res.cloudinary.com/dogrgo15f/image/upload/v1724141993/images/prku8kdqwsi4lmcubkfu.jpg"
-              alt="flower6"
-            />
-            <div class="icons">
-              <a href="#" class="cart-btn">add to cart</a>
-            </div>
-          </div>
-          <div class="imgcontent">
-            <h3>Rose Bouquet</h3>
-            <div class="price">P 12,000</div>
-          </div>
-        </div>
-      </div>
-    </section>
+
+
+echo '<div class="flwrbox">';
+echo'   <div class="flwrimg">';
+echo '      <img src="'. $row["img_url"].'" alt="'.$row["name"].'"/>';
+echo '      <div class="icons">';
+echo'           <a href="#" class="cart-btn">add to cart</a>';
+echo'       </div>';
+echo '  </div>';
+echo'   <div class="imgcontent">';
+echo'      <h3>'. $row["name"] .'</h3>';
+echo'        <div class="price">PP'. $row["price"] . '</div>';
+echo'    </div>';
+echo' </div>';
+
+
+    }
+}else {
+    echo "No products found";
+
+}
+
+
+$conn ->close();
+
+?>
+
+
+
+
+
+      </section>
 
     <?php include 'footer.php'; ?>
 

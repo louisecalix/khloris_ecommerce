@@ -1,4 +1,4 @@
-const DB = 'http://localhost/khloris_/fetching.php';
+const DB = 'http://localhost/khloris_/khloris_ecommerce/customize_bea/fetching.php';
 const Wrapper_cont = document.getElementById('rbbncont');
 
 // Fetch wrapper data
