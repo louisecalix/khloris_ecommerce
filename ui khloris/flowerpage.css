@@ -1,0 +1,140 @@
+
+
+:root {
+    --strawberry: #e5ada8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    overflow-x: hidden;
+    background: #eeedea;
+}
+
+section {
+    padding: 2rem 9%;
+    /* margin-top: 5rem; */
+    /* border: 2px solid black; */
+
+}
+
+.product_container{
+    align-items: center;
+    min-height: 100vh;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    z-index: 2;
+}
+
+
+.product_container .flower-text {
+    text-align: center;
+    font-size: 3rem;
+    color: #725c3f;
+    padding: 1rem;
+    margin: 15rem 0 0;
+    background: rgba(255, 51, 153, .05);
+    font-weight: 600;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-style:normal;
+}
+
+
+
+.product_container .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 1.5rem;
+    margin-top: 5rem;
+}
+
+.product_container .box-container .flwrbox {
+    flex: 1 1 30rem;
+    box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
+    border-radius: .5rem;
+    border: .1rem solid rgba(0, 0, 0, .1);
+    position: relative;
+}
+
+.product_container .box-container .flwrimg {
+    position: relative;
+    text-align: center;
+    padding-top: 2rem;
+    overflow: hidden;
+}
+
+.product_container .box-container .flwrbox .flwrimg img {
+    height: 25rem;
+}
+
+.product_container .box-container .flwrbox:hover .flwrimg img {
+    transform: scale(1.1);
+}
+
+.product_container .box-container .flwrbox .flwrimg .btn-div {
+    position: absolute;
+    bottom: -7rem;
+    left: 0;
+    right: 0;
+    display: flex;
+    
+}
+
+.product_container .box-container .flwrbox .flwrimg .btn-div {
+    bottom: 0;
+    
+}
+
+.product_container .box-container .flwrbox .flwrimg .btn-div button {
+    height: 5rem;
+    line-height: 5rem;
+    font-size: 2rem;
+    width: 50%;
+    background: var(--strawberry);
+    color: #fff;
+}
+
+.product_container .box-container .flwrbox .flwrimg .btn-div .button {
+    border-left: .1rem solid #d8d7b2;
+    border-right: .1rem solid #d8d7b2;
+    width: 100%;
+}
+
+.product_container .box-container .flwrbox .flwrimg .btn-div button:hover {
+    background: #4f483f;
+}
+
+.product_container .box-container .flwrbox .flower-info {
+    padding: 2rem;
+    text-align: center;
+}
+
+.product_container .box-container .flwrbox h3 {
+    font-size: 1.5rem;
+    color: #725c3f;
+}
+
+.product_container .box-container .flwrbox .flower-price {
+    font-size: 2.5rem;
+    color: var(--strawberry);
+    font-weight: bold;
+    padding-top: 1rem;
+}
+
+
