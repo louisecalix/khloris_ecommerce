@@ -33,7 +33,7 @@ if ($isLoggedIn) {
         <a href="mainpage.php">Home</a>
         <a href="#Customization">Customization</a>
         <a href="flowerpage.php">Flowers</a>
-        <a href="#Occasions">Occasions</a>
+        <a href="occasion.php">Occasions</a>
     </nav>
 
     <div class="icons">
