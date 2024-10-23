@@ -4,8 +4,10 @@
 
     if(isset($_GET['id'])){
         $id = $_GET['id'];
-        $delete_sql = "DELETE FROM products WHERE id='$id'";
+        $delete_incart = "DELETE FROM cart WHERE product_id='$id'";
+        mysqli_query($con, $delete_incart);
 
+        $delete_sql = "DELETE FROM products WHERE product_id='$id'";
         $data = mysqli_query($con, $delete_sql);
 
         if($data){

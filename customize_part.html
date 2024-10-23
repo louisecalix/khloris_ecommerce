@@ -8,8 +8,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Khloris</title>
-    <link rel="stylesheet" href="homepage_.css" />
-    <link rel="stylesheet" href="cutomize_.css"/>
+    <link rel="stylesheet" href="customize_bea/homepage_.css" />
+    <link rel="stylesheet" href="customize_bea/cutomize_.css"/>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
@@ -18,21 +18,7 @@
   <body>
     <div class="container_grid">
         <div class="head"> 
-          <header>
-          <input type="checkbox" name="" id="toggler" />
-          <label for="toggler" class="fas fa-bars"></label>
-          <a href="#" class="logo">Khloris<span>.</span></a>
-          <nav class="navbar">
-            <a href="#Home">Home</a>
-            <a href="#Customization">Customization</a>
-            <a href="#Flowers">Flowers</a>
-            <a href="#Occassions">Occassions</a>
-          </nav>
-          <div class="icons">
-            <a href="#" class="fas fa-shopping-cart"></a>
-            <a href="#" class="fas fa-user"></a>
-          </div>
-          </header> 
+          <?php include 'header.php'; ?>
       </div>
       <div class="choices">
 
@@ -77,23 +63,23 @@
             <div id="leaves1"></div>
             <div id="leaves2"></div>
 
-            <div class="ten">
+            <div class="ten" id="ten_qty">
               <div id="flower10"></div>
               <div id="flower9"></div>
               <div id="flower8"></div>
             </div>
               
-            <div class="seven">
+            <div class="seven" id="seven_qty">
               <div id="flower7"></div>
               <div id="flower6"></div>
             </div>
-            <div class="five">
+            <div class="five" id="five_qty">
               
               <div id="flower5"></div>
               <div id="flower4"></div>
             </div>
 
-            <div class="three">
+            <div class="three" id="threeqty">
               <div id="flower1"></div>
               <div  id="flower3"></div>
 
@@ -387,17 +373,15 @@
       
     </button> 
      
-    
-
     </div>-->
     
     
 
-     <script src="khlorisjs.js"></script>
-     <script src="wrapper.js"></script>
-     <script src="ribbon.js"></script>
+     <script src="customize_bea/khlorisjs.js"></script>
+     <script src="customize_bea/wrapper.js"></script>
+     <script src="customize_bea/ribbon.js"></script>
     </div>
   </body> 
 
 
-</html>
+</html> 
