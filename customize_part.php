@@ -8,8 +8,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Khloris</title>
-    <link rel="stylesheet" href="homepage_.css" />
-    <link rel="stylesheet" href="cutomize_.css"/>
+    <link rel="stylesheet" href="customize_bea/homepage_.css" />
+    <link rel="stylesheet" href="customize_bea/cutomize_.css"/>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
@@ -373,15 +373,13 @@
       
     </button> 
      
-    
-
     </div>-->
     
     
 
-     <script src="khlorisjs.js"></script>
-     <script src="wrapper.js"></script>
-     <script src="ribbon.js"></script>
+     <script src="customize_bea/khlorisjs.js"></script>
+     <script src="customize_bea/wrapper.js"></script>
+     <script src="customize_bea/ribbon.js"></script>
     </div>
   </body> 
 

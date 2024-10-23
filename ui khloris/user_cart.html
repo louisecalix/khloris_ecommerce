@@ -1,17 +1,3 @@
-<?php
-
-session_start();
-include('../php/config.php');
-
-if(!isset($_SESSION['ID'])){
-    header('Location: login.php');
-    exit();
-}
-
-
-?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -26,8 +12,8 @@ if(!isset($_SESSION['ID'])){
     />
   </head>
   <body>
-    <!-- <header> -->
-      <!-- <input type="checkbox" name="" id="toggler" />
+    <header>
+      <input type="checkbox" name="" id="toggler" />
       <label for="toggler" class="fas fa-bars"></label>
       <a href="#" class="logo">Khloris<span>.</span></a>
       <nav class="navbar">
@@ -40,43 +26,53 @@ if(!isset($_SESSION['ID'])){
         <a href="" class="fas fa-shopping-cart"></a>
         <a href="logout.php" class="fa-solid fa-right-from-bracket" onclick="return confirmLogout()"></a>
       </div>
-    </header> -->
-    <?php include '../header.php'; ?>
+    </header>
+
 
     <section class="cart-section">
         <div class="cart-container">
             <h3>My <span>Cart</span></h3>
-            <?php 
 
-$sql = "SELECT * FROM cart";
-$result = $con -> query($sql);
+            <div class="cart-orders-item" data-name="Product 1" data-price="10" data-image="https://res.cloudinary.com/dogrgo15f/image/upload/v1725509559/images/annivflowers/telh8ozwxjzyavqbf82t.jpg">
+              <input type="checkbox" class="item-checkbox" id="item1" data-price="10" />
+              <img src="https://res.cloudinary.com/dogrgo15f/image/upload/v1725509559/images/annivflowers/telh8ozwxjzyavqbf82t.jpg" alt="Product 1" />
+              <label for="item1">Product 1</label>
+              <div class="quantity-controls">
+                <button class="minus-btn">-</button>
+                <input type="number" class="quantity" value="1" min="1" />
+                <button class="plus-btn">+</button>
+              </div>
+              <div class="price-container">
+                <span class="original-price">P 10.00</span>
+                <span class="updated-price">P 10.00</span>
+              </div>
+              
+              <span class="remove-btn">
+                <i class="fa-solid fa-trash-can"></i>
+              </span>
+          </div>
 
-if ($result -> num_rows > 0) {
-    while ($row = $result -> fetch_assoc()) {
-      
-        
-        echo '<div class="cart-orders-item" data-name="' . $row['product_name'] . '" data-price="' . $row['product_price'] . '" data-image="' . $row['image_url'] . '" data-id="' . $row['product_id'] . '">';
-        echo '    <input type="checkbox" class="item-checkbox" id="item' . $row['product_id'] . '" data-price="' . $row['product_price'] . '" />';
-        echo '    <img src="' . $row['image_url'] . '" alt="' . $row['product_name'] . '" />';
-        echo '    <label for="item' . $row['product_id'] . '">' . $row['product_name'] . '</label>';
-        echo '    <div class="quantity-controls">';
-        echo '        <button class="minus-btn">-</button>';
-        echo '        <input type="number" class="quantity" value="' . $row['quantity'] . '" min="1" />';
-        echo '        <button class="plus-btn">+</button>';
-        echo '    </div>';
-        echo '    <div class="price-container">';
-        echo '        <span class="original-price">P ' . number_format($row['product_price'], 2) . '</span>';
-        echo '        <span class="updated-price">P ' . number_format($row['product_price'] * $row['quantity'], 2) . '</span>'; // Update total price
-        echo '    </div>';
-        echo '    <span class="remove-btn" data-product-id="' . $row['product_id'] . '">';
-        echo '        <i class="fa-solid fa-trash-can"></i>';
-        echo '    </span>';
-        echo '</div>';
-    }
-} else {
-    echo "No items in the cart.";
-}
-?>
+          <div class="cart-orders-item" data-name="Product 1" data-price="10" data-image="https://res.cloudinary.com/dogrgo15f/image/upload/v1725509559/images/annivflowers/telh8ozwxjzyavqbf82t.jpg">
+            <input type="checkbox" class="item-checkbox" id="item1" data-price="10" />
+            <img src="https://res.cloudinary.com/dogrgo15f/image/upload/v1725509559/images/annivflowers/telh8ozwxjzyavqbf82t.jpg" alt="Product 1" />
+            <label for="item1">Product 1</label>
+            <div class="quantity-controls">
+              <button class="minus-btn">-</button>
+              <input type="number" class="quantity" value="1" min="1" />
+              <button class="plus-btn">+</button>
+            </div>
+            <div class="price-container">
+              <span class="original-price">P 10.00</span>
+              <span class="updated-price">P 10.00</span>
+            </div>
+            
+            <span class="remove-btn">
+              <i class="fa-solid fa-trash-can"></i>
+            </span>
+        </div>
+
+          
+                    
 
         <div class="total-container">
           <span class="total">Total: <span id="total">P 0.00</span></span>
@@ -105,7 +101,7 @@ if ($result -> num_rows > 0) {
               <ul class="ftrul">
                 <p>Flower Shop in Pandi,Bulacan <br />Delivery only in Pandi</p>
                 <li><a href="#">Privacy policy</a></li>
-                <li><a href="#">Payment Instruction</a></li>
+                <li><a href="#">Payment Instruction</a</li>
                 <li><a href="#">Terms and conditions</a></li>
               </ul>
             </div>
@@ -222,61 +218,6 @@ if ($result -> num_rows > 0) {
 });
 
   </script>
- <script>
-    // Function to save cart to the server
-function saveCart() {
-    $.ajax({
-        url: 'customize_bea/save_cart.php',
-        type: 'POST',
-        contentType: 'application/json',
-        data: JSON.stringify(Object.values(cart)), // Send cart data as JSON
-        success: function(response) {
-            console.log('Cart saved:', response);
-        },
-        error: function(xhr, status, error) {
-            console.error('Error saving cart:', error);
-        }
-    });
-}
-
-// Function to add/update item in the cart
-function updateItem(productId, productName, productPrice, quantity, imageUrl) {
-    if (quantity <= 0) {
-        delete cart[productId]; // Remove item if quantity is 0
-    } else {
-        cart[productId] = { 
-            product_id: productId, 
-            product_name: productName, 
-            product_price: productPrice, 
-            quantity: quantity, 
-            image_url: imageUrl 
-        };
-    }
-    saveCart(); // Automatically save the cart
-}
-
-// Example of handling quantity change
-$(document).ready(function() {
-    // Update quantity and total when changed
-    $('.quantity').change(function() {
-        const productId = $(this).closest('.cart-orders-item').data('id'); // Assuming data-id is set in the item div
-        const productName = $(this).closest('.cart-orders-item').data('name');
-        const productPrice = $(this).closest('.cart-orders-item').data('price');
-        const quantity = parseInt($(this).val());
-        const imageUrl = $(this).closest('.cart-orders-item').data('image');
-        
-        updateItem(productId, productName, productPrice, quantity, imageUrl);
-    });
-
-    // Example of removing an item
-    $('.remove-btn').click(function() {
-        const productId = $(this).data('product-id'); // Get product ID
-        updateItem(productId, '', 0, 0, ''); // Set quantity to 0 to remove
-    });
-});
-
- </script>
-
 
 
   </body>

@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-include('../php/config.php');
+include('php/config.php');
 
 if(!isset($_SESSION['ID'])){
     header('Location: login.php');
@@ -19,7 +19,7 @@ if(!isset($_SESSION['ID'])){
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Khloris</title>
-    <link rel="stylesheet" href="cart.css" />
+    <link rel="stylesheet" href="ui khloris/cart.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
@@ -41,20 +41,22 @@ if(!isset($_SESSION['ID'])){
         <a href="logout.php" class="fa-solid fa-right-from-bracket" onclick="return confirmLogout()"></a>
       </div>
     </header> -->
-    <?php include '../header.php'; ?>
+    <?php include 'header.php'; ?>
 
     <section class="cart-section">
         <div class="cart-container">
             <h3>My <span>Cart</span></h3>
             <?php 
 
-$sql = "SELECT * FROM cart";
+$sql = "SELECT * FROM cart WHERE user_id = " . $_SESSION['ID'];
+
 $result = $con -> query($sql);
 
 if ($result -> num_rows > 0) {
     while ($row = $result -> fetch_assoc()) {
       
-        echo '<div class="cart-orders-item" data-name="' . $row['product_name'] . '" data-price="' . $row['product_price'] . '" data-image="' . $row['image_url'] . '">';
+        
+        echo '<div class="cart-orders-item" data-name="' . $row['product_name'] . '" data-price="' . $row['product_price'] . '" data-image="' . $row['image_url'] . '" data-id="' . $row['product_id'] . '">';
         echo '    <input type="checkbox" class="item-checkbox" id="item' . $row['product_id'] . '" data-price="' . $row['product_price'] . '" />';
         echo '    <img src="' . $row['image_url'] . '" alt="' . $row['product_name'] . '" />';
         echo '    <label for="item' . $row['product_id'] . '">' . $row['product_name'] . '</label>';
@@ -65,9 +67,9 @@ if ($result -> num_rows > 0) {
         echo '    </div>';
         echo '    <div class="price-container">';
         echo '        <span class="original-price">P ' . number_format($row['product_price'], 2) . '</span>';
-        echo '        <span class="updated-price">P ' . number_format($row['product_price'], 2) . '</span>';
+        echo '        <span class="updated-price">P ' . number_format($row['product_price'] * $row['quantity'], 2) . '</span>'; // Update total price
         echo '    </div>';
-        echo '    <span class="remove-btn">';
+        echo '    <span class="remove-btn" data-product-id="' . $row['product_id'] . '">';
         echo '        <i class="fa-solid fa-trash-can"></i>';
         echo '    </span>';
         echo '</div>';
@@ -221,6 +223,61 @@ if ($result -> num_rows > 0) {
 });
 
   </script>
+ <script>
+    // Function to save cart to the server
+function saveCart() {
+    $.ajax({
+        url: 'customize_bea/save_cart.php',
+        type: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify(Object.values(cart)), // Send cart data as JSON
+        success: function(response) {
+            console.log('Cart saved:', response);
+        },
+        error: function(xhr, status, error) {
+            console.error('Error saving cart:', error);
+        }
+    });
+}
+
+// Function to add/update item in the cart
+function updateItem(productId, productName, productPrice, quantity, imageUrl) {
+    if (quantity <= 0) {
+        delete cart[productId]; // Remove item if quantity is 0
+    } else {
+        cart[productId] = { 
+            product_id: productId, 
+            product_name: productName, 
+            product_price: productPrice, 
+            quantity: quantity, 
+            image_url: imageUrl 
+        };
+    }
+    saveCart(); // Automatically save the cart
+}
+
+// Example of handling quantity change
+$(document).ready(function() {
+    // Update quantity and total when changed
+    $('.quantity').change(function() {
+        const productId = $(this).closest('.cart-orders-item').data('id'); // Assuming data-id is set in the item div
+        const productName = $(this).closest('.cart-orders-item').data('name');
+        const productPrice = $(this).closest('.cart-orders-item').data('price');
+        const quantity = parseInt($(this).val());
+        const imageUrl = $(this).closest('.cart-orders-item').data('image');
+        
+        updateItem(productId, productName, productPrice, quantity, imageUrl);
+    });
+
+    // Example of removing an item
+    $('.remove-btn').click(function() {
+        const productId = $(this).data('product-id'); // Get product ID
+        updateItem(productId, '', 0, 0, ''); // Set quantity to 0 to remove
+    });
+});
+
+ </script>
+
 
 
   </body>

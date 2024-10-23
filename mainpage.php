@@ -51,7 +51,7 @@ if(isset($_SESSION['ID'])){
       <div class="box-container">
       <?php
 
-$sql= "SELECT name, price, image_url FROM products";
+$sql= "SELECT * FROM products WHERE type_id = 5";
 
 $result= $con -> query($sql);
 

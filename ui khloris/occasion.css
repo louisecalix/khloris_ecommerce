@@ -203,17 +203,17 @@ header .fa-bars {
 .prdctsoccassion .box-container .flwrbox:hover .flwrimg img {
     transform: scale(1.1);
 }
-.prdctsoccassion .box-container .flwrbox .flwrimg .icons {
+.prdctsoccassion .box-container .flwrbox .flwrimg .btn-div {
     position: absolute;
     bottom: -7rem;
     left: 0;
     right: 0;
     display: flex;
 }
-.prdctsoccassion .box-container .flwrbox:hover .flwrimg .icons {
+.prdctsoccassion .box-container .flwrbox:hover .flwrimg .btn-div {
     bottom: 0;
 }
-.prdctsoccassion .box-container .flwrbox .flwrimg .icons a {
+.prdctsoccassion .box-container .flwrbox .flwrimg .btn-div button {
     height: 5rem;
     line-height: 5rem;
     font-size: 2rem;
@@ -221,12 +221,12 @@ header .fa-bars {
     background: var(--strawberry);
     color: #fff;
 }
-.prdctsoccassion .box-container .flwrbox .flwrimg .icons .cart-btn {
+.prdctsoccassion .box-container .flwrbox .flwrimg .btn-div .button {
     border-left: .1rem solid #d8d7b2;
     border-right: .1rem solid #d8d7b2;
     width: 100%;
 }
-.prdctsoccassion .box-container .flwrbox .flwrimg .icons a:hover {
+.prdctsoccassion .box-container .flwrbox .flwrimg .btn-div button:hover {
     background: #4f483f;
 }
 .prdctsoccassion .box-container .flwrbox .imgcontent {
@@ -363,17 +363,17 @@ header .fa-bars {
 .prdctsoccassion-anniv .box-container .flwrbox:hover .flwrimg img {
     transform: scale(1.1);
 }
-.prdctsoccassion-anniv .box-container .flwrbox .flwrimg .icons {
+.prdctsoccassion-anniv .box-container .flwrbox .flwrimg .btn-div {
     position: absolute;
     bottom: -7rem;
     left: 0;
     right: 0;
     display: flex;
 }
-.prdctsoccassion-anniv .box-container .flwrbox:hover .flwrimg .icons {
+.prdctsoccassion-anniv .box-container .flwrbox:hover .flwrimg .btn-div {
     bottom: 0;
 }
-.prdctsoccassion-anniv .box-container .flwrbox .flwrimg .icons a {
+.prdctsoccassion-anniv .box-container .flwrbox .flwrimg .btn-div button {
     height: 5rem;
     line-height: 5rem;
     font-size: 2rem;
@@ -381,12 +381,12 @@ header .fa-bars {
     background: var(--strawberry);
     color: #fff;
 }
-.prdctsoccassion-anniv .box-container .flwrbox .flwrimg .icons .cart-btn {
+.prdctsoccassion-anniv .box-container .flwrbox .flwrimg .btn-div .button {
     border-left: .1rem solid #d8d7b2;
     border-right: .1rem solid #d8d7b2;
     width: 100%;
 }
-.prdctsoccassion-anniv .box-container .flwrbox .flwrimg .icons a:hover {
+.prdctsoccassion-anniv .box-container .flwrbox .flwrimg .btn-div button:hover {
     background: #4f483f;
 }
 .prdctsoccassion-anniv .box-container .flwrbox .imgcontent {
@@ -525,17 +525,17 @@ header .fa-bars {
 .prdctsoccassion-funeral .box-container .flwrbox:hover .flwrimg img {
     transform: scale(1.1);
 }
-.prdctsoccassion-funeral .box-container .flwrbox .flwrimg .icons {
+.prdctsoccassion-funeral .box-container .flwrbox .flwrimg .btn-div {
     position: absolute;
     bottom: -7rem;
     left: 0;
     right: 0;
     display: flex;
 }
-.prdctsoccassion-funeral .box-container .flwrbox:hover .flwrimg .icons {
+.prdctsoccassion-funeral .box-container .flwrbox:hover .flwrimg .btn-div {
     bottom: 0;
 }
-.prdctsoccassion-funeral .box-container .flwrbox .flwrimg .icons a {
+.prdctsoccassion-funeral .box-container .flwrbox .flwrimg .btn-div button {
     height: 5rem;
     line-height: 5rem;
     font-size: 2rem;
@@ -543,12 +543,12 @@ header .fa-bars {
     background: var(--strawberry);
     color: #fff;
 }
-.prdctsoccassion-funeral .box-container .flwrbox .flwrimg .icons .cart-btn {
+.prdctsoccassion-funeral .box-container .flwrbox .flwrimg .btn-div .button {
     border-left: .1rem solid #d8d7b2;
     border-right: .1rem solid #d8d7b2;
     width: 100%;
 }
-.prdctsoccassion-funeral .box-container .flwrbox .flwrimg .icons a:hover {
+.prdctsoccassion-funeral .box-container .flwrbox .flwrimg .btn-div button:hover {
     background: #4f483f;
 }
 .prdctsoccassion-funeral .box-container .flwrbox .imgcontent {
