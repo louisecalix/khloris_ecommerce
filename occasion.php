@@ -1,14 +1,74 @@
 <?php
 
-session_start();
+// session_start();
 include 'php/config.php';
 
 
-if(isset($_SESSION['ID'])){
-  $user_id = $_SESSION['ID'];
-}else{
-  $user_id = '';
+// if(isset($_SESSION['ID'])){
+//   $user_id = $_SESSION['ID'];
+// }else{
+//   $user_id = '';
+
+// }
+
+
+session_start();
+
+include '../php/config.php';
+
+if (!isset($_SESSION['ID'])) {
+    header("Location: occasion.php");
+    exit();
+    
 }
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $user_id = $_SESSION['ID'];
+    $product_id = $_POST['product_id'];
+    $product_name = $_POST['product_name'];
+    $product_price = $_POST['product_price'];
+    $quantity = $_POST['quantity'];
+    $image_url = $_POST['image_url'];
+
+    $total = $product_price * $quantity;
+
+    // SQL query: Insert into cart, or if there's a duplicate entry, update the quantity.
+    $sql = "INSERT INTO cart(user_id, product_id, product_name, product_price, quantity, image_url, total) 
+            VALUES (?, ?, ?, ?, ?, ?, ?)
+            ON DUPLICATE KEY UPDATE quantity = quantity + ?";
+
+    // Prepare the statement
+    if ($stmt = $con->prepare($sql)) {
+        
+        // Bind parameters including the one for the `ON DUPLICATE KEY UPDATE` clause
+        $stmt->bind_param("isssisis", $user_id, $product_id, $product_name, $product_price, $quantity, $image_url, $total, $quantity);
+
+        // Execute the statement
+        if ($stmt->execute()) {
+            header("Location: occasion.php");
+            exit();
+            
+        } else {
+            echo "Error! Could not add to cart: " . $stmt->error;
+        }
+
+        $stmt->close();
+    } else {
+        echo "Error preparing statement: " . $con->error;
+    }
+}
+
+$con->close();
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -22,15 +82,15 @@ if(isset($_SESSION['ID'])){
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Khloris</title>
-    <link rel="stylesheet" href="ui khloris/occasion.css" />
+    <link rel="stylesheet" href="ui khloris/flower_occasion.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
       />
       <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 
   </head>
   <body>
@@ -68,32 +128,32 @@ if(isset($_SESSION['ID'])){
 
             while ($row = $result -> fetch_assoc()) {
 
-        echo '<div class="flwrbox">';
-        echo'   <div class="flwrimg">';
-        echo '      <img src="'. $row["image_url"].'" alt="'.$row["name"].'"/>';
-        echo '      <div class="icons">';
-              echo'     <form action="customize_bea/add_to_cart.php" method="POST">';       
-              echo '    <input type="hidden" name="product_id" value="' . $row["product_id"] . '">';         
-              echo '    <input type="hidden" name="product_name" value="' . $row["name"] . '">';   
-              echo '    <input type="hidden" name="product_price" value="' . $row["price"] . '">'; 
-              echo '    <input type="hidden" name="quantity" value="1">';  
-              echo '    <input type="hidden" name="image_url" value="' . $row["image_url"] . '">';       
-              echo '    <div class="btn-div"><button type="submit" class="button">Add to cart</button></div>';
-              echo '</form>';               
-        echo'       </div>';
-        echo '  </div>';
-        echo'   <div class="imgcontent">';
-        echo'      <h3>'. $row["name"] .'</h3>';
-        echo'        <div class="price">P'. $row["price"] . '</div>';
-        echo'    </div>';
-        echo' </div>';
-
-
-            }
-        }else {
-            echo "No products found";
-
-        }
+              echo '<div class="flwrbox">';
+              echo'   <div class="flwrimg">';
+              echo '      <img src="'. $row["image_url"].'" alt="'.$row["name"].'"/>';
+              echo '      <div class="icons">';
+                            echo'     <form action="" method="POST">';       
+                            echo '    <input type="hidden" name="product_id" value="' . $row["product_id"] . '">';         
+                            echo '    <input type="hidden" name="product_name" value="' . $row["name"] . '">';   
+                            echo '    <input type="hidden" name="product_price" value="' . $row["price"] . '">'; 
+                            echo '    <input type="hidden" name="quantity" value="1">';  
+                            echo '    <input type="hidden" name="image_url" value="' . $row["image_url"] . '">';       
+                            echo '    <div class="btn-div"><button type="submit" class="button">Add to cart</button></div>';
+                            echo '</form>';   
+              echo'       </div>';
+              echo '  </div>';
+              echo'   <div class="imgcontent">';
+              echo'      <h3>'. $row["name"] .'</h3>';
+              echo'        <div class="price">P'. $row["price"] . '</div>';
+              echo'    </div>';
+              echo' </div>';
+              
+              
+                  }
+              }else {
+                  echo "No products found";
+              
+              }
 
 
         // $con->close();
@@ -128,7 +188,7 @@ echo '<div class="flwrbox">';
 echo'   <div class="flwrimg">';
 echo '      <img src="'. $row["image_url"].'" alt="'.$row["name"].'"/>';
 echo '      <div class="icons">';
-              echo'     <form action="customize_bea/add_to_cart.php" method="POST">';       
+              echo'     <form action="" method="POST">';       
               echo '    <input type="hidden" name="product_id" value="' . $row["product_id"] . '">';         
               echo '    <input type="hidden" name="product_name" value="' . $row["name"] . '">';   
               echo '    <input type="hidden" name="product_price" value="' . $row["price"] . '">'; 
@@ -184,7 +244,7 @@ echo '<div class="flwrbox">';
 echo'   <div class="flwrimg">';
 echo '      <img src="'. $row["image_url"].'" alt="'.$row["name"].'"/>';
 echo '      <div class="icons">';
-echo'     <form action="customize_bea/add_to_cart.php" method="POST">';       
+echo'     <form action="" method="POST">';       
 echo '    <input type="hidden" name="product_id" value="' . $row["product_id"] . '">';         
 echo '    <input type="hidden" name="product_name" value="' . $row["name"] . '">';   
 echo '    <input type="hidden" name="product_price" value="' . $row["price"] . '">'; 
@@ -218,51 +278,7 @@ $con->close();
     <!-- footer -->
     
 
-    <footer class="footer">
-      <div class="ftrcontainer">
-        <div class="ftrrow">
-          <div class="footer-col">
-            <h4 class="logofooter">Khloris<span>.</span></h4>
-            <ul class="ftrul">
-              <p>Follow us in Social Media!</p>
-              <div class="social-links">
-                <a href="#" class="fa-brands fa-square-facebook"></a>
-                <a href="#" class="fa-brands fa-square-instagram"></a>
-              </div>
-            </ul>
-          </div>
-
-          <div class="footer-col">
-            <h4>Information</h4>
-            <ul class="ftrul">
-              <p>Flower Shop in Pandi,Bulacan <br />Delivery only in Pandi</p>
-              <li><a href="#">Privacy policy</a></li>
-              <li><a href="#">Payment Instruction</a</li>
-              <li><a href="#">Terms and conditions</a></li>
-            </ul>
-          </div>
-
-          <div class="footer-col">
-            <h4>Contact us</h4>
-            <ul class="ftrul">
-              <p><span>Address:</span>Pandi, Bulacan</p>
-              <p><span>Mobile:</span>(+63) 0903-2301484/09299750331</p>
-              <p><span>Telephone:</span>(632) 8881-4173</p>
-              <p><span>Email:</span>admin@khlorisflowershop.com</p>
-            </ul>
-          </div>
-
-          <div class="footer-col">
-            <h4>Contact Services</h4>
-            <ul class="ftrul">
-              <li><a href="#">Contact us</a></li>
-              <li><a href="#">My account</a></li>
-              <li><a href="#">Order History</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </footer>
+    <?php include 'footer.php'; ?>
 
     <script>
         function confirmLogout() {

@@ -1,4 +1,6 @@
-
+MAIN {
+    margin-top: 77px;
+}
 
 :root {
     --strawberry: #e5ada8;
@@ -26,45 +28,28 @@ html {
 
 section {
     padding: 2rem 9%;
-    /* margin-top: 5rem; */
     /* border: 2px solid black; */
 
 }
 
-.product_container{
-    align-items: center;
-    min-height: 100vh;
-    justify-content: center;
-    position: relative;
-    width: 100%;
-    z-index: 2;
-}
-
-
-.product_container .flower-text {
+.flower-text {
     text-align: center;
     font-size: 3rem;
     color: #725c3f;
     padding: 1rem;
-    margin: 15rem 0 0;
+    margin: 2rem 0;
     background: rgba(255, 51, 153, .05);
-    font-weight: 600;
-    font-family: "Playfair Display", serif;
-    font-optical-sizing: auto;
-    font-style:normal;
 }
 
 
-
-.product_container .box-container {
+.box-container {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     gap: 1.5rem;
-    margin-top: 5rem;
 }
 
-.product_container .box-container .flwrbox {
+.container .box-container .flower-container {
     flex: 1 1 30rem;
     box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
     border-radius: .5rem;
@@ -72,36 +57,34 @@ section {
     position: relative;
 }
 
-.product_container .box-container .flwrimg {
+.container .box-container .flower-img {
     position: relative;
     text-align: center;
     padding-top: 2rem;
     overflow: hidden;
 }
 
-.product_container .box-container .flwrbox .flwrimg img {
+IMG {
     height: 25rem;
 }
 
-.product_container .box-container .flwrbox:hover .flwrimg img {
+.container .box-container .flower-container:hover .flower-img {
     transform: scale(1.1);
 }
 
-.product_container .box-container .flwrbox .flwrimg .btn-div {
+.container .box-container .flower-container .flower-img .icons {
     position: absolute;
     bottom: -7rem;
     left: 0;
     right: 0;
     display: flex;
-    
 }
 
-.product_container .box-container .flwrbox .flwrimg .btn-div {
+.container .box-container .flower-container:hover .flower-img .icons {
     bottom: 0;
-    
 }
 
-.product_container .box-container .flwrbox .flwrimg .btn-div button {
+.container .box-container .flower-container .flower-img .icons a {
     height: 5rem;
     line-height: 5rem;
     font-size: 2rem;
@@ -110,30 +93,34 @@ section {
     color: #fff;
 }
 
-.product_container .box-container .flwrbox .flwrimg .btn-div .button {
+.container .box-container .flower-container .flower-img .icons .cart-btn {
     border-left: .1rem solid #d8d7b2;
     border-right: .1rem solid #d8d7b2;
     width: 100%;
 }
 
-.product_container .box-container .flwrbox .flwrimg .btn-div button:hover {
+.container .box-container .flower-container .flower-img .icons a:hover {
     background: #4f483f;
 }
 
-.product_container .box-container .flwrbox .flower-info {
+.container .box-container .flower-container .flower-info {
     padding: 2rem;
     text-align: center;
 }
 
-.product_container .box-container .flwrbox h3 {
+H3 {
     font-size: 1.5rem;
     color: #725c3f;
 }
 
-.product_container .box-container .flwrbox .flower-price {
+.flower-price {
     font-size: 2.5rem;
     color: var(--strawberry);
     font-weight: bold;
     padding-top: 1rem;
 }
+
+.icons {
+    position: relative; 
+  }
 

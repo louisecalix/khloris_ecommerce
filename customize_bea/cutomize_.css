@@ -481,12 +481,16 @@ html, body {
     left:20rem;
     width: 40%;
     height:20%;
-    border:1px solid #271e13;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    z-index: 3;
-    transform: scale(1.1);
+   border:1px solid #271e13;
+<<<<<<< HEAD
+   display: flex;
+=======
+   display: none;
+>>>>>>> 27ce399 (ji)
+   justify-content: space-evenly;
+   align-items: center;
+   z-index: 3;
+   transform: scale(1.1);
 }
 .five{
     position: absolute;
@@ -494,12 +498,16 @@ html, body {
     left:21rem;
     width: 40%;
     height:20%;
-    border:1px solid #6ebe8c;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    z-index: 3;
-    transform: scale(1.1);
+   border:1px solid #6ebe8c;
+<<<<<<< HEAD
+   display: flex;
+=======
+   display: none;
+>>>>>>> 27ce399 (ji)
+   justify-content: space-evenly;
+   align-items: center;
+   z-index: 3;
+   transform: scale(1.1);
 }
 
 .seven{
@@ -508,12 +516,16 @@ html, body {
     left:23rem;
     width: 40%;
     height:20%;
-    border:1px solid #b93b70;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    z-index: 2;
-    transform: scale(1.1);
+   border:1px solid #b93b70;
+<<<<<<< HEAD
+   display: flex;
+=======
+   display: none;
+>>>>>>> 27ce399 (ji)
+   justify-content: space-evenly;
+   align-items: center;
+   z-index: 2;
+   transform: scale(1.1);
 }
 
 .ten{
@@ -522,19 +534,30 @@ html, body {
     left:18rem;
     width: 40%;
     height:20%;
-    border:1px solid #3c0b57;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    z-index: 2;
-    transform: scale(1.1);
+   border:1px solid #3c0b57;
+<<<<<<< HEAD
+   display: flex;
+=======
+   display: none;
+>>>>>>> 27ce399 (ji)
+   justify-content: space-evenly;
+   align-items: center;
+   z-index: 2;
+   transform: scale(1.1);
 }
+
 
 .flower-container #flower1{
     display: flex;
     width: 10%;
     height: 40%;
+    /* background-color: #cfb391; */
+   
+<<<<<<< HEAD
     background-image: url('https://res.cloudinary.com/dsfcl09md/image/upload/v1726073109/flowers/ms3vruapnyhspj8hbejv.png');
+=======
+    /* background-image: url('https://res.cloudinary.com/dsfcl09md/image/upload/v1726073109/flowers/ms3vruapnyhspj8hbejv.png'); */
+>>>>>>> 27ce399 (ji)
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -543,13 +566,21 @@ html, body {
     left:7rem;
     top:3rem;
     z-index: 2;
+
+    
 }
 
 .flower-container #flower2{
     display: flex;
     width: 10%;
     height: 40%;
+    /* background-color: #cfb391; */
+    z-index: 2;
+<<<<<<< HEAD
     background-image: url('https://res.cloudinary.com/dsfcl09md/image/upload/v1727787473/flowers/jphjliisocba3y8jehxr.png');
+=======
+    /* background-image: url('https://res.cloudinary.com/dsfcl09md/image/upload/v1727787473/flowers/jphjliisocba3y8jehxr.png'); */
+>>>>>>> 27ce399 (ji)
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -557,28 +588,40 @@ html, body {
     position: relative;
     left:-5rem;
     top:3rem;
-}
 
+}
 .flower-container #flower3{
     display: flex;
     width: 10%;
     height: 40%;
+    /* background-color: #cfb391; */
+    z-index: 2;
+<<<<<<< HEAD
     background-image: url('https://res.cloudinary.com/dsfcl09md/image/upload/v1725826753/flowers/voikv1769whr33lkm645.png');
+=======
+    /* background-image: url('https://res.cloudinary.com/dsfcl09md/image/upload/v1725826753/flowers/voikv1769whr33lkm645.png'); */
+>>>>>>> 27ce399 (ji)
     background-position: end;
     background-size: contain;
     background-repeat: no-repeat;
     transform: rotate(0deg) scale(5.8);
+    /* position: absolute; */
     position: relative;
     left: 0.5rem;
     top:-1.2rem;
     z-index: 1;
 }
-
 .flower-container #flower4{
     display: flex;
     width: 10%;
     height: 40%;
+    /* background-color: #cfb391; */
+   
+<<<<<<< HEAD
     background-image: url('https://res.cloudinary.com/dsfcl09md/image/upload/v1726073109/flowers/ms3vruapnyhspj8hbejv.png');
+=======
+    /* background-image: url('https://res.cloudinary.com/dsfcl09md/image/upload/v1726073109/flowers/ms3vruapnyhspj8hbejv.png'); */
+>>>>>>> 27ce399 (ji)
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -588,12 +631,18 @@ html, body {
     top:3rem;
     z-index: 1;
 }
-
 .flower-container #flower5{
+    
     display: flex;
     width: 10%;
     height: 40%;
+    /* background-color: #cfb391; */
+    z-index: 2;
+<<<<<<< HEAD
     background-image: url('https://res.cloudinary.com/dsfcl09md/image/upload/v1727787473/flowers/jphjliisocba3y8jehxr.png');
+=======
+    /* background-image: url('https://res.cloudinary.com/dsfcl09md/image/upload/v1727787473/flowers/jphjliisocba3y8jehxr.png'); */
+>>>>>>> 27ce399 (ji)
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -601,42 +650,62 @@ html, body {
     position: relative;
     left:7rem;
     top:3rem;
-}
-
-.flower-container #flower6{
-    display: flex;
-    width: 10%;
-    height: 40%;
-    background-image: url('https://res.cloudinary.com/dsfcl09md/image/upload/v1726073109/flowers/ms3vruapnyhspj8hbejv.png');
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    transform: rotate(-28deg) scale(4.8);
-    position: relative;
-    left:-10rem;
-    top:3rem;
-    z-index: 1;
-}
-
-.flower-container #flower7{
-    display: flex;
-    width: 10%;
-    height: 40%;
-    background-image: url('https://res.cloudinary.com/dsfcl09md/image/upload/v1727787473/flowers/jphjliisocba3y8jehxr.png');
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    transform: rotate(22deg) scale(4.8);
-    position: relative;
-    left:7rem;
-    top:3rem;
-}
+    }
+    #flower6{
+        
+        display: flex;
+        width: 10%;
+        height: 40%;
+        /* background-color: #cfb391; */
+       
+<<<<<<< HEAD
+        background-image: url('https://res.cloudinary.com/dsfcl09md/image/upload/v1726073109/flowers/ms3vruapnyhspj8hbejv.png');
+=======
+        /* background-image: url('https://res.cloudinary.com/dsfcl09md/image/upload/v1726073109/flowers/ms3vruapnyhspj8hbejv.png'); */
+>>>>>>> 27ce399 (ji)
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        transform: rotate(-28deg) scale(4.8);
+        position: relative;
+        left:-10rem;
+        top:3rem;
+        z-index: 1;
+        }
+    .flower-container #flower7{
+        
+        display: flex;
+        width: 10%;
+        height: 40%;
+        /* background-color: #cfb391; */
+        z-index: 2;
+<<<<<<< HEAD
+        background-image: url('https://res.cloudinary.com/dsfcl09md/image/upload/v1727787473/flowers/jphjliisocba3y8jehxr.png');
+=======
+        /* background-image: url('https://res.cloudinary.com/dsfcl09md/image/upload/v1727787473/flowers/jphjliisocba3y8jehxr.png'); */
+>>>>>>> 27ce399 (ji)
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        transform: rotate(22deg) scale(4.8);
+        position: relative;
+        left:7rem;
+        top:3rem;
+        }
+  
 
 .flower-container #flower8{
+  
     display: flex;
     width: 10%;
     height: 40%;
+    /* background-color: #cfb391; */
+   
+<<<<<<< HEAD
     background-image: url('https://res.cloudinary.com/dsfcl09md/image/upload/v1726073109/flowers/ms3vruapnyhspj8hbejv.png');
+=======
+    /* background-image: url('https://res.cloudinary.com/dsfcl09md/image/upload/v1726073109/flowers/ms3vruapnyhspj8hbejv.png'); */
+>>>>>>> 27ce399 (ji)
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -646,12 +715,20 @@ html, body {
     top:3rem;
     z-index: 1;
 }
+
+
 
 .flower-container #flower9{
     display: flex;
     width: 10%;
     height: 40%;
+    /* background-color: #cfb391; */
+    z-index: 2;
+<<<<<<< HEAD
     background-image: url('https://res.cloudinary.com/dsfcl09md/image/upload/v1727787473/flowers/jphjliisocba3y8jehxr.png');
+=======
+    /* background-image: url('https://res.cloudinary.com/dsfcl09md/image/upload/v1727787473/flowers/jphjliisocba3y8jehxr.png'); */
+>>>>>>> 27ce399 (ji)
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -659,43 +736,60 @@ html, body {
     position: relative;
     left:7rem;
     top:3rem;
-}
 
+
+}
 .flower-container #flower10{
     display: flex;
     width: 10%;
     height: 40%;
+    /* background-color: #cfb391; */
+    z-index: 2;
+<<<<<<< HEAD
     background-image: url('https://res.cloudinary.com/dsfcl09md/image/upload/v1725826753/flowers/voikv1769whr33lkm645.png');
+=======
+    /* background-image: url('https://res.cloudinary.com/dsfcl09md/image/upload/v1725826753/flowers/voikv1769whr33lkm645.png'); */
+>>>>>>> 27ce399 (ji)
     background-position: end;
     background-size: contain;
     background-repeat: no-repeat;
     transform: rotate(0deg) scale(4.8);
+    /* position: absolute; */
     position: relative;
     left: 10rem;
     top:7rem;
     z-index: 1;
 }
 
+/* #flower1, #flower2, #flower3{
+    width: auto;
+    height: auto;
+   
+    transform: scale(7);
+} */
+
 #ribbon_{
     display: flex;
-    width: 20%;
-    height: 30%;
-    background-image: url('https://res.cloudinary.com/dsfcl09md/image/upload/v1727610784/flowers/hi1flpios13nk4mvsa7p.png');
-    background-position: end;
-    background-size: contain;
-    background-repeat: no-repeat;
-    z-index: 3;
-    position: relative;
-    top: 9rem;
-    left: -18rem;
+   /* background-color: #516b0f; */
+   width: 20%;
+   height: 30%;
+   background-image: url('https://res.cloudinary.com/dsfcl09md/image/upload/v1727610784/flowers/hi1flpios13nk4mvsa7p.png');
+   background-position: end;
+   background-size: contain;
+   background-repeat: no-repeat;
+   z-index: 3;
+   position:relative;
+   top:9rem;
+<<<<<<< HEAD
+   left: -18rem;
+=======
+   left: 0.5rem;
+>>>>>>> 27ce399 (ji)
 }
 
-.flower-container #flower1{
-    display: flex;
-    width: 10%;
-    height: 40%;
-    /* background-color: #cfb391; */
-}
+
+
+
 #stand{
     display: flex;
     position: relative;
