@@ -1,82 +1,67 @@
 <?php
-
 session_start();
 include('php/config.php');
 
-if(!isset($_SESSION['ID'])){
-    header('Location: login.php');
-    exit();
+
+if (isset($_GET['ID'])) {
+    $id = $_GET['ID'];
+
+    // Delete the item from the cart based on cart_id
+    $delete_incart = "DELETE FROM cart WHERE cart_id='$id'"; 
+    $data = mysqli_query($con, $delete_incart);
+
+    // Redirect to the user cart after deletion
+    if ($data) {
+        header("location:user_cart.php");
+        exit;  
+    }
 }
-
-
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Khloris</title>
     <link rel="stylesheet" href="ui khloris/cart.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-    />
-  </head>
-  <body>
-    <!-- <header> -->
-      <!-- <input type="checkbox" name="" id="toggler" />
-      <label for="toggler" class="fas fa-bars"></label>
-      <a href="#" class="logo">Khloris<span>.</span></a>
-      <nav class="navbar">
-        <a href="#home">Home</a>
-        <a href="#Customization">Customization</a>
-        <a href="flowerpage.html">Flowers</a>
-        <a href="#Occassions">Occassions</a>
-      </nav>
-      <div class="icons">
-        <a href="" class="fas fa-shopping-cart"></a>
-        <a href="logout.php" class="fa-solid fa-right-from-bracket" onclick="return confirmLogout()"></a>
-      </div>
-    </header> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+</head>
+<body>
     <?php include 'header.php'; ?>
 
     <section class="cart-section">
         <div class="cart-container">
             <h3>My <span>Cart</span></h3>
             <?php 
+            $sql = "SELECT * FROM cart WHERE user_id = " . $_SESSION['ID'];
+            $result = $con->query($sql);
 
-$sql = "SELECT * FROM cart WHERE user_id = " . $_SESSION['ID'];
-
-$result = $con -> query($sql);
-
-if ($result -> num_rows > 0) {
-    while ($row = $result -> fetch_assoc()) {
-      
-        
-        echo '<div class="cart-orders-item" data-name="' . $row['product_name'] . '" data-price="' . $row['product_price'] . '" data-image="' . $row['image_url'] . '" data-id="' . $row['product_id'] . '">';
-        echo '    <input type="checkbox" class="item-checkbox" id="item' . $row['product_id'] . '" data-price="' . $row['product_price'] . '" />';
-        echo '    <img src="' . $row['image_url'] . '" alt="' . $row['product_name'] . '" />';
-        echo '    <label for="item' . $row['product_id'] . '">' . $row['product_name'] . '</label>';
-        echo '    <div class="quantity-controls">';
-        echo '        <button class="minus-btn">-</button>';
-        echo '        <input type="number" class="quantity" value="' . $row['quantity'] . '" min="1" />';
-        echo '        <button class="plus-btn">+</button>';
-        echo '    </div>';
-        echo '    <div class="price-container">';
-        echo '        <span class="original-price">P ' . number_format($row['product_price'], 2) . '</span>';
-        echo '        <span class="updated-price">P ' . number_format($row['product_price'] * $row['quantity'], 2) . '</span>'; // Update total price
-        echo '    </div>';
-        echo '    <span class="remove-btn" data-product-id="' . $row['product_id'] . '">';
-        echo '        <i class="fa-solid fa-trash-can"></i>';
-        echo '    </span>';
-        echo '</div>';
-    }
-} else {
-    echo "No items in the cart.";
-}
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    echo '<div class="cart-orders-item" data-name="' . $row['product_name'] . '" data-price="' . $row['product_price'] . '" data-image="' . $row['image_url'] . '" data-id="' . $row['product_id'] . '">';
+                    echo '    <input type="checkbox" class="item-checkbox" id="item' . $row['product_id'] . '" data-price="' . $row['product_price'] . '" />';
+                    echo '    <img src="' . $row['image_url'] . '" alt="' . $row['product_name'] . '" />';
+                    echo '    <label for="item' . $row['product_id'] . '">' . $row['product_name'] . '</label>';
+                    echo '    <div class="quantity-controls">';
+                    echo '        <button class="minus-btn">-</button>';
+                    echo '        <input type="number" class="quantity" value="' . $row['quantity'] . '" min="1" />';
+                    echo '        <button class="plus-btn">+</button>';
+                    echo '    </div>';
+                    echo '    <div class="price-container">';
+                    echo '        <span class="original-price">P ' . number_format($row['product_price'], 2) . '</span>';
+                    echo '        <span class="updated-price">P ' . number_format($row['product_price'] * $row['quantity'], 2) . '</span>';
+                    echo '    </div>';
+                    echo '    <span class="remove-btn">';
+                    echo '        <a href="user_cart.php?ID=' . $row['cart_id'] . '" onclick="return confirm(\'Are you sure you want to remove this item from your cart?\')">';
+                    echo '            <i class="fa-solid fa-trash-can"></i>';
+                    echo '        </a>';
+                    echo '    </span>';
+                    echo '</div>';
+                }
+            } else {
+                echo "No items in the cart.";
+            }
 ?>
 
         <div class="total-container">
@@ -201,7 +186,7 @@ if ($result -> num_rows > 0) {
       });
 
       
-      window.addEventListener("load", updateTotal); // Ensure total is calculated at page load
+      window.addEventListener("load", updateTotal); 
 
       document.getElementById("checkoutBtn").addEventListener("click", function() {
   const cartItems = document.querySelectorAll(".cart-orders-item");
@@ -210,27 +195,27 @@ if ($result -> num_rows > 0) {
   cartItems.forEach(item => {
     if (item.querySelector(".item-checkbox").checked) {
       const name = item.getAttribute("data-name");  // Get product name
-      const price = item.getAttribute("data-price"); // Get product price
-      const image = item.getAttribute("data-image"); // Get product image URL
+      const price = item.getAttribute("data-price");
+      const image = item.getAttribute("data-image");
       const quantity = item.querySelector(".quantity").value;
       orderSummary.push({ name, price, image, quantity });
     }
   });
 
-  // Store the order data in local storage to pass to the checkout page
+ 
   localStorage.setItem("orderSummary", JSON.stringify(orderSummary));
-  window.location.href = "checkout.html"; // Redirect to checkout page
+  window.location.href = "ui khloris/checkout.html"; 
 });
 
   </script>
  <script>
-    // Function to save cart to the server
+   
 function saveCart() {
     $.ajax({
         url: 'customize_bea/save_cart.php',
         type: 'POST',
         contentType: 'application/json',
-        data: JSON.stringify(Object.values(cart)), // Send cart data as JSON
+        data: JSON.stringify(Object.values(cart)),
         success: function(response) {
             console.log('Cart saved:', response);
         },
@@ -240,10 +225,10 @@ function saveCart() {
     });
 }
 
-// Function to add/update item in the cart
+
 function updateItem(productId, productName, productPrice, quantity, imageUrl) {
     if (quantity <= 0) {
-        delete cart[productId]; // Remove item if quantity is 0
+        delete cart[productId];
     } else {
         cart[productId] = { 
             product_id: productId, 
@@ -253,14 +238,14 @@ function updateItem(productId, productName, productPrice, quantity, imageUrl) {
             image_url: imageUrl 
         };
     }
-    saveCart(); // Automatically save the cart
+    saveCart(); 
 }
 
-// Example of handling quantity change
+
 $(document).ready(function() {
-    // Update quantity and total when changed
+  
     $('.quantity').change(function() {
-        const productId = $(this).closest('.cart-orders-item').data('id'); // Assuming data-id is set in the item div
+        const productId = $(this).closest('.cart-orders-item').data('id'); 
         const productName = $(this).closest('.cart-orders-item').data('name');
         const productPrice = $(this).closest('.cart-orders-item').data('price');
         const quantity = parseInt($(this).val());
@@ -271,8 +256,8 @@ $(document).ready(function() {
 
     // Example of removing an item
     $('.remove-btn').click(function() {
-        const productId = $(this).data('product-id'); // Get product ID
-        updateItem(productId, '', 0, 0, ''); // Set quantity to 0 to remove
+        const productId = $(this).data('product-id'); 
+        updateItem(productId, '', 0, 0, '');
     });
 });
 

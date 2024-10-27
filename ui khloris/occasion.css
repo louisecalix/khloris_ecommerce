@@ -1,3 +1,7 @@
+/* MAIN {
+    margin-top: 77px;
+} */
+
 :root {
     --strawberry: #e5ada8;
 }
@@ -28,97 +32,49 @@ section {
     margin-top: 10rem;
 }
 
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: #d8d7b2;
-    padding: 2rem 9%;
-    display: flex;
+.prdctsoccassion{
     align-items: center;
-    justify-content: space-between;
-    z-index: 1000;
-    box-shadow: 0.5rem 1rem rgba(0, 0, 0, .1);
+    min-height: 100vh;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    z-index: 2; 
+    padding-top: 10rem;
+    padding-bottom: 10rem;
 }
 
-header .logo {
-    font-size: 3rem;
-    color: #725c3f;
-    font-weight: lighter;
-    text-shadow: 1px 1px 2px #0000008f;
-    ;
-}
-
-header .logo span {
-    color: var(--strawberry);
-}
-
-header .navbar a {
-    font-size: 2rem;
-    padding: 0 1.5rem;
-    color: #725c3f;
-}
-
-header .navbar a:hover {
-    color: var(--strawberry);
-}
-
-header .icons a {
-    font-size: 2.5rem;
-    color: #d0a77b;
-    margin-left: 2.5rem;
-}
-
-header .icons a:hover {
-    color: var(--strawberry);
-}
-
-header #toggler {
-    display: none;
-}
-
-header .fa-bars {
-    font-size: 3rem;
-    color: #d0a77b;
-    border-radius: .5rem;
-    padding: .5rem 1.5rem;
-    cursor: pointer;
-    border: .1rem solid rgba(0, 0, 0, .3);
-    display: none;
-}
-
-.bg-imagebirthday {
+.prdctsoccassion .bg-imagebirthday {
     background-image: url(https://res.cloudinary.com/dogrgo15f/image/upload/v1727691662/images/header/twu2s8wn5nq42rvxvt27.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     width: 105%;
-    height: 15%;
+    height: 10%;
     position: absolute;
     z-index: 0;
     left: -1rem;
     top: -1.5rem;
     box-shadow: 2px 2px 4px #000000;
+    padding-bottom: 10rem;
 }
 
-.filter-blur-bday {
+.prdctsoccassion .filter-blur-bday {
     background: rgba(46, 46, 46, 0.587);
     backdrop-filter: blur(2px);
     position: absolute;
-    height: 15%;
+    height: 10%;
     width: 105%;
     left: -1rem;
     z-index: 1;
     top: -1.5rem;
 }
 
-.bday-header{
+.prdctsoccassion .bday-header{
     align-items: center;
     justify-self: center;
-    position: absolute;
+    /* position: absolute;
     left: 53rem;
-    bottom: 7rem;
+    bottom: 7rem; */
     font-size: 3.5rem;
     color: #ec978f;
     text-shadow: 2px 2px 4px #000000;
@@ -126,10 +82,12 @@ header .fa-bars {
     font-family: "Playfair Display", serif;
     font-optical-sizing: auto;
     font-style:normal;
+    text-align: center;
+    padding-top: 3rem;
 
 }
 
-.bday-header span{
+.prdctsoccassion .bday-header span{
     color: rgb(252, 233, 233);
     font-weight: 600;
     font-family: "Playfair Display", serif;
@@ -138,25 +96,20 @@ header .fa-bars {
 }
 
 
-.prdctsoccassion{
-    align-items: center;
-    min-height: 100vh;
-    justify-content: center;
-    position: relative;
-    width: 100%;
-    z-index: 2; 
-}
+
 
 .prdctsoccassion .bday-h3 {
     text-align: center;
     font-size: 3.5rem;
     color: #6F5C3C;
     text-shadow: 1px 6px 2px #7a7a7a36;
-    margin-top: 16rem;
+    /* margin-top: 16rem; */
     font-weight: 600;
     font-family: "Playfair Display", serif;
     font-optical-sizing: auto;
     font-style:normal;
+    padding-top: 15rem;
+    padding-bottom: 2rem;
 }
 .prdctsoccassion .bday-h3 span {
     color: #eb7f76;
@@ -176,13 +129,16 @@ header .fa-bars {
     font-family: "Playfair Display", serif;
     font-optical-sizing: auto;
     font-style:normal;
+    padding-bottom: 5rem;
 }
 
 .prdctsoccassion .box-container {
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     gap: 1.5rem;
     margin-top: 5rem;
+    z-index: 2;
 }
 .prdctsoccassion .box-container .flwrbox {
     flex: 1 1 30rem;
@@ -203,17 +159,17 @@ header .fa-bars {
 .prdctsoccassion .box-container .flwrbox:hover .flwrimg img {
     transform: scale(1.1);
 }
-.prdctsoccassion .box-container .flwrbox .flwrimg .icons {
+.prdctsoccassion .box-container .flwrbox .flwrimg .btn-div {
     position: absolute;
     bottom: -7rem;
     left: 0;
     right: 0;
     display: flex;
 }
-.prdctsoccassion .box-container .flwrbox:hover .flwrimg .icons {
+.prdctsoccassion .box-container .flwrbox:hover .flwrimg .btn-div {
     bottom: 0;
 }
-.prdctsoccassion .box-container .flwrbox .flwrimg .icons a {
+.prdctsoccassion .box-container .flwrbox .flwrimg .btn-div button {
     height: 5rem;
     line-height: 5rem;
     font-size: 2rem;
@@ -221,12 +177,12 @@ header .fa-bars {
     background: var(--strawberry);
     color: #fff;
 }
-.prdctsoccassion .box-container .flwrbox .flwrimg .icons .cart-btn {
+.prdctsoccassion .box-container .flwrbox .flwrimg .btn-div .button {
     border-left: .1rem solid #d8d7b2;
     border-right: .1rem solid #d8d7b2;
     width: 100%;
 }
-.prdctsoccassion .box-container .flwrbox .flwrimg .icons a:hover {
+.prdctsoccassion .box-container .flwrbox .flwrimg .btn-div button:hover {
     background: #4f483f;
 }
 .prdctsoccassion .box-container .flwrbox .imgcontent {
@@ -252,13 +208,14 @@ header .fa-bars {
     background-size: cover;
     background-position: center;
     width: 105%;
-    height: 15%;
+    height: 10%;
     position: absolute;
     z-index: 0;
     bottom: -15rem;
     left: -1rem;
     top: -1.5rem; 
     box-shadow: 2px 2px 4px #000000;
+    padding-bottom: 10rem;
 }
 
 
@@ -266,7 +223,7 @@ header .fa-bars {
     background: rgba(46, 46, 46, 0.587);
     backdrop-filter: blur(2px);
     position: absolute;
-    height: 15%;
+    height: 10%;
     width: 105%;
     left: -1rem;
     z-index: 1;
@@ -276,9 +233,9 @@ header .fa-bars {
 .anniv-header{
     align-items: center;
     justify-self: center;
-    position: absolute;
+    /* position: absolute;
     left: 56rem;
-    bottom: 6rem;
+    bottom: 6rem; */
     font-size: 3.5rem;
     color: #ec978f;
     text-shadow: 2px 2px 4px #000000;
@@ -286,6 +243,8 @@ header .fa-bars {
     font-family: "Playfair Display", serif;
     font-optical-sizing: auto;
     font-style:normal;
+    text-align: center;
+    padding-top: 3rem;
 
 }
 
@@ -304,7 +263,9 @@ header .fa-bars {
     justify-content: center;
     position: relative;
     width: 100%;
-    z-index: 2; 
+    z-index: 2;
+    padding-top: 10rem;
+    padding-bottom: 10rem; 
 }
 
 .prdctsoccassion-anniv .anniv-h3 {
@@ -312,11 +273,13 @@ header .fa-bars {
     font-size: 3.5rem;
     color: #6F5C3C;
     text-shadow: 1px 6px 2px #7a7a7a36;
-    margin-top: 16rem;
+    /* margin-top: 16rem; */
     font-weight: 600;
     font-family: "Playfair Display", serif;
     font-optical-sizing: auto;
     font-style:normal;
+    padding-top: 15rem;
+    padding-bottom: 2rem;
 }
 .prdctsoccassion-anniv .anniv-h3 span {
     color: #eb7f76;
@@ -336,6 +299,7 @@ header .fa-bars {
     font-family: "Playfair Display", serif;
     font-optical-sizing: auto;
     font-style:normal;
+    padding-bottom: 5rem
 }
 
 .prdctsoccassion-anniv .box-container {
@@ -363,17 +327,17 @@ header .fa-bars {
 .prdctsoccassion-anniv .box-container .flwrbox:hover .flwrimg img {
     transform: scale(1.1);
 }
-.prdctsoccassion-anniv .box-container .flwrbox .flwrimg .icons {
+.prdctsoccassion-anniv .box-container .flwrbox .flwrimg .btn-div {
     position: absolute;
     bottom: -7rem;
     left: 0;
     right: 0;
     display: flex;
 }
-.prdctsoccassion-anniv .box-container .flwrbox:hover .flwrimg .icons {
+.prdctsoccassion-anniv .box-container .flwrbox:hover .flwrimg .btn-div {
     bottom: 0;
 }
-.prdctsoccassion-anniv .box-container .flwrbox .flwrimg .icons a {
+.prdctsoccassion-anniv .box-container .flwrbox .flwrimg .btn-div button {
     height: 5rem;
     line-height: 5rem;
     font-size: 2rem;
@@ -381,12 +345,12 @@ header .fa-bars {
     background: var(--strawberry);
     color: #fff;
 }
-.prdctsoccassion-anniv .box-container .flwrbox .flwrimg .icons .cart-btn {
+.prdctsoccassion-anniv .box-container .flwrbox .flwrimg .btn-div button {
     border-left: .1rem solid #d8d7b2;
     border-right: .1rem solid #d8d7b2;
     width: 100%;
 }
-.prdctsoccassion-anniv .box-container .flwrbox .flwrimg .icons a:hover {
+.prdctsoccassion-anniv .box-container .flwrbox .flwrimg .btn-div button:hover {
     background: #4f483f;
 }
 .prdctsoccassion-anniv .box-container .flwrbox .imgcontent {
@@ -407,19 +371,19 @@ header .fa-bars {
 }
 
 /* funeral */
-
 .bg-image-funeral{
     background-image: url(https://res.cloudinary.com/dogrgo15f/image/upload/v1727703941/images/header/fx2vhdz6ffdlvkdwv6if.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     width: 105%;
-    height: 15%;
+    height: 10%;
     position: absolute;
     z-index: 0;
     bottom: -15rem;
     left: -1rem;
     top: -1.5rem; 
+    padding-bottom: 10rem;
 }
 
 
@@ -427,7 +391,7 @@ header .fa-bars {
     background: rgba(46, 46, 46, 0.587);
     backdrop-filter: blur(2px);
     position: absolute;
-    height: 15%;
+    height: 10%;
     width: 105%;
     left: -1rem;
     z-index: 1;
@@ -437,9 +401,9 @@ header .fa-bars {
 .funeral-header{
     align-items: center;
     justify-self: center;
-    position: absolute;
+    /* position: absolute;
     left: 60rem;
-    bottom: 6rem;
+    bottom: 6rem; */
     font-size: 3.5rem;
     color: #ec978f;
     text-shadow: 2px 2px 4px #000000;
@@ -447,6 +411,8 @@ header .fa-bars {
     font-family: "Playfair Display", serif;
     font-optical-sizing: auto;
     font-style:normal;
+    text-align: center;
+    padding-top: 3rem;
 
 }
 
@@ -466,7 +432,9 @@ header .fa-bars {
     position: relative;
     width: 100%;
     z-index: 2; 
-    margin-bottom: 5rem;
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+
 }
 
 .prdctsoccassion-funeral .funeral-h3 {
@@ -474,11 +442,13 @@ header .fa-bars {
     font-size: 3.5rem;
     color: #6F5C3C;
     text-shadow: 1px 6px 2px #7a7a7a36;
-    margin-top: 16rem;
+    /* margin-top: 16rem; */
     font-weight: 600;
     font-family: "Playfair Display", serif;
     font-optical-sizing: auto;
     font-style:normal;
+    padding-top: 15rem;
+    padding-bottom: 2rem;
 }
 .prdctsoccassion-funeral .funeral-h3 span {
     color: #eb7f76;
@@ -498,6 +468,7 @@ header .fa-bars {
     font-family: "Playfair Display", serif;
     font-optical-sizing: auto;
     font-style:normal;
+    padding-bottom: 5rem;
 }
 
 .prdctsoccassion-funeral .box-container {
@@ -525,17 +496,17 @@ header .fa-bars {
 .prdctsoccassion-funeral .box-container .flwrbox:hover .flwrimg img {
     transform: scale(1.1);
 }
-.prdctsoccassion-funeral .box-container .flwrbox .flwrimg .icons {
+.prdctsoccassion-funeral .box-container .flwrbox .flwrimg .btn-div {
     position: absolute;
     bottom: -7rem;
     left: 0;
     right: 0;
     display: flex;
 }
-.prdctsoccassion-funeral .box-container .flwrbox:hover .flwrimg .icons {
+.prdctsoccassion-funeral .box-container .flwrbox:hover .flwrimg .btn-div {
     bottom: 0;
 }
-.prdctsoccassion-funeral .box-container .flwrbox .flwrimg .icons a {
+.prdctsoccassion-funeral .box-container .flwrbox .flwrimg .btn-div button {
     height: 5rem;
     line-height: 5rem;
     font-size: 2rem;
@@ -543,12 +514,12 @@ header .fa-bars {
     background: var(--strawberry);
     color: #fff;
 }
-.prdctsoccassion-funeral .box-container .flwrbox .flwrimg .icons .cart-btn {
+.prdctsoccassion-funeral .box-container .flwrbox .flwrimg .btn-div .button {
     border-left: .1rem solid #d8d7b2;
     border-right: .1rem solid #d8d7b2;
     width: 100%;
 }
-.prdctsoccassion-funeral .box-container .flwrbox .flwrimg .icons a:hover {
+.prdctsoccassion-funeral .box-container .flwrbox .flwrimg .btn-div button:hover {
     background: #4f483f;
 }
 .prdctsoccassion-funeral .box-container .flwrbox .imgcontent {
@@ -567,115 +538,6 @@ header .fa-bars {
     /* text-shadow: 1px 1px 1px #0000008f; */
 
 }
-
-/* footer */
-
-.ftrcontainer {
-    max-width: 1170px;
-    margin: auto;
-    
-}
-
-.ftrrow {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.footer {
-    background-color: #d8d7b2;
-    padding: 70px 0;
-}
-
-.footer-col {
-    width: 25%;
-    padding: 0 15px;
-}
-
-.footer-col h4 {
-    font-size: 18px;
-    color: #725c3f;
-    text-transform: capitalize;
-    margin-bottom: 40px;
-    font-weight: 500%;
-    position: relative;
-}
-
-.ftrul {
-    list-style: none;
-}
-
-.footer .ftrcontainer h4 span {
-    font-size: 2rem;
-    color: var(--strawberry);
-}
-
-.footer-col h4::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -10px;
-    background-color: var(--strawberry);
-    height: 2px;
-    box-sizing: border-box;
-    width: 50px;
-}
-
-.footer-col ul li:not(:last-child) {
-    margin-bottom: 10px;
-}
-
-.footer-col ul li a {
-    font-size: 12px;
-    text-transform: capitalize;
-    color: black;
-    text-decoration: none;
-    font-weight: 300;
-    color: black;
-    display: block;
-    transition: all 0.3s ease;
-}
-
-.footer-col ul p {
-    font-size: 12px;
-    text-transform: capitalize;
-    color: black;
-    text-decoration: none;
-    font-weight: 300;
-    color: black;
-    display: block;
-}
-
-.footer-col ul li a:hover {
-    color: var(--strawberry);
-    padding-left: 8px;
-}
-
-.footer-col .social-links a {
-    font-size: 20px;
-    display: inline-block;
-    height: 60px;
-    width: 60px;
-    background-color: rgba(51, 37, 44, 0.845);
-    margin: 0 10px 10px 0;
-    text-align: center;
-    line-height: 60px;
-    border-radius: 50%;
-    color: var(--strawberry);
-    transition: all 0.5s ease;
-    text-shadow: 1px 1px 2px #0000008f;
-    position: relative;
-    bottom: -3rem;
-}
-
-.footer-col .social-links a:hover {
-    color: var(--strawberry);
-    background-color: #d2cdc5;
-}
-
-
-
-
-
 
 .icons {
     position: relative;
@@ -704,14 +566,6 @@ header .fa-bars {
 .dropdown-item:hover {
     background-color: #f1f1f1;
 }
-
-
-
-
-
-
-
-
 
 
 
