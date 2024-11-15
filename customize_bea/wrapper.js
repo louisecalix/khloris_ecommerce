@@ -14,6 +14,7 @@ const getwrappers = async () => {
 };
 
 
+
 const update_wrapper = (data) => {
     if (!Wrapper_cont) {
         console.error("Wrapper container not found in the DOM.");
@@ -23,10 +24,10 @@ const update_wrapper = (data) => {
     const wrappers = data.filter(wrapper => wrapper.type_id === '9');
     console.log("All wrappers with type_id 9:", wrappers);
 
+
     wrappers.forEach(w => {
         const wrapperDiv = document.createElement('div');
         wrapperDiv.setAttribute('id', `wrapper-${w.product_id}`);
-        wrapperDiv.setAttribute('class', 'wrrpr_frame');
         wrapperDiv.style.width = '100px';
         wrapperDiv.style.height = '100px';
         wrapperDiv.style.display = 'flex';
@@ -53,6 +54,7 @@ const update_wrapper = (data) => {
         Wrapper_cont.appendChild(wrapperDiv);
     });
 };
+
 // Main function to fetch data and update the UI
 (async () => {
     const data = await getwrappers();
