@@ -1,57 +1,13 @@
 <?php
 session_start();
-<?php
-session_start();
 include 'php/config.php';
 
 if (isset($_SESSION['ID'])) {
-if (isset($_SESSION['ID'])) {
   $user_id = $_SESSION['ID'];
-} else {
 } else {
   $user_id = '';
 }
 
-session_start();
-include '../php/config.php';
-
-if (!isset($_SESSION['ID'])) {
-    header("Location: mainpage.php");
-    exit();
-}
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $user_id = $_SESSION['ID'];
-    $product_id = $_POST['product_id'];
-    $product_name = $_POST['product_name'];
-    $product_price = $_POST['product_price'];
-    $quantity = $_POST['quantity'];
-    $image_url = $_POST['image_url'];
-
-    $total = $product_price * $quantity;
-
-    $sql = "INSERT INTO cart(user_id, product_id, product_name, product_price, quantity, image_url, total) 
-            VALUES (?, ?, ?, ?, ?, ?, ?)
-            ON DUPLICATE KEY UPDATE quantity = quantity + ?";
-
-    if ($stmt = $con->prepare($sql)) {
-        $stmt->bind_param("isssisis", $user_id, $product_id, $product_name, $product_price, $quantity, $image_url, $total, $quantity);
-
-        if ($stmt->execute()) {
-            // Redirect back to the products section
-            header("Location: mainpage.php#prdctsrecommend");
-            exit();
-        } else {
-            echo "Error! Could not add to cart: " . $stmt->error;
-        }
-
-        $stmt->close();
-    } else {
-        echo "Error preparing statement: " . $con->error;
-    }
-}
-
-$con->close();
 session_start();
 include '../php/config.php';
 
@@ -124,7 +80,7 @@ $con->close();
           Creating memories with every each petals. Try our <br />long lasting
           flowers for every occasion <br />anywhere and anytime.
         </p>
-        <a href="#prdctsrecommend" class="btnshopnow">Shop now</a>
+        <a href="#" class="btnshopnow">Shop now</a>
       </div>
     </section>
 
@@ -133,7 +89,6 @@ $con->close();
       <div class="box-container">
       <?php
 
-$sql= "SELECT * FROM products WHERE type_id= 5";
 $sql= "SELECT * FROM products WHERE type_id= 5";
 
 $result= $con -> query($sql);
@@ -147,7 +102,6 @@ if ($result -> num_rows > 0){
 echo'   <div class="flwrimg">';
 echo '      <img src="'. $row["image_url"].'" alt="'.$row["name"].'"/>';
 echo '      <div class="icons">';
-              echo'     <form action="" method="POST">';       
               echo'     <form action="" method="POST">';       
               echo '    <input type="hidden" name="product_id" value="' . $row["product_id"] . '">';         
               echo '    <input type="hidden" name="product_name" value="' . $row["name"] . '">';   
