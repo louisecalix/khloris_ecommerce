@@ -31,14 +31,14 @@ if ($isLoggedIn) {
 
     <nav class="navbar">
         <a href="mainpage.php">Home</a>
-        <a href="#Customization">Customization</a>
+        <a href="customize_part.php">Customization</a>
         <a href="flowerpage.php">Flowers</a>
-        <a href="#Occasions">Occasions</a>
+        <a href="occasion.php">Occasions</a>
     </nav>
 
     <div class="icons">
         <?php if ($isLoggedIn): ?>
-            <a href="cart.php" class="fas fa-shopping-cart" title="Cart">
+            <a href="user_cart.php" class="fas fa-shopping-cart" title="Cart">
                 <span>(<?php echo $total_count_cart_items; ?>)</span>
             </a>
             <a href="profile.php" class="fas fa-user-circle" title="Profile"></a>

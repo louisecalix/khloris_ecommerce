@@ -1,14 +1,74 @@
 <?php
 
-session_start();
+// session_start();
 include 'php/config.php';
 
 
-if(isset($_SESSION['ID'])){
-  $user_id = $_SESSION['ID'];
-}else{
-  $user_id = '';
+// if(isset($_SESSION['ID'])){
+//   $user_id = $_SESSION['ID'];
+// }else{
+//   $user_id = '';
+
+// }
+
+
+session_start();
+
+include '../php/config.php';
+
+if (!isset($_SESSION['ID'])) {
+    header("Location: occasion.php");
+    exit();
+    
 }
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $user_id = $_SESSION['ID'];
+    $product_id = $_POST['product_id'];
+    $product_name = $_POST['product_name'];
+    $product_price = $_POST['product_price'];
+    $quantity = $_POST['quantity'];
+    $image_url = $_POST['image_url'];
+
+    $total = $product_price * $quantity;
+
+    // SQL query: Insert into cart, or if there's a duplicate entry, update the quantity.
+    $sql = "INSERT INTO cart(user_id, product_id, product_name, product_price, quantity, image_url, total) 
+            VALUES (?, ?, ?, ?, ?, ?, ?)
+            ON DUPLICATE KEY UPDATE quantity = quantity + ?";
+
+    // Prepare the statement
+    if ($stmt = $con->prepare($sql)) {
+        
+        // Bind parameters including the one for the `ON DUPLICATE KEY UPDATE` clause
+        $stmt->bind_param("isssisis", $user_id, $product_id, $product_name, $product_price, $quantity, $image_url, $total, $quantity);
+
+        // Execute the statement
+        if ($stmt->execute()) {
+            header("Location: occasion.php");
+            exit();
+            
+        } else {
+            echo "Error! Could not add to cart: " . $stmt->error;
+        }
+
+        $stmt->close();
+    } else {
+        echo "Error preparing statement: " . $con->error;
+    }
+}
+
+$con->close();
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -22,7 +82,7 @@ if(isset($_SESSION['ID'])){
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Khloris</title>
-    <link rel="stylesheet" href="ui khloris/flower_occasion.css" />
+    <link rel="stylesheet" href="ui khloris/occasion.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
@@ -72,7 +132,7 @@ if(isset($_SESSION['ID'])){
               echo'   <div class="flwrimg">';
               echo '      <img src="'. $row["image_url"].'" alt="'.$row["name"].'"/>';
               echo '      <div class="icons">';
-                            echo'     <form action="customize_bea/add_to_cart.php" method="POST">';       
+                            echo'     <form action="" method="POST">';       
                             echo '    <input type="hidden" name="product_id" value="' . $row["product_id"] . '">';         
                             echo '    <input type="hidden" name="product_name" value="' . $row["name"] . '">';   
                             echo '    <input type="hidden" name="product_price" value="' . $row["price"] . '">'; 
@@ -128,7 +188,7 @@ echo '<div class="flwrbox">';
 echo'   <div class="flwrimg">';
 echo '      <img src="'. $row["image_url"].'" alt="'.$row["name"].'"/>';
 echo '      <div class="icons">';
-              echo'     <form action="customize_bea/add_to_cart.php" method="POST">';       
+              echo'     <form action="" method="POST">';       
               echo '    <input type="hidden" name="product_id" value="' . $row["product_id"] . '">';         
               echo '    <input type="hidden" name="product_name" value="' . $row["name"] . '">';   
               echo '    <input type="hidden" name="product_price" value="' . $row["price"] . '">'; 
@@ -184,7 +244,7 @@ echo '<div class="flwrbox">';
 echo'   <div class="flwrimg">';
 echo '      <img src="'. $row["image_url"].'" alt="'.$row["name"].'"/>';
 echo '      <div class="icons">';
-echo'     <form action="customize_bea/add_to_cart.php" method="POST">';       
+echo'     <form action="" method="POST">';       
 echo '    <input type="hidden" name="product_id" value="' . $row["product_id"] . '">';         
 echo '    <input type="hidden" name="product_name" value="' . $row["name"] . '">';   
 echo '    <input type="hidden" name="product_price" value="' . $row["price"] . '">'; 

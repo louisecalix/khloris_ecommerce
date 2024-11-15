@@ -5,8 +5,9 @@ session_start();
 include '../php/config.php';
 
 if (!isset($_SESSION['ID'])) {
-    header("Location:login.php");
+    header("Location: https://www.google.com");
     exit();
+    
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -32,8 +33,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Execute the statement
         if ($stmt->execute()) {
-            header("Location: mainpage.php");
+            header("Location: https://www.google.com");
             exit();
+            
         } else {
             echo "Error! Could not add to cart: " . $stmt->error;
         }

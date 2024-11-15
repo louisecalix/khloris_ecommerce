@@ -13,44 +13,49 @@ const getwrappers = async () => {
     }
 };
 
-// Update the wrapper content - display all wrappers with type_id === '9'
+
 const update_wrapper = (data) => {
-    // Check if wrapper container exists
     if (!Wrapper_cont) {
         console.error("Wrapper container not found in the DOM.");
         return;
     }
 
-    // Filter all wrappers with type_id === '9'
     const wrappers = data.filter(wrapper => wrapper.type_id === '9');
     console.log("All wrappers with type_id 9:", wrappers);
 
-    // Loop through all matching wrappers and create individual divs
     wrappers.forEach(w => {
-        const new_cont = document.createElement('div');
-        
-        // Set unique ID for each div based on the product_id
-        new_cont.setAttribute('id', `wrapper-${w.product_id}`);
-        new_cont.setAttribute('class', 'wrrpr_frame');
-        
-        // Log the unique ID and image URL
+        const wrapperDiv = document.createElement('div');
+        wrapperDiv.setAttribute('id', `wrapper-${w.product_id}`);
+        wrapperDiv.setAttribute('class', 'wrrpr_frame');
+        wrapperDiv.style.width = '100px';
+        wrapperDiv.style.height = '100px';
+        wrapperDiv.style.display = 'flex';
+        wrapperDiv.style.alignItems = 'center';
+        wrapperDiv.style.justifyContent = 'center';
+        wrapperDiv.style.border = '1px solid #ccc';
+        wrapperDiv.style.backgroundColor = 'white';
+        wrapperDiv.style.padding = '10px';
+        wrapperDiv.style.paddingTop = '24px';
+
         console.log(`Wrapper ID: wrapper-${w.product_id}`);
         console.log("Image URL:", w.image_url);
-        
-        // Set background image and size
-        new_cont.style.backgroundImage = `url(${w.image_url})`;
-        new_cont.style.width = '80px';  // Adjust to your desired size
-        new_cont.style.height = '80px'; // Adjust to your desired size
-        new_cont.style.backgroundSize = 'cover'; // Ensure the background fits the div
 
-        // Append each wrapper to the container
-        Wrapper_cont.appendChild(new_cont);
+        // Create img element
+        const img = document.createElement('img');
+        img.src = w.image_url;
+        img.style.width = '90px';
+        img.style.height = '90px';
+        img.style.objectFit = 'cover'; // Ensures image fits within given dimensions
+
+        // Append img to the div
+        wrapperDiv.appendChild(img);
+
+        Wrapper_cont.appendChild(wrapperDiv);
     });
 };
-
 // Main function to fetch data and update the UI
 (async () => {
     const data = await getwrappers();
-    console.log("Data received:", data);  // Log the data to ensure it's fetched
+    console.log("Data received:", data); 
     update_wrapper(data);
 })();

@@ -8,7 +8,7 @@ if (!isset($_SESSION['ID'])) {
 }
 
 if (!isset($_POST['proceedcheckout']) && !isset($_POST['place_order'])) {
-    header('Location: cart.php');
+    header('Location: checkout.php');
     exit();
 }
 

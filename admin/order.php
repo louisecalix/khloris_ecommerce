@@ -5,12 +5,12 @@
     if (isset($_GET['order_id'])) {
         $id = $_GET['order_id'];
 
-        $check_sql = "SELECT status FROM orders_user WHERE order_id='$id'";
+        $check_sql = "SELECT order_status FROM orders WHERE order_id='$id'";
         $check_result = mysqli_query($con, $check_sql);
         $order = mysqli_fetch_assoc($check_result);
 
-        if ($order && $order['status'] === 'Pending') {
-            $delete_sql = "DELETE FROM orders_user WHERE order_id='$id'";
+        if ($order && $order['order_status'] === 'Pending') {
+            $delete_sql = "DELETE FROM orders WHERE order_id='$id'";
             $data = mysqli_query($con, $delete_sql);
 
             if ($data) {
@@ -23,7 +23,7 @@
     }
 
 
-    $sql = "SELECT * FROM orders_user";
+    $sql = "SELECT * FROM orders";
     $result = mysqli_query($con, $sql);
 ?>
 
@@ -69,11 +69,11 @@
                 <td><?php echo $row['order_id']; ?></td>
                 <td><?php echo $row['user_id']; ?></td>
                 <td><?php echo $row['product_id']; ?></td>
-                <td><?php echo $row['qty']; ?></td>
+                <td><?php echo $row['qnty']; ?></td>
                 <td><?php echo $row['total']; ?></td>
-                <td><?php echo $row['status']; ?></td>
+                <td><?php echo $row['order_status']; ?></td>
                 <td>
-                    <?php if ($row['status'] === 'Pending') { ?>
+                    <?php if ($row['order_status'] === 'Pending') { ?>
                         <a href="order.php?order_id=<?php echo $row['order_id']; ?>" class="delete-btn"
                            onclick="return confirm('Are you sure you want to cancel this order?')">Cancel</a>
                     <?php } else { ?>

@@ -1,4 +1,4 @@
-:root{
+z:root{
     --strawberry:#e5ada8;
 }
 
@@ -347,7 +347,7 @@ html, body {
     /* border:1px solid rgb(63, 32, 4); */
     border-radius: 15px;
     display: grid;
-    background-color: pink;
+    /* background-color: pink; */
     bottom: 0;
    
 }
@@ -482,11 +482,7 @@ html, body {
     width: 40%;
     height:20%;
    border:1px solid #271e13;
-<<<<<<< HEAD
-   display: flex;
-=======
    display: none;
->>>>>>> 27ce399 (ji)
    justify-content: space-evenly;
    align-items: center;
    z-index: 3;
@@ -499,11 +495,7 @@ html, body {
     width: 40%;
     height:20%;
    border:1px solid #6ebe8c;
-<<<<<<< HEAD
-   display: flex;
-=======
    display: none;
->>>>>>> 27ce399 (ji)
    justify-content: space-evenly;
    align-items: center;
    z-index: 3;
@@ -517,11 +509,7 @@ html, body {
     width: 40%;
     height:20%;
    border:1px solid #b93b70;
-<<<<<<< HEAD
-   display: flex;
-=======
    display: none;
->>>>>>> 27ce399 (ji)
    justify-content: space-evenly;
    align-items: center;
    z-index: 2;
@@ -535,11 +523,7 @@ html, body {
     width: 40%;
     height:20%;
    border:1px solid #3c0b57;
-<<<<<<< HEAD
-   display: flex;
-=======
    display: none;
->>>>>>> 27ce399 (ji)
    justify-content: space-evenly;
    align-items: center;
    z-index: 2;
@@ -553,11 +537,7 @@ html, body {
     height: 40%;
     /* background-color: #cfb391; */
    
-<<<<<<< HEAD
-    background-image: url('https://res.cloudinary.com/dsfcl09md/image/upload/v1726073109/flowers/ms3vruapnyhspj8hbejv.png');
-=======
     /* background-image: url('https://res.cloudinary.com/dsfcl09md/image/upload/v1726073109/flowers/ms3vruapnyhspj8hbejv.png'); */
->>>>>>> 27ce399 (ji)
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -576,11 +556,7 @@ html, body {
     height: 40%;
     /* background-color: #cfb391; */
     z-index: 2;
-<<<<<<< HEAD
-    background-image: url('https://res.cloudinary.com/dsfcl09md/image/upload/v1727787473/flowers/jphjliisocba3y8jehxr.png');
-=======
     /* background-image: url('https://res.cloudinary.com/dsfcl09md/image/upload/v1727787473/flowers/jphjliisocba3y8jehxr.png'); */
->>>>>>> 27ce399 (ji)
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -596,11 +572,7 @@ html, body {
     height: 40%;
     /* background-color: #cfb391; */
     z-index: 2;
-<<<<<<< HEAD
-    background-image: url('https://res.cloudinary.com/dsfcl09md/image/upload/v1725826753/flowers/voikv1769whr33lkm645.png');
-=======
     /* background-image: url('https://res.cloudinary.com/dsfcl09md/image/upload/v1725826753/flowers/voikv1769whr33lkm645.png'); */
->>>>>>> 27ce399 (ji)
     background-position: end;
     background-size: contain;
     background-repeat: no-repeat;
@@ -617,11 +589,7 @@ html, body {
     height: 40%;
     /* background-color: #cfb391; */
    
-<<<<<<< HEAD
-    background-image: url('https://res.cloudinary.com/dsfcl09md/image/upload/v1726073109/flowers/ms3vruapnyhspj8hbejv.png');
-=======
     /* background-image: url('https://res.cloudinary.com/dsfcl09md/image/upload/v1726073109/flowers/ms3vruapnyhspj8hbejv.png'); */
->>>>>>> 27ce399 (ji)
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -638,11 +606,7 @@ html, body {
     height: 40%;
     /* background-color: #cfb391; */
     z-index: 2;
-<<<<<<< HEAD
-    background-image: url('https://res.cloudinary.com/dsfcl09md/image/upload/v1727787473/flowers/jphjliisocba3y8jehxr.png');
-=======
     /* background-image: url('https://res.cloudinary.com/dsfcl09md/image/upload/v1727787473/flowers/jphjliisocba3y8jehxr.png'); */
->>>>>>> 27ce399 (ji)
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -658,11 +622,7 @@ html, body {
         height: 40%;
         /* background-color: #cfb391; */
        
-<<<<<<< HEAD
-        background-image: url('https://res.cloudinary.com/dsfcl09md/image/upload/v1726073109/flowers/ms3vruapnyhspj8hbejv.png');
-=======
         /* background-image: url('https://res.cloudinary.com/dsfcl09md/image/upload/v1726073109/flowers/ms3vruapnyhspj8hbejv.png'); */
->>>>>>> 27ce399 (ji)
         background-position: center;
         background-size: contain;
         background-repeat: no-repeat;
@@ -679,11 +639,7 @@ html, body {
         height: 40%;
         /* background-color: #cfb391; */
         z-index: 2;
-<<<<<<< HEAD
-        background-image: url('https://res.cloudinary.com/dsfcl09md/image/upload/v1727787473/flowers/jphjliisocba3y8jehxr.png');
-=======
         /* background-image: url('https://res.cloudinary.com/dsfcl09md/image/upload/v1727787473/flowers/jphjliisocba3y8jehxr.png'); */
->>>>>>> 27ce399 (ji)
         background-position: center;
         background-size: contain;
         background-repeat: no-repeat;
@@ -701,11 +657,7 @@ html, body {
     height: 40%;
     /* background-color: #cfb391; */
    
-<<<<<<< HEAD
-    background-image: url('https://res.cloudinary.com/dsfcl09md/image/upload/v1726073109/flowers/ms3vruapnyhspj8hbejv.png');
-=======
     /* background-image: url('https://res.cloudinary.com/dsfcl09md/image/upload/v1726073109/flowers/ms3vruapnyhspj8hbejv.png'); */
->>>>>>> 27ce399 (ji)
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -724,11 +676,7 @@ html, body {
     height: 40%;
     /* background-color: #cfb391; */
     z-index: 2;
-<<<<<<< HEAD
-    background-image: url('https://res.cloudinary.com/dsfcl09md/image/upload/v1727787473/flowers/jphjliisocba3y8jehxr.png');
-=======
     /* background-image: url('https://res.cloudinary.com/dsfcl09md/image/upload/v1727787473/flowers/jphjliisocba3y8jehxr.png'); */
->>>>>>> 27ce399 (ji)
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -745,11 +693,7 @@ html, body {
     height: 40%;
     /* background-color: #cfb391; */
     z-index: 2;
-<<<<<<< HEAD
-    background-image: url('https://res.cloudinary.com/dsfcl09md/image/upload/v1725826753/flowers/voikv1769whr33lkm645.png');
-=======
     /* background-image: url('https://res.cloudinary.com/dsfcl09md/image/upload/v1725826753/flowers/voikv1769whr33lkm645.png'); */
->>>>>>> 27ce399 (ji)
     background-position: end;
     background-size: contain;
     background-repeat: no-repeat;
@@ -780,11 +724,7 @@ html, body {
    z-index: 3;
    position:relative;
    top:9rem;
-<<<<<<< HEAD
-   left: -18rem;
-=======
    left: 0.5rem;
->>>>>>> 27ce399 (ji)
 }
 
 

@@ -208,7 +208,7 @@ h1 {
 
 .message {
     text-align: center;
-    color: red;
+    color: rgb(16, 184, 35);
     font-size: 14px;
     margin-bottom: 15px;
 }

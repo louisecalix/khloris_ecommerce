@@ -55,7 +55,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flowers</title>
-    <link rel="stylesheet" href="ui khloris/flowerpage.css">
+    <link rel="stylesheet" href="ui khloris/flowerui.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -66,7 +66,11 @@
 
     <main>
     <section class="product_container" id="sunflower">
-    <h1 class="flower-text">Sunflowers</h1>
+    <div class="bg-sunflower"></div>
+        <div class="filter-blur-sunflower"><h2 class="sunflower-header"><span>Sunflowers</span></h2></div>
+      </div>
+      <h3 class="sf-h3"><span>Sunflower Radiance</span> Bouquet</h3>
+      <p class="sf-p">Like a sunflower turning toward the sun,<br> may this bouquet bring warmth, happiness, and a touch of nature's beauty to brighten your day.</p>
     <div class="box-container">
         <?php while($row = mysqli_fetch_assoc($resultSunflower)) { ?>
             <div class="flwrbox">
@@ -96,7 +100,11 @@
 
 
 <section class="product_container" id="rose">
-    <h1 class="flower-text">Rose</h1>
+<div class="bg-rose"></div>
+        <div class="filter-blur-rose"><h2 class="rose-header"><span>Roses</span></h2></div>
+      </div>
+      <h3 class="r-h3"><span>Rose Elegance</span> Bouquet</h3>
+      <p class="r-p">Like the timeless beauty of a rose,<br> may this bouquet bring elegance, love, and a touch of nature's grace to brighten your day.</p>
     <div class="box-container">
         <?php while($row = mysqli_fetch_assoc($resultRose)) { ?>
             <div class="flwrbox">
@@ -125,7 +133,11 @@
 </section>
 
 <section class="product_container" id="lily">
-    <h1 class="flower-text">Lilies</h1>
+    <div class="bg-lily"></div>
+        <div class="filter-blur-lily"><h2 class="lily-header"><span>Lilies</span></h2></div>
+      </div>
+      <h3 class="ll-h3"><span>Lilies</span> Charm Bouquet</h3>
+      <p class="ll-p">Like the pure beauty of a lily, may this bouquet bring<br> serenity, grace, and a touch of nature's tranquility to brighten your day.</p>
     <div class="box-container">
         <?php while($row = mysqli_fetch_assoc($resultLily)) { ?>
             <div class="flwrbox">
@@ -144,6 +156,8 @@
                         </form>
                     </div>
                 </div>
+
+                
                 <div class="flower-info">
                     <h3><?php echo htmlspecialchars($row['name']); ?></h3>
                     <div class="flower-price">P<?php echo htmlspecialchars($row['price']); ?></div>
@@ -154,7 +168,11 @@
 </section>
 
 <section class="product_container" id="tulip">
-    <h1 class="flower-text">Tulips</h1>
+<div class="bg-tulip"></div>
+        <div class="filter-blur-tulip"><h2 class="tulip-header"><span>Tulips</span></h2></div>
+      </div>
+      <h3 class="t-h3"><span>Tulip</span> Delight Bouquet</h3>
+      <p class="t-p">Like the vibrant colors of tulips, may this bouquet<br> bring joy, renewal, and a touch of spring's beauty to brighten your day.</p>
     <div class="box-container">
         <?php while($row = mysqli_fetch_assoc($resultTulip)) { ?>
             <div class="flwrbox">
