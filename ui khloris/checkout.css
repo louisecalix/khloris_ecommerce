@@ -119,7 +119,8 @@ header .fa-bars {
     margin-bottom: 2rem;
 }
 
-.header-delivery{
+.header-delivery,
+.header-date {
     position: absolute;
     text-align: left;
     font-size: 2.5rem;
@@ -140,7 +141,8 @@ form {
     flex-direction: column;
 }
 
-.delivery-options {
+.delivery-options,
+.delivery-date {
     display: flex;
     gap: 2rem;
     background-color: #fff;
@@ -162,6 +164,19 @@ form {
     left: 3.3rem;
     bottom: -1rem;
 }
+
+#date {
+    margin-top: 3rem;
+    position: relative;
+    bottom: -1rem;
+    left: 3.3rem;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1.4rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.199);
+}
+
 
 i{
     color: #e97065;
