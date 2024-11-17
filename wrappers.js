@@ -1,5 +1,6 @@
 const DB = 'http://localhost/khloris_/khloris_ecommerce/customize_bea/fetching.php';
 const Wrapper_cont = document.getElementById('wrpprcont');
+const Wrapper = document.getElementById('wrapper'); // Get the #wrapper element
 
 // Fetch wrapper data
 const getwrappers = async () => {
@@ -11,55 +12,81 @@ const getwrappers = async () => {
         alert(`Error fetching data: ${e.message}`);
         return [];
     }
-};const update_wrapper = (data) => {
+};
+
+// Update wrappers
+const update_wrappers = (data) => {
     if (!Wrapper_cont) {
         console.error("Wrapper container not found in the DOM.");
         return;
     }
 
-    const wrappers = data.filter(wrapper => wrapper.type_id === '9'); // Match actual type_id
+    const wrappers = data.filter(wrapper => wrapper.type_id === '9'); 
     console.log("Filtered wrappers:", wrappers);
 
     wrappers.forEach(w => {
+        // Create wrapper element
         const wrapperDiv = document.createElement('div');
-        wrapperDiv.setAttribute('id', `wrapper-${w.product_id}`);
-        wrapperDiv.style.width = '9rem';
-        wrapperDiv.style.height = '16rem';
-        wrapperDiv.style.display = 'flex';
-        wrapperDiv.style.flexDirection = 'column';
-        wrapperDiv.style.alignItems = 'center';
-        wrapperDiv.style.justifyContent = 'space-between';
-        wrapperDiv.style.border = '1px solid #brown';
-        wrapperDiv.style.backgroundColor = '#f7f4eb';
-        wrapperDiv.style.padding = '6px';
-        wrapperDiv.style.paddingTop = '4px';
+        wrapperDiv.classList.add('wrappers_'); // Add the correct CSS class
 
-        // Create image
+        // Create image element
         const img = document.createElement('img');
-        img.src = w.image_url || 'fallback-image-url.jpg'; // Use a fallback if image_url is missing
+        img.src = w.image_url ; // Fallback image
         img.alt = w.name || "Product Image";
-        img.style.width = '12rem';
-        img.style.height = '14rem';
-        img.style.objectFit = 'cover';
 
-        // Create name
+        // Create name element
         const name = document.createElement('span');
         name.textContent = w.name || "No Name Available";
-        name.style.marginTop = '3px';
-        name.style.fontSize = '1.1rem';
-        name.style.color = '#333';
-        name.style.textAlign = 'center';
+        name.classList.add('name');
+        name.style.backgroundColor = '#a2b378';
 
+        // Set click event on the wrapperDiv to change the background of #wrapper
+        wrapperDiv.addEventListener('click', () => {
+            if (Wrapper) {
+                Wrapper.style.backgroundImage = `url('${w.image_url}')`;
+            } else {
+                console.error("Wrapper element not found.");
+            }
+            update_wtotal(w.price)
+            return {id: w.product_id, prc: w.price};
+        });
+
+        // Append children to wrapper div
         wrapperDiv.appendChild(img);
         wrapperDiv.appendChild(name);
 
+        // Append wrapper to the container
         Wrapper_cont.appendChild(wrapperDiv);
     });
+};
+
+let wrppr_prc = 0.0;
+
+
+const update_wtotal = (price) => {
+    // Ensure price is a valid number
+    const numericPrice = parseFloat(price);
+
+    if (isNaN(numericPrice)) {
+        console.error("Invalid price value:", price);
+        return; // Exit the function if the price is invalid
+    }
+
+    wrppr_prc = numericPrice;
+
+    const total = document.getElementById('ttl_');
+    if (total) {
+        total.textContent = `₱${wrppr_prc.toFixed(2)}`;
+    } else {
+        console.error("Element with id 'ttl_' not found.");
+    }
+
+    return wrppr_prc;
 };
 
 // Fetch and update UI
 (async () => {
     const data = await getwrappers();
     console.log("Data received:", data);
-    update_wrapper(data);
+    update_wrappers(data);
 })();

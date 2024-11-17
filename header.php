@@ -46,7 +46,7 @@ if ($isLoggedIn) {
 
     <nav class="navbar">
         <a href="mainpage.php">Home</a>
-        <a href="customize_part.php">Customization</a>
+        <a href="customizepage.php">Customization</a>
 
         <!-- Dropdown for Flowers -->
         <div class="dropdown">

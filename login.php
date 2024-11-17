@@ -1,6 +1,36 @@
 <?php 
-   session_start();
+session_start();
+include("php/config.php"); // Move this here to avoid output before header
+
+// Check if form is submitted
+if (isset($_POST['submit'])) {
+    $email = mysqli_real_escape_string($con, $_POST['email']);
+    $password = mysqli_real_escape_string($con, $_POST['password']);
+
+    // Perform database query
+    $result = mysqli_query($con, "SELECT * FROM users WHERE email='$email' AND Password='$password'") or die("Select Error");
+    $row = mysqli_fetch_assoc($result);
+
+    if (is_array($row) && !empty($row)) {
+        // Set session variables
+        $_SESSION['valid'] = $row['email'];
+        $_SESSION['username'] = $row['username'];
+        $_SESSION['name'] = $row['name'];
+        $_SESSION['ID'] = $row['ID'];
+
+        // Redirect to main page (header should be here)
+        header("Location: mainpage.php");
+        exit();
+    } else {
+        // Show error message if login fails
+        echo "<div class='message'>
+                <p>Wrong Username or Password</p>
+              </div> <br>";
+        echo "<a href='login.php'><button class='btn'>Back</button></a>";
+    }
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,8 +44,8 @@
 </head>
 
 <body>
-    <?php include 'header.php'; ?>
-      <!-- <header>
+    
+      <header>
       <input type="checkbox" name="" id="toggler" />
       <label for="toggler" class="fas fa-bars"></label>
       <a href="#" class="logo">Khloris<span>.</span></a>
@@ -29,42 +59,18 @@
         <a href="" class="fas fa-shopping-cart"></a>
         <a href="logout.php" class="fa-solid fa-right-from-bracket" onclick="return confirmLogout()"></a>
       </div>
-    </header> -->
+    </header>
+
 
     <div class="container">
         <div class="logo-section">
             <img src="https://res.cloudinary.com/dogrgo15f/image/upload/v1724128500/images/kk90fhhfsltwy7eqgtfg.png"
                 alt="Shop Logo" class="shop-logo">
-
         </div>
         <h2 class="shop-name"><span>Khloris</span><br>Flower Shop</h2>
         <div class="box form-box">
-            <?php 
-             
-              include("php/config.php");
-              if(isset($_POST['submit'])){
-                $email = mysqli_real_escape_string($con,$_POST['email']);
-                $password = mysqli_real_escape_string($con,$_POST['password']);
 
-                $result = mysqli_query($con,"SELECT * FROM users WHERE email='$email' AND Password='$password'") or die("Select Error");
-                $row = mysqli_fetch_assoc($result);
-
-                if(is_array($row) && !empty($row)){
-                    $_SESSION['valid'] = $row['email'];
-                    $_SESSION['username'] = $row['username'];
-                    $_SESSION['name'] = $row['name'];
-                    $_SESSION['ID'] = $row['ID'];
-                    
-                    header("Location: mainpage.php");
-                    exit();
-                }else{
-                    echo "<div class='message'>
-                      <p>Wrong Username or Password</p>
-                       </div> <br>";
-                   echo "<a href='login.php'><button class='btn'>Back</button>";
-                }
-              }else{
-            ?>
+            <?php if (!isset($_POST['submit'])) { ?>
 
             <h1>Login</h1>
             <form action="" method="post">
@@ -86,8 +92,9 @@
                     Don't have an account? <a href="register.php">Sign Up here</a>
                 </div>
             </form>
+
+            <?php } ?>
         </div>
-        <?php } ?>
     </div>
 </body>
 

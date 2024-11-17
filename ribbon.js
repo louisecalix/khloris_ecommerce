@@ -1,10 +1,11 @@
-const DB = 'http://localhost/khloris_/khloris_ecommerce/customize_bea/fetching.php';
+const BD = 'http://localhost/khloris_/khloris_ecommerce/customize_bea/fetching.php';
 const Ribbon_cont = document.getElementById('rbbncont');
+const Ribbon = document.getElementById('ribbon_');
 
-// Fetch ribbon data
+
 const getribbons = async () => {
     try {
-        const response = await fetch(DB);
+        const response = await fetch(BD);
         const data = await response.json();
         return data;
     } catch (e) {
@@ -19,38 +20,35 @@ const update_ribbons = (data) => {
         return;
     }
 
-    const ribbons = data.filter(ribbon => ribbon.type_id === '10'); // Match actual type_id for ribbons
+    const ribbons = data.filter(ribbon => ribbon.type_id === '10'); 
     console.log("Filtered ribbons:", ribbons);
 
     ribbons.forEach(r => {
         const ribbonDiv = document.createElement('div');
+        ribbonDiv.classList.add('ribbon');
         ribbonDiv.setAttribute('id', `ribbon-${r.product_id}`);
-        ribbonDiv.style.width = '9rem';
-        ribbonDiv.style.height = '16rem';
-        ribbonDiv.style.display = 'flex';
-        ribbonDiv.style.flexDirection = 'column';
-        ribbonDiv.style.alignItems = 'center';
-        ribbonDiv.style.justifyContent = 'space-between';
-        ribbonDiv.style.border = '1px solid #brown';
-        ribbonDiv.style.backgroundColor = '#f7f4eb';
-        ribbonDiv.style.padding = '6px';
-        ribbonDiv.style.paddingTop = '4px';
 
         // Create image
         const img = document.createElement('img');
-        img.src = r.image_url || 'fallback-image-url.jpg'; // Use a fallback if image_url is missing
+        img.src = r.image_url ;// Use a fallback if image_url is missing
         img.alt = r.name || "Product Image";
-        img.style.width = '12rem';
-        img.style.height = '14rem';
-        img.style.objectFit = 'cover';
 
         // Create name
         const name = document.createElement('span');
         name.textContent = r.name || "No Name Available";
-        name.style.marginTop = '3px';
-        name.style.fontSize = '1.1rem';
-        name.style.color = '#333';
-        name.style.textAlign = 'center';
+        name.classList.add('name');
+
+        ribbonDiv.addEventListener('click', () =>{
+            if (Ribbon){
+                Ribbon.style.backgroundImage = `url(${r.image_url})`
+            }else {
+                console.error("Ribbon element not found.");
+            }
+            console.log("Ribbon clicked with Product ID:", r.product_id);
+            console.log("Ribbon clicked with Product ID:", r.price);
+            update_total(r.price)
+            return {id: r.product_id, prc: r.price};
+        });
 
         ribbonDiv.appendChild(img);
         ribbonDiv.appendChild(name);
@@ -59,9 +57,38 @@ const update_ribbons = (data) => {
     });
 };
 
-// Fetch and update UI
+let rbbn_prc = 0.0;
+
+const update_total = (price) => {
+    // Ensure price is a valid number
+    const numericPrice = parseFloat(price);
+
+    if (isNaN(numericPrice)) {
+        console.error("Invalid price value:", price);
+        return; // Exit the function if the price is invalid
+    }
+
+    rbbn_prc = numericPrice;
+
+    const total = document.getElementById('ttl_');
+    if (total) {
+        total.textContent = `₱${rbbn_prc.toFixed(2)}`;
+    } else {
+        console.error("Element with id 'ttl_' not found.");
+    }
+
+    return rbbn_prc;
+};
+
+
+
+
 (async () => {
     const data = await getribbons();
     console.log("Data received:", data);
     update_ribbons(data);
+    
 })();
+
+
+// export default update_total;

@@ -166,7 +166,7 @@ document.querySelectorAll('.bttn_qty').forEach(button =>{
                     three.style.transform= 'scale(1.3)';
 
                     wrpr= document.getElementById("wrapper");
-                    wrpr.style.transform= 'scale(0.85)';
+                    wrpr.style.transform= 'scale(0.25)';
 
                     
 
@@ -281,15 +281,18 @@ const AnemoneClick = () => flowerClick("Purple Anemone");
 const HydrangeaClick = () => flowerClick("Blue Hydrangea");
 const LilacClick = () => flowerClick("Lilac");
 
+const updateTotalPrice = () => {
+    const TotalPricespan = document.getElementById('ttl_');
 
+    // Get the current total value from #ttl_ (if it exists), or initialize to 0 if empty
+    let existingTotal = parseFloat(TotalPricespan.textContent.replace('₱', '').replace(',', '').trim()) || 0;
 
+    // Add the current flower price to the existing total
+    let newTotal = existingTotal + curr_flower_price;
 
-const updateTotalPrice =() =>{
-    const TotalPricespan=document.getElementById('ttl_');
-
-    TotalPricespan.textContent = `₱${curr_total.toFixed(2)}`;
-
-}
+    // Update the displayed total price with proper formatting
+    TotalPricespan.textContent = `₱${newTotal.toFixed(2)}`;
+};
 
 
 
