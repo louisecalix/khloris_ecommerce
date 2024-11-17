@@ -4,23 +4,19 @@
 include 'php/config.php';
 
 
-// if(isset($_SESSION['ID'])){
-//   $user_id = $_SESSION['ID'];
-// }else{
-//   $user_id = '';
-
-// }
-
+if(isset($_SESSION['ID'])){
+  $user_id = $_SESSION['ID'];
+}
 
 session_start();
 
 include '../php/config.php';
 
-if (!isset($_SESSION['ID'])) {
-    header("Location: flowerpage.php");
-    exit();
+// if (!isset($_SESSION['ID'])) {
+//     header("Location: flowerpage.php");
+//     exit();
     
-}
+// }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user_id = $_SESSION['ID'];
