@@ -107,7 +107,7 @@ $con->close();
     </header> -->
     <?php include 'header.php'; ?>
 
-    <section class="prdctsoccassion" id="prdctsoccassion">
+    <section class="prdctsoccassion" id="sunflowers">
       <div class="bg-imagebirthday"></div>
         <div class="filter-blur-bday"><h2 class="bday-header">Sunflowers</h2></div>
       </div>
@@ -160,7 +160,7 @@ $con->close();
     </section>
 
     <!-- anniv -->
-    <section class="prdctsoccassion-anniv" id="prdctsoccassion-anniv">
+    <section class="prdctsoccassion-anniv" id="roses">
       <div class="bg-image-anniv"></div>
         <div class="filter-blur-anniv"><h2 class="anniv-header">Roses</h2></div>
       </div>
@@ -218,7 +218,7 @@ echo' </div>';
 
     <!-- funeral -->
 
-    <section class="prdctsoccassion-funeral" id="prdctsoccassion-funeral">
+    <section class="prdctsoccassion-funeral" id="lilies">
       <div class="bg-image-funeral"></div>
         <div class="filter-blur-funeral"><h2 class="funeral-header">Lilies</h2></div>
       </div>

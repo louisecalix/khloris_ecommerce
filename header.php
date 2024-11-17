@@ -37,12 +37,39 @@ if ($isLoggedIn) {
     <label for="toggler" class="fas fa-bars"></label>
     <a href="mainpage.php" class="logo">Khloris<span>.</span></a>
 
-    <nav class="navbar">
+    <!-- <nav class="navbar">
         <a href="mainpage.php">Home</a>
         <a href="customize_part.php">Customization</a>
         <a href="flowerpage.php">Flowers</a>
         <a href="occasion.php">Occasions</a>
+    </nav> -->
+
+    <nav class="navbar">
+        <a href="mainpage.php">Home</a>
+        <a href="customize_part.php">Customization</a>
+
+        <!-- Dropdown for Flowers -->
+        <div class="dropdown">
+            <a href="flowerpage.php">Flowers</a>
+            <div class="dropdown-content">
+                <a href="flowerpage.php#sunflowers">Sunflowers</a>
+                <a href="flowerpage.php#roses">Roses</a>
+                <a href="flowerpage.php#lilies">Lilies</a>
+            </div>
+        </div>
+
+        <!-- Dropdown for Occasions -->
+        <div class="dropdown">
+            <a href="occasion.php">Occasions</a>
+            <div class="dropdown-content">
+                <a href="occasion.php#prdctsoccassion">Birthday</a>
+                <a href="occasion.php#prdctsoccassion-anniv">Anniversary</a>
+                <a href="occasion.php#prdctsoccassion-funeral">Funeral</a>
+                <!-- <a href="#graduation">Graduation</a> -->
+            </div>
+        </div>
     </nav>
+
 
     <div class="icons">
         <?php if ($isLoggedIn): ?>
@@ -111,6 +138,14 @@ if ($isLoggedIn) {
     .dropdown-content a {
         margin: 0;
     }
+
+    .navbar {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Space between nav items */
+}
+
+
 </style>
 
 <script>
