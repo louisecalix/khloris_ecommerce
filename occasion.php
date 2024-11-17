@@ -16,11 +16,11 @@ session_start();
 
 include '../php/config.php';
 
-if (!isset($_SESSION['ID'])) {
-    header("Location: occasion.php");
-    exit();
+// if (!isset($_SESSION['ID'])) {
+//     header("Location: occasion.php");
+//     exit();
     
-}
+// }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user_id = $_SESSION['ID'];
