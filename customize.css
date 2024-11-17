@@ -257,46 +257,85 @@ html, body {
 
     justify-content: space-evenly;
     align-items: center;
-    border: 1px solid rgb(183, 46, 87);
+    border: 1px solid rgb(13, 13, 79);
   
 }
-.wrppr_cont{
-  
-    grid-area: divs;
-    display: flex;
-    flex-wrap: wrap;
-    flex:1 1 30rem;
-    border:none;
-    width: 100%;
-    height: 100%;
-   
 
+
+
+
+
+
+
+
+.wrppr_cont {
+    grid-area: divs;
+    display: none;                        /* Activate grid layout */
+    grid-template-columns: repeat(2, 1fr); /* 2 items per row */
+    gap: 2rem;                             /* Space between items */
+    width: 100%;
+    height: 26rem;                         /* Fixed container height */
+    overflow-y: auto;                      /* Enable vertical scrolling */
+    overflow-x: hidden;                    /* Prevent horizontal scrolling */
+    border: 1px solid rgb(183, 46, 87);    /* Debug border */
+    padding-top: 10px;      
+    padding-left: 10px;
+    box-sizing: border-box;  
     justify-content: space-evenly;
-    align-items: center;
-    border: 1px solid rgb(183, 46, 87);
-   
-   
-    
+}
+#wrpprcont::-webkit-scrollbar {
+    width: 10px; /* Width of the scrollbar */
+}
+
+#wrpprcont::-webkit-scrollbar-track {
+    background: #c9ddca; /* Track background color */
+    border-radius: 10px;
+}
+
+#wrpprcont::-webkit-scrollbar-thumb {
+    background: #795151; /* Scrollbar thumb color */
+    border-radius: 10px;
+}
+
+#wrpprcont::-webkit-scrollbar-thumb:hover {
+    background: #3d6147; /* Scrollbar thumb hover color */
+}
+
+.wrppr_cont > * {
+    width: 90%;                           /* Make items fit within grid cells */
+    min-width: 15rem;                      /* Minimum width of items */
+    max-width: 20rem;                      /* Optional maximum width */
+    box-sizing: border-box;                /* Include padding and border in size */
+    border-radius: 15%;                    /* Rounded corners for items */
 }
 
 
 .rbbn_cont{
     grid-area: divs;
-    display: flex;
-    flex-wrap: wrap;
-    flex:1 1 30rem;
-    border:none;
+    display: none;                        /* Activate grid layout */
+    grid-template-columns: repeat(2, 1fr); /* 2 items per row */
+    gap: 2rem;                             /* Space between items */
     width: 100%;
-    height: 100%;
-   
-
+    height: 26rem;                         /* Fixed container height */
+    overflow-y: auto;                      /* Enable vertical scrolling */
+    overflow-x: hidden;                    /* Prevent horizontal scrolling */
+    border: 10px solid blueviolet;    /* Debug border */
+    padding-top: 10px;      
+    padding-left: 10px;
+    box-sizing: border-box;  
     justify-content: space-evenly;
-    align-items: center;
-    border: 1px solid rgb(183, 46, 87);
-   
-  
+
     
 }
+
+.rbbn_cont > * {
+    width: 100%;                           /* Make items fit within grid cells */
+    min-width: 15rem;                      /* Minimum width of items */
+    max-width: 20rem;                      /* Optional maximum width */
+    box-sizing: border-box;                /* Include padding and border in size */
+    border-radius: 15%;                    /* Rounded corners for items */
+}
+
 
 .flwrs_cont{
     grid-area: divs;
@@ -482,7 +521,7 @@ html, body {
     width: 40%;
     height:20%;
    border:1px solid #271e13;
-   display: none;
+   display: block;
    justify-content: space-evenly;
    align-items: center;
    z-index: 3;
@@ -495,7 +534,7 @@ html, body {
     width: 40%;
     height:20%;
    border:1px solid #6ebe8c;
-   display: none;
+   display: block;
    justify-content: space-evenly;
    align-items: center;
    z-index: 3;
@@ -509,7 +548,7 @@ html, body {
     width: 40%;
     height:20%;
    border:1px solid #b93b70;
-   display: none;
+   display: block;
    justify-content: space-evenly;
    align-items: center;
    z-index: 2;
@@ -523,7 +562,7 @@ html, body {
     width: 40%;
     height:20%;
    border:1px solid #3c0b57;
-   display: none;
+   display: block;
    justify-content: space-evenly;
    align-items: center;
    z-index: 2;
@@ -807,7 +846,7 @@ html, body {
     font-size: 1.3rem;
     width: 17rem;
     height: 12rem;
-    justify-content: space-evenly;
+    justify-content: space-between;
     border-radius: 20px;
     border: 0.1rem solid rgb(165, 136, 105);
     box-shadow: 2px 4px 4px #c1af81;
