@@ -204,7 +204,7 @@ if (isset($_GET['ID'])) {
 
  
   localStorage.setItem("orderSummary", JSON.stringify(orderSummary));
-  window.location.href = "ui khloris/checkout.html"; 
+  window.location.href = "checkout.php"; 
 });
 
   </script>

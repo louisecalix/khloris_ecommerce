@@ -1,0 +1,136 @@
+Test log entry
+Test log entry
+Test log entry
+Test log entry
+Test log entry
+Test log entry
+Test log entry
+Test log entry
+Test log entry
+Test log entry
+Test log entry
+[2024-11-18 20:09:46] Log written successfully!
+[2024-11-18 20:09:46] Received POST data: Array
+(
+    [deliveryMethod] => delivery
+    [address] => 3333333333334
+    [date] => 2024-11-30
+    [email] => delacruzbeatrice10@gmail.com
+    [phone] => 12345678901
+)
+
+Test log entry
+[2024-11-18 20:14:02] Log written successfully!
+[2024-11-18 20:14:02] Received POST data: Array
+(
+    [deliveryMethod] => delivery
+    [address] => 3333333333334
+    [date] => 2024-11-30
+    [email] => delacruzbeatrice10@gmail.com
+    [phone] => 12345678901
+)
+
+Test log entry
+[2024-11-18 20:14:29] Log written successfully!
+[2024-11-18 20:14:29] Received POST data: Array
+(
+    [deliveryMethod] => pickup
+    [address] => edrrrrv
+    [date] => 2024-11-22
+    [email] => delacruzbeii290@gmail.com
+    [phone_num] => 12345678910
+)
+
+Test log entry
+[2024-11-18 20:16:19] Log written successfully!
+[2024-11-18 20:16:19] Received POST data: Array
+(
+    [deliveryMethod] => delivery
+    [address] => dededed
+    [date] => 2024-11-23
+    [email] => delacruzbeatrice10@gmail.com
+    [phone] => 12345678901
+)
+
+Test log entry
+[2024-11-18 20:16:34] Log written successfully!
+[2024-11-18 20:16:34] Received POST data: Array
+(
+    [deliveryMethod] => delivery
+    [address] => ede
+    [date] => 2024-11-29
+    [email] => delacruzbeatrice10@gmail.com
+    [phone_num] => 12345678910
+    [orderSummary] => [{"product_id":1,"quantity":2,"price":500},{"product_id":2,"quantity":1,"price":300}]
+)
+
+Test log entry
+[2024-11-18 20:23:12] Log written successfully!
+[2024-11-18 20:23:12] Received POST data: Array
+(
+    [deliveryMethod] => delivery
+    [address] => tttttttttttttttttttttttttttttttttt
+    [date] => 2024-11-23
+    [email] => delacruzbeii290@gmail.com
+    [phone_num] => 23456789109
+    [orderSummary] => [{"product_id":1,"quantity":2,"price":500},{"product_id":2,"quantity":1,"price":300}]
+)
+
+Test log entry
+[2024-11-18 20:23:39] Log written successfully!
+[2024-11-18 20:23:39] Received POST data: Array
+(
+    [deliveryMethod] => pickup
+    [address] => dcfvf
+    [date] => 2024-11-21
+    [email] => drf
+    [phone_num] => 23456789109
+    [orderSummary] => [{"product_id":1,"quantity":2,"price":500},{"product_id":2,"quantity":1,"price":300}]
+)
+
+Test log entry
+[2024-11-18 20:24:13] Log written successfully!
+[2024-11-18 20:24:13] Received POST data: Array
+(
+    [deliveryMethod] => pickup
+    [address] => dcfvf
+    [date] => 2024-11-21
+    [email] => drf
+    [phone_num] => 23456789109
+    [orderSummary] => [{"product_id":1,"quantity":2,"price":500},{"product_id":2,"quantity":1,"price":300}]
+)
+
+Test log entry
+[2024-11-18 20:24:39] Log written successfully!
+[2024-11-18 20:24:39] Received POST data: Array
+(
+    [deliveryMethod] => pickup
+    [address] => 33333333333333333333333333333
+    [date] => 2024-11-07
+    [email] => definitely
+    [phone_num] => 12345678910
+)
+
+Test log entry
+[2024-11-18 20:30:17] Log written successfully!
+[2024-11-18 20:30:17] Received POST data: Array
+(
+    [deliveryMethod] => delivery
+    [address] => 66666666666666666666
+    [date] => 2024-11-28
+    [email] => yhnhnhnhnhn
+    [phone_num] => 12345678910
+)
+
+Test log entry
+[2024-11-18 20:31:14] Log written successfully!
+[2024-11-18 20:31:14] Received POST data: Array
+(
+    [deliveryMethod] => delivery
+    [address] => 9999999999999999
+    [date] => 2024-11-16
+    [email] => BBIIK
+    [phone_num] => 12345678910
+    [orderSummary] => [{"name":"Green Flover","price":"12000.00","image":"https://res.cloudinary.com/dogrgo15f/image/upload/v1725509476/images/annivflowers/dn7ouvmkvaetdvfdhh5y.jpg","quantity":"1"}]
+)
+
