@@ -13,14 +13,14 @@
     }
 
 
-    // $sql = "SELECT COUNT(*) AS total_orders FROM orders_user";
-    // $result = mysqli_query($con, $sql);
-    // if ($result) {
-    //     $row = mysqli_fetch_assoc($result);
-    //     $totalOrders = $row['total_oders'];
-    // } else {
-    //     $totalOrders = 0;
-    // }    
+    $sql = "SELECT COUNT(*) AS total_orders FROM orders";
+    $result = mysqli_query($con, $sql);
+    if ($result) {
+        $row = mysqli_fetch_assoc($result);
+        $totalOrders = $row['total_orders'];
+    } else {
+        $totalOrders = 0;
+    }    
 
 
     $sql = "SELECT COUNT(*) AS total_products FROM products";
@@ -72,7 +72,7 @@
             </div>
 
             <div class="box">
-                <p class="totals">0</p>
+                <p class="totals"><?php echo $totalOrders; ?></p>
                 <a href="../admin/order.php" class="link">Order Place</a>
             </div>
 

@@ -45,7 +45,7 @@ if (isset($_POST['submit'])) {
 
 <body>
     
-      <header>
+      <!-- <header>
       <input type="checkbox" name="" id="toggler" />
       <label for="toggler" class="fas fa-bars"></label>
       <a href="#" class="logo">Khloris<span>.</span></a>
@@ -59,7 +59,10 @@ if (isset($_POST['submit'])) {
         <a href="" class="fas fa-shopping-cart"></a>
         <a href="logout.php" class="fa-solid fa-right-from-bracket" onclick="return confirmLogout()"></a>
       </div>
-    </header>
+    </header> -->
+    <?php include 'header.php'; ?>
+
+
 
 
     <div class="container">

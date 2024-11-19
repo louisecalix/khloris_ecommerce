@@ -134,3 +134,62 @@ Test log entry
     [orderSummary] => [{"name":"Green Flover","price":"12000.00","image":"https://res.cloudinary.com/dogrgo15f/image/upload/v1725509476/images/annivflowers/dn7ouvmkvaetdvfdhh5y.jpg","quantity":"1"}]
 )
 
+Test log entry
+[2024-11-19 01:43:58] Log written successfully!
+[2024-11-19 01:43:58] Received POST data: Array
+(
+)
+
+Test log entry
+[2024-11-19 01:44:05] Log written successfully!
+[2024-11-19 01:44:05] Received POST data: Array
+(
+)
+
+Test log entry
+[2024-11-19 01:44:11] Log written successfully!
+[2024-11-19 01:44:11] Received POST data: Array
+(
+)
+
+Test log entry
+[2024-11-19 01:44:15] Log written successfully!
+[2024-11-19 01:44:15] Received POST data: Array
+(
+)
+
+Test log entry
+[2024-11-19 01:44:31] Log written successfully!
+[2024-11-19 01:44:31] Received POST data: Array
+(
+    [deliveryMethod] => delivery
+    [address] => qqq
+    [date] => 2024-11-20
+    [email] => wawa@gmail.com
+    [phone_num] => 2121212
+    [orderSummary] => [{"name":"Timeless Romance","price":"25000.00","image":"https://res.cloudinary.com/dogrgo15f/image/upload/v1725510372/images/rose/ubn1zoyojxbift2yr2ta.webp","quantity":"1"}]
+)
+
+Test log entry
+[2024-11-19 01:54:12] Log written successfully!
+[2024-11-19 01:54:12] Received POST data: Array
+(
+)
+
+Test log entry
+[2024-11-19 01:54:20] Log written successfully!
+[2024-11-19 01:54:20] Received POST data: Array
+(
+    [address] => 
+    [date] => 
+    [email] => 
+    [phone_num] => 
+    [orderSummary] => []
+)
+
+Test log entry
+[2024-11-19 01:54:21] Log written successfully!
+[2024-11-19 01:54:21] Received POST data: Array
+(
+)
+
