@@ -23,7 +23,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Users</title>
-    <link rel="stylesheet" href="users_acc.css"/>
+    <link rel="stylesheet" href="total_users.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
 
 
@@ -54,8 +54,8 @@
         <a href="../admin/admin_dashboard.php">Home</a>
         <a href="../admin/add_products.php">Add Products</a>
         <a href="../admin/view_products.php">View Products</a>
-        <a href="../admin/orders.php">Orders</a>
-        <a href="#Orders">Users</a>
+        <a href="../admin/order.php">Orders</a>
+        <a href="../admin/total_users.php">Users</a>
       </nav>
       <div class="icons">
         <a

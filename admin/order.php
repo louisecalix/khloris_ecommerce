@@ -2,26 +2,18 @@
     session_start();
     include('../php/config.php');
 
-    if (isset($_GET['order_id'])) {
-        $id = $_GET['order_id'];
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['order_id'], $_POST['order_status'])) {
+        $order_id = intval($_POST['order_id']);
+        $order_status = mysqli_real_escape_string($con, $_POST['order_status']); 
 
-        $check_sql = "SELECT order_status FROM orders WHERE order_id='$id'";
-        $check_result = mysqli_query($con, $check_sql);
-        $order = mysqli_fetch_assoc($check_result);
-
-        if ($order && $order['order_status'] === 'Pending') {
-            $delete_sql = "DELETE FROM orders WHERE order_id='$id'";
-            $data = mysqli_query($con, $delete_sql);
-
-            if ($data) {
-                header("Location: order.php");
-                exit(); 
-            } else {
-                echo "Error: Cant cancel the order.";
-            }
+        $update_sql = "UPDATE orders SET order_status = '$order_status' WHERE order_id = $order_id";
+        if (!mysqli_query($con, $update_sql)) {
+            echo "Error updating order: " . mysqli_error($con);
+        } else {
+            header("Location: order.php"); 
+            exit();
         }
     }
-
 
     $sql = "SELECT * FROM orders";
     $result = mysqli_query($con, $sql);
@@ -33,6 +25,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order</title>
+    <link rel="stylesheet" href="order.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 <body>
     <header>
@@ -52,7 +46,7 @@
     </header>
 
     <div class="order-info">
-        <h1>Order Information</h1>
+        <h1><span>Order</span> Information</h1>
 
         <table>
             <tr>
@@ -73,17 +67,24 @@
                 <td><?php echo $row['total']; ?></td>
                 <td><?php echo $row['order_status']; ?></td>
                 <td>
-                    <?php if ($row['order_status'] === 'Pending') { ?>
-                        <a href="order.php?order_id=<?php echo $row['order_id']; ?>" class="delete-btn"
-                           onclick="return confirm('Are you sure you want to cancel this order?')">Cancel</a>
-                    <?php } else { ?>
-                        Done
-                    <?php } ?>
+                    <form method="POST" action="order.php">
+                        <input type="hidden" name="order_id" value="<?php echo $row['order_id']; ?>">
+                        <select name="order_status" onchange="this.form.submit()">
+                            <option value="Pending" <?php echo $row['order_status'] === 'Pending' ? 'selected' : ''; ?>>Pending</option>
+                            <option value="Completed" <?php echo $row['order_status'] === 'Completed' ? 'selected' : ''; ?>>Completed</option>
+                            <option value="Cancelled" <?php echo $row['order_status'] === 'Canceled' ? 'selected' : ''; ?>>Canceled</option>
+                        </select>
+                    </form>
                 </td>
             </tr>
             <?php } ?>
         </table>
-
     </div>
+
+    <script>
+    function confirmLogout() {
+        return confirm("Are you sure you want to log out?");
+    }
+    </script>
 </body>
 </html>

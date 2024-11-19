@@ -12,13 +12,14 @@ session_start();
 
 // include '../php/config.php';
 
-// if (!isset($_SESSION['ID'])) {
-//     header("Location: flowerpage.php");
-//     exit();
-    
-// }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (!isset($_SESSION['ID'])) {
+      // Redirect to login page if not logged in
+      header("Location: login.php");
+      exit();
+    }
+
     $user_id = $_SESSION['ID'];
     $product_id = $_POST['product_id'];
     $product_name = $_POST['product_name'];
