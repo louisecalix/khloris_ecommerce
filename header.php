@@ -13,6 +13,7 @@ $total_count_cart_items = 0;
 if ($isLoggedIn) {
     $user_id = $_SESSION['ID'];
 
+    // Count cart items
     if (isset($con)) {
         $count_cart_items = $con->prepare("SELECT * FROM `cart` WHERE user_id = ?");
         $count_cart_items->bind_param("i", $user_id); 
@@ -23,12 +24,19 @@ if ($isLoggedIn) {
 
     // Fetch user details for the dropdown
     $query = "SELECT name, username, email FROM users WHERE id = ?";
-    $stmt = $con->prepare($query);
-    $stmt->bind_param("i", $user_id);
-    $stmt->execute();
-    $stmt->bind_result($name, $username, $email);
-    $stmt->fetch();
-    $stmt->close();
+    if ($stmt = $con->prepare($query)) {
+        $stmt->bind_param("i", $user_id);
+        $stmt->execute();
+        $stmt->bind_result($name, $username, $email);
+        
+        if ($stmt->fetch()) {
+            $stmt->close();
+        } else {
+            echo "Error: User not found.";
+        }
+    } else {
+        echo "Error: Query failed.";
+    }
 }
 ?>
 
@@ -37,15 +45,8 @@ if ($isLoggedIn) {
     <label for="toggler" class="fas fa-bars"></label>
     <a href="mainpage.php" class="logo">Khloris<span>.</span></a>
 
-    <!-- <nav class="navbar">
-        <a href="mainpage.php">Home</a>
-        <a href="customize_part.php">Customization</a>
-        <a href="flowerpage.php">Flowers</a>
-        <a href="occasion.php">Occasions</a>
-    </nav> -->
-
     <nav class="navbar">
-        <a href="mainpage.php">Home</a>
+        <a href="myorder.php">Home</a>
         <a href="customizepage.php">Customization</a>
 
         <!-- Dropdown for Flowers -->
@@ -65,11 +66,9 @@ if ($isLoggedIn) {
                 <a href="occasion.php#prdctsoccassion">Birthday</a>
                 <a href="occasion.php#prdctsoccassion-anniv">Anniversary</a>
                 <a href="occasion.php#prdctsoccassion-funeral">Funeral</a>
-                <!-- <a href="#graduation">Graduation</a> -->
             </div>
         </div>
     </nav>
-
 
     <div class="icons">
         <?php if ($isLoggedIn): ?>
@@ -112,7 +111,6 @@ if ($isLoggedIn) {
         border-radius: 8px;
         right: 0;
         font-size: 16px;
-        /* top: 50px; */
     }
 
     .dropdown-content p,
@@ -140,12 +138,10 @@ if ($isLoggedIn) {
     }
 
     .navbar {
-    display: flex;
-    align-items: center;
-    gap: 20px; /* Space between nav items */
-}
-
-
+        display: flex;
+        align-items: center;
+        gap: 20px; /* Space between nav items */
+    }
 </style>
 
 <script>

@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('php/config.php');
+include 'php/config.php';
 
 
 if (isset($_GET['ID'])) {

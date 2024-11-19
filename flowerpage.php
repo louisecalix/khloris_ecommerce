@@ -10,7 +10,7 @@ if(isset($_SESSION['ID'])){
 
 session_start();
 
-include '../php/config.php';
+// include '../php/config.php';
 
 // if (!isset($_SESSION['ID'])) {
 //     header("Location: flowerpage.php");
@@ -106,6 +106,7 @@ $con->close();
       </div>
     </header> -->
     <?php include 'header.php'; ?>
+    
 
     <section class="prdctsoccassion" id="sunflowers">
       <div class="bg-imagebirthday"></div>
