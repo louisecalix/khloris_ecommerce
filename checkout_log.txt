@@ -261,3 +261,18 @@
     [orderSummary] => [{"name":"Golden Sunshine Bliss","price":"10000.00","image":"https://res.cloudinary.com/dogrgo15f/image/upload/v1725509919/images/sunflower/muadbqi0e7c45vft7jpr.jpg","quantity":"1"},{"name":"Golden Glow Harmony","price":"5000.00","image":"https://res.cloudinary.com/dogrgo15f/image/upload/v1725509998/images/sunflower/fe7bc7ootsfe3kns2mdo.jpg","quantity":"1"}]
 )
 
+[2024-11-20 09:46:04] Received POST data: Array
+(
+)
+
+[2024-11-20 09:46:04] Error: Order summary is empty.
+[2024-11-20 09:46:34] Received POST data: Array
+(
+    [deliveryMethod] => delivery
+    [address] => apt apt apt uh aha aha
+    [date] => 2024-11-29
+    [email] => delacruzbeatrice10@gmail.com
+    [phone_num] => 12345678910
+    [orderSummary] => [{"name":"Pixie Dream","price":"12000.00","image":"https://res.cloudinary.com/dogrgo15f/image/upload/v1725509168/images/BIRTHDAYFLOWERS/br21gmyop5xo1f3ip4mo.jpg","quantity":"1"}]
+)
+

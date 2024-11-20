@@ -530,20 +530,20 @@ html, body {
     background-repeat: no-repeat;
     z-index: 2; 
 } */
-
+/* 
 .flower-container img{
     display: none;
     position: absolute;
-    transform: scale(0.3)  rotate(-18deg);
+    transform: scale(5)  rotate(-18deg);
     transition: transform 0.3s ease, box-shadow 0.3s ease; 
-    
+    background-color: #132814;
 
 }
 .flower-container img.active{
     display: block;
    
     
-}
+} */
 
 
 #leaves1{
@@ -639,7 +639,7 @@ html, body {
     display: flex;
     width: 10%;
     height: 40%;
-    /* background-color: #cfb391; */
+    background-color: #cfb391;
    
     background-image: url('https://res.cloudinary.com/dsfcl09md/image/upload/v1726073109/flowers/ms3vruapnyhspj8hbejv.png');
     background-position: center;
