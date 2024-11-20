@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Khloris</title>
     <link rel="stylesheet" href="customize_bea/homepage_.css" />
-    <link rel="stylesheet" href="customize1.css"/>
+    <link rel="stylesheet" href="custom2.css"/>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
@@ -377,7 +377,7 @@
     
     
 
-     <script src="khloris.js"></script>
+     <script src="khloris1.js"></script>
      <script src="wrappers.js"></script>
      <script src="ribbon.js"></script>
     </div>
