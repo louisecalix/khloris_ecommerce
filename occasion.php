@@ -91,7 +91,66 @@ $con->close();
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <style>
+        .left-nav {
+            position: fixed;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            background-color: #f8f8f8;
+            padding: 10px;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+        }
 
+        .nav-item {
+            position: relative;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #333;
+            transition: color 0.3s;
+            overflow: visible;
+        }
+
+        .nav-icon {
+            width: 60px;
+            height: 60px;
+            display: block;
+            transition: transform 0.3s;
+        }
+
+        .nav-text {
+            position: absolute;
+            left: 80px; 
+            opacity: 0;
+            visibility: hidden;
+            background-color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            white-space: nowrap;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+            transform: translateX(-10px);
+            pointer-events: none;
+            font-size: 20px;
+        }
+
+        .nav-item:hover .nav-text {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(0);
+        }
+
+        .nav-item:hover .nav-icon {
+            transform: scale(1.1);
+        }
+
+    </style>
   </head>
   <body>
     <!-- <header>
@@ -110,6 +169,21 @@ $con->close();
       </div>
     </header> -->
     <?php include 'header.php'; ?>
+
+    <div class="left-nav">
+      <a href="#prdctsoccassion" class="nav-item">
+          <img src="https://res.cloudinary.com/dzvd6o0og/image/upload/v1732100729/vecteezy_ai-generated-bouquet-of-flowers-isolated-on-transparent_41856468_osknfh.png" alt="Sunflowers" class="nav-icon">
+          <span class="nav-text">Birthday</span>
+      </a>
+      <a href="#prdctsoccassion-anniv" class="nav-item">
+          <img src="https://res.cloudinary.com/dzvd6o0og/image/upload/v1732100833/vecteezy_rose-bouquet-3d-ornament_45931769_nz5f5t.png" alt="Roses" class="nav-icon">
+          <span class="nav-text">Anniversary</span>
+      </a>
+      <a href="#prdctsoccassion-funeral" class="nav-item">
+          <img src="https://res.cloudinary.com/dzvd6o0og/image/upload/v1732100729/pngwing.com_r4g28q.png" alt="Tulips" class="nav-icon">
+          <span class="nav-text">Funeral</span>
+      </a>
+  </div>
 
     <section class="prdctsoccassion" id="prdctsoccassion">
       <div class="bg-imagebirthday"></div>
