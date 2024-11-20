@@ -14,7 +14,6 @@ include 'php/config.php';
 
 session_start();
 
-include '../php/config.php';
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

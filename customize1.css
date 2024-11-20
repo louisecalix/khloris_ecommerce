@@ -108,7 +108,7 @@ html, body {
 }
 
 
-#wrapper {
+.flower-container {
     display: flex;
     width: 100%;
     height: 100%;
@@ -118,8 +118,9 @@ html, body {
     background-size: contain;
     background-position: center 4rem;
     background-repeat: no-repeat;
+    /* background-color: #271e13; */
     
-    border: 1px solid black;
+    /* border: 1px solid black; */
     justify-content: center; 
     align-items: center; 
     transform: scale(0.9);
@@ -257,7 +258,7 @@ html, body {
 
     justify-content: space-evenly;
     align-items: center;
-    border: 1px solid rgb(13, 13, 79);
+    /* border: 1px solid rgb(13, 13, 79); */
   
 }
 
@@ -405,7 +406,7 @@ html, body {
 
     justify-content: space-evenly;
     align-items: center;
-    border: 1px solid rgb(183, 46, 87);
+    /* border: 1px solid rgb(183, 46, 87); */
    
 
     
@@ -534,12 +535,16 @@ html, body {
     display: none;
     position: absolute;
     transform: scale(0.3)  rotate(-18deg);
-   
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
     
 
 }
 .flower-container img.active{
     display: block;
+    transform: scale(1.3); /* Enlarges the active flower */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Adds a shadow for emphasis */
+    z-index: 1;
+    
 }
 
 

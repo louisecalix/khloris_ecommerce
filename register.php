@@ -22,74 +22,68 @@
         <h2 class="shop-name"><span>Khloris</span><br>Flower Shop</h2>
         <div class="box form-box">
 
-            <?php 
-         
-         include("php/config.php");
-         if(isset($_POST['submit'])){
-            $name = $_POST['name'];
-            $username = $_POST['username'];
-            $email = $_POST['email'];
-            $password = $_POST['password'];
+        <?php 
+include("php/config.php");
 
+if(isset($_POST['submit'])){
+    $name = $_POST['name'];
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
 
-         $verify_query = mysqli_query($con,"SELECT email FROM users WHERE email='$email'");
+    // Encrypt the password using password_hash() function
+    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-         if(mysqli_num_rows($verify_query) !=0 ){
-            echo "<div class='message'>
-                      <p>This email is already taken</p>
-                  </div> <br>";
-            echo "<a href='javascript:self.history.back()'><button class='btn'>Go Back</button>";
-         }
-         else{
+    $verify_query = mysqli_query($con, "SELECT email FROM users WHERE email='$email'");
 
-            mysqli_query($con,"INSERT INTO users(name,username,email,Password) VALUES('$name','$username','$email','$password')") or die("Erroe Occured");
+    if(mysqli_num_rows($verify_query) != 0 ){
+        echo "<div class='message'>
+                  <p>This email is already taken</p>
+              </div> <br>";
+        echo "<a href='javascript:self.history.back()'><button class='btn'>Go Back</button>";
+    } else {
+        mysqli_query($con, "INSERT INTO users(name, username, email, password) VALUES('$name', '$username', '$email', '$hashed_password')") 
+        or die("Error Occurred");
 
-            echo "<div class='message'>
-                      <p>Account Created Successfully</p>
-                  </div> <br>";
-            echo "<a href='login.php'><button class='btn'>Login Now</button>";
-         
+        echo "<div class='message'>
+                  <p>Account Created Successfully</p>
+              </div> <br>";
+        echo "<a href='login.php'><button class='btn'>Login Now</button>";
+    }
+} else {
+?>
 
-         }
+<h1>Sign Up</h1>
+<form action="" method="post">
+    <div class="field input">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" placeholder="Name.." autocomplete="off" required>
+    </div>
 
-         }else{
-         
-        ?>
+    <div class="field input">
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username" placeholder="Username.." autocomplete="off" required>
+    </div>
 
-            <h1>Sign Up</h1>
-            <form action="" method="post">
-                <div class="field input">
-                    <label for="name">Name</label>
-                    <input type="text" name="name" id="name" placeholder="Name.." autocomplete="off" required>
-                </div>
+    <div class="field input">
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email" placeholder="Email.." autocomplete="off" required>
+    </div>
 
-                <div class="field input">
-                    <label for="username">Username</label>
-                    <input type="text" name="username" id="username" placeholder="Username.." autocomplete="off"
-                        required>
-                </div>
+    <div class="field input">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" placeholder="Password.." autocomplete="off" required>
+    </div>
 
-                <div class="field input">
-                    <label for="email">Email</label>
-                    <input type="text" name="email" id="email" placeholder="Email.." autocomplete="off" required>
-                </div>
+    <div class="field">
+        <input type="submit" class="btn" name="submit" value="Register" required>
+    </div>
+    <div class="links">
+        Already have an account? <a href="login.php">Sign In</a>
+    </div>
+</form>
+<?php } ?>
 
-                <div class="field input">
-                    <label for="password">Password</label>
-                    <input type="password" name="password" id="password" placeholder="Password.." autocomplete="off"
-                        required>
-                </div>
-
-                <div class="field">
-
-                    <input type="submit" class="btn" name="submit" value="Register" required>
-                </div>
-                <div class="links">
-                    Already have an account? <a href="login.php">Sign In</a>
-                </div>
-            </form>
-        </div>
-        <?php } ?>
     </div>
 </body>
 

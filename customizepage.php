@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Khloris</title>
     <link rel="stylesheet" href="customize_bea/homepage_.css" />
-    <link rel="stylesheet" href="customize.css"/>
+    <link rel="stylesheet" href="customize1.css"/>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"

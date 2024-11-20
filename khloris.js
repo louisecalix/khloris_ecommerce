@@ -128,12 +128,18 @@ function update_flower(){
 
     document.querySelectorAll('.flower-container img').forEach((img)=>{
         img.classList.remove('active');
+        img.style.transform = 'scale(1)';
     });
 
     const flower =currlist[curr_flower];
     if (flower){
-        document.getElementById(flower.id).classList.add('active');
+        const activeElement = document.getElementById(flower.id);
+        if (activeElement) {
+            activeElement.classList.add('active');
+            activeElement.style.transform = 'scale(1.3)';
+
         document.getElementById('flower_num').textContent= flower.label;
+    }
     }
 }
 

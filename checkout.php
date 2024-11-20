@@ -1,125 +1,80 @@
 <?php
-session_start(); // Start session at the beginning
-include 'php/config.php'; // Include the config file for database connection
+session_start();
+include 'php/config.php';
 
-// Logging function - Move it to the top
-function writeLog($message) {
-    $logFile = 'logs.txt';
-    $currentTime = date("Y-m-d H:i:s");
-    if (is_writable($logFile)) {
-        file_put_contents($logFile, "[$currentTime] $message\n", FILE_APPEND);
-    } else {
-        echo "Cannot write to log file. Please check file permissions.";
-    }
+// Ensure user is logged in
+if (!isset($_SESSION['ID'])) {
+    header("Location: login.php");
+    exit();
 }
 
-// Check if the user is logged in
-if (isset($_SESSION['ID'])) {
-    $user_id = $_SESSION['ID']; // Get user ID from session
-} else {
-    die("User is not logged in."); // Stop execution if the user is not logged in
-}
+$user_id = $_SESSION['ID']; // Logged-in user's ID
 
-// Logging test to ensure log file is writable
-$file = 'logs.txt';
-if (file_put_contents($file, "Test log entry\n", FILE_APPEND)) {
-    writeLog("Log written successfully!");
-} else {
-    writeLog("Failed to write to log.");
-}
+// Ensure POST data is set and sanitize it
+$delivery_method = isset($_POST['deliveryMethod']) ? $_POST['deliveryMethod'] : '';
+$address = isset($_POST['address']) ? $_POST['address'] : '';
+$delivery_date = isset($_POST['date']) ? $_POST['date'] : '';
+$email = isset($_POST['email']) ? $_POST['email'] : '';
+$phone_num = isset($_POST['phone_num']) ? $_POST['phone_num'] : '';
+$order_summary = isset($_POST['orderSummary']) ? json_decode($_POST['orderSummary'], true) : []; // Decode JSON data into PHP array
 
-// Log received POST data
-writeLog("Received POST data: " . print_r($_POST, true));
+// Prepare a log entry for debugging (optional)
+$log_entry = "[" . date("Y-m-d H:i:s") . "] Received POST data: " . print_r($_POST, true) . "\n";
+file_put_contents('checkout_log.txt', $log_entry, FILE_APPEND);
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['place_order'])) {
-    $address = $_POST['address']; // Get address from form
-    $phoneNum = $_POST['phone_num']; // Get phone number from form
-    $deliveryOption = $_POST['deliveryMethod']; // Get delivery option from form
-    $deliveryDate = $_POST['date']; // Get delivery date from form
-    $orderSummary = json_decode($_POST['orderSummary'], true); // Parse JSON order summary
+try {
+    $con->begin_transaction(); // Begin transaction
 
-    // Validate the parsed JSON data
-    if (!$orderSummary || !is_array($orderSummary)) {
-        writeLog("Order summary is empty or invalid JSON.");
-        die("Order summary is invalid.");
+    // Check if the order summary is not empty
+    if (empty($order_summary)) {
+        throw new Exception("Order summary is empty.");
     }
 
-    $connection = $con; // Database connection
-
-    // Check database connection
-    if ($connection->connect_error) {
-        writeLog("Connection failed: " . $connection->connect_error);
-        die("Database connection failed: " . $connection->connect_error);
-    }
-
-    try {
-        mysqli_begin_transaction($connection); // Start transaction
-        writeLog("Transaction started.");
-
-        foreach ($orderSummary as $item) {
-            // Ensure product_id, quantity, and price exist in each order item
-            if (!isset($item['product_id'], $item['quantity'], $item['price'])) {
-                throw new Exception("Invalid order item structure.");
-            }
-
-            $productId = $item['product_id']; // Product ID
-            $quantity = $item['quantity']; // Quantity
-            $totalPrice = $item['price'] * $quantity; // Calculate total price for the item
-
-            // Log order details before inserting
-            writeLog("Inserting order for user ID: $user_id, product ID: $productId, quantity: $quantity, total price: $totalPrice");
-
-            // Insert order details into the orders table
-            $query = "INSERT INTO orders (user_id, product_id, address, phone_num, delivery_option, qnty, total, delivery_date) 
-                      VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-            $stmt = mysqli_prepare($connection, $query);
-
-            if (!$stmt) {
-                writeLog("Failed to prepare insert query: " . mysqli_error($connection));
-                throw new Exception("Failed to prepare insert query.");
-            }
-
-            mysqli_stmt_bind_param($stmt, 'iisssids', $user_id, $productId, $address, $phoneNum, $deliveryOption, $quantity, $totalPrice, $deliveryDate);
-
-            if (!mysqli_stmt_execute($stmt)) {
-                writeLog("Error executing insert query: " . mysqli_stmt_error($stmt));
-                throw new Exception("Error inserting order data.");
-            }
-
-            writeLog("Order inserted for product ID $productId.");
-
-            // Update product quantity in the products table
-            $updateQuery = "UPDATE products SET qnty = qnty - ? WHERE id = ?";
-            $updateStmt = mysqli_prepare($connection, $updateQuery);
-
-            if (!$updateStmt) {
-                writeLog("Failed to prepare update query: " . mysqli_error($connection));
-                throw new Exception("Failed to prepare update query.");
-            }
-
-            mysqli_stmt_bind_param($updateStmt, 'ii', $quantity, $productId);
-
-            if (!mysqli_stmt_execute($updateStmt)) {
-                writeLog("Error executing update query: " . mysqli_stmt_error($updateStmt));
-                throw new Exception("Error updating product quantity.");
-            }
-
-            writeLog("Product quantity updated for product ID $productId.");
+    foreach ($order_summary as $item) {
+        if (empty($item['name']) || empty($item['quantity']) || empty($item['price'])) {
+            throw new Exception("Invalid item data.");
         }
 
-        mysqli_commit($connection); // Commit transaction
-        writeLog("Transaction committed successfully.");
+        $product_name = $item['name'];
+        $quantity = $item['quantity'];
+        $total_price = $item['price'] * $quantity;
 
-        // Redirect with success message
-        echo "<script>
-                alert('Order successfully placed');
-                window.location.href = 'thank_you.php';
-              </script>";
-    } catch (Exception $e) {
-        mysqli_rollback($connection); // Rollback transaction
-        writeLog("Transaction rolled back. Error: " . $e->getMessage());
-        echo "Error placing order. Please try again later.";
+        // Query to get product_id from product name
+        $stmt = $con->prepare("SELECT product_id FROM products WHERE name = ?");
+        $stmt->bind_param("s", $product_name);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if ($result->num_rows === 1) {
+            $product = $result->fetch_assoc();
+            $product_id = $product['product_id'];
+
+            // Insert order into the database
+            $stmt_order = $con->prepare("
+                INSERT INTO orders (user_id, product_id, delivery_option, qnty, address, delivery_date, total)
+                VALUES (?, ?, ?,?, ?, ?, ?)
+            ");
+            $stmt_order->bind_param("iissssd", $user_id, $product_id, $delivery_method, $quantity,$address, $delivery_date, $total_price);
+            $stmt_order->execute();
+
+            // Update product quantity in stock (qnty is the correct column name here)
+            $stmt_update = $con->prepare("UPDATE products SET stock = stock - ? WHERE product_id = ?");
+            $stmt_update->bind_param("ii", $quantity, $product_id);
+            $stmt_update->execute();
+        } else {
+            throw new Exception("Product not found: $product_name");
+        }
     }
+
+    $con->commit(); // Commit transaction
+    echo "Order placed successfully!";
+} catch (Exception $e) {
+    $con->rollback(); // Rollback transaction on error
+    echo "Error processing your order: " . $e->getMessage();
+
+    // Log the error message
+    $log_error_entry = "[" . date("Y-m-d H:i:s") . "] Error: " . $e->getMessage() . "\n";
+    file_put_contents('checkout_log.txt', $log_error_entry, FILE_APPEND);
 }
 ?>
 

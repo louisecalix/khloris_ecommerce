@@ -193,3 +193,75 @@ Test log entry
 (
 )
 
+Test log entry
+[2024-11-19 12:16:49] Log written successfully!
+[2024-11-19 12:16:49] Received POST data: Array
+(
+)
+
+Test log entry
+[2024-11-19 12:17:49] Log written successfully!
+[2024-11-19 12:17:49] Received POST data: Array
+(
+    [deliveryMethod] => delivery
+    [address] => uhiu
+    [date] => 2024-11-22
+    [email] => delacruzbeii290@gmail.com
+    [phone_num] => 12345678910
+    [orderSummary] => [{"name":"Petal Poetry","price":"13000.00","image":"https://res.cloudinary.com/dogrgo15f/image/upload/v1725509186/images/BIRTHDAYFLOWERS/rjiv8evs1l0tcafoavxf.jpg","quantity":"2"}]
+)
+
+Test log entry
+[2024-11-19 13:28:21] Log written successfully!
+[2024-11-19 13:28:21] Received POST data: Array
+(
+)
+
+Test log entry
+[2024-11-19 13:46:49] Log written successfully!
+[2024-11-19 13:46:49] Received POST data: Array
+(
+    [deliveryMethod] => delivery
+    [address] => nknckne
+    [date] => 2024-11-28
+    [email] => delacruzbeatrice10@gmail.com
+    [phone_num] => 12345678910
+    [orderSummary] => [{"name":"Green Flover","price":"12000.00","image":"https://res.cloudinary.com/dogrgo15f/image/upload/v1725509476/images/annivflowers/dn7ouvmkvaetdvfdhh5y.jpg","quantity":"1"}]
+)
+
+Test log entry
+[2024-11-19 13:47:23] Log written successfully!
+[2024-11-19 13:47:23] Received POST data: Array
+(
+    [deliveryMethod] => delivery
+    [address] => apt apt apt uh aha aha
+    [date] => 2024-11-22
+    [email] => rose@gmail.com
+    [phone_num] => 12345678910
+    [orderSummary] => [{"name":"Green Flover","price":"12000.00","image":"https://res.cloudinary.com/dogrgo15f/image/upload/v1725509476/images/annivflowers/dn7ouvmkvaetdvfdhh5y.jpg","quantity":"1"}]
+)
+
+Test log entry
+[2024-11-19 13:54:29] Log written successfully!
+[2024-11-19 13:54:29] Received POST data: Array
+(
+    [deliveryMethod] => delivery
+    [address] => apt apt apt uh aha aha
+    [date] => 2024-11-22
+    [email] => rose@gmail.com
+    [phone_num] => 12345678910
+    [orderSummary] => [{"name":"Green Flover","price":"12000.00","image":"https://res.cloudinary.com/dogrgo15f/image/upload/v1725509476/images/annivflowers/dn7ouvmkvaetdvfdhh5y.jpg","quantity":"1"}]
+)
+
+Test log entry
+[2024-11-19 13:54:54] Log written successfully!
+[2024-11-19 13:54:54] Received POST data: Array
+(
+    [deliveryMethod] => delivery
+    [address] => nanananana
+    [date] => 2024-11-22
+    [email] => justsomebody@gmail.com
+    [phone_num] => 12345678910
+    [orderSummary] => [{"name":"Green Flover","price":"12000.00","image":"https://res.cloudinary.com/dogrgo15f/image/upload/v1725509476/images/annivflowers/dn7ouvmkvaetdvfdhh5y.jpg","quantity":"1"}]
+)
+
