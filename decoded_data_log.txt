@@ -1,0 +1,124 @@
+Array
+(
+    [wrapper] => Array
+        (
+            [price] => 50.00
+            [product_id] => 59
+        )
+
+    [ribbon] => Array
+        (
+            [price] => 40.00
+            [product_id] => 88
+        )
+
+    [flowers] => Array
+        (
+            [0] => Array
+                (
+                    [product_id] => 47
+                    [name] => Pink Dahlia
+                    [price] => 100
+                    [quantity] => 1
+                    [total_price] => 100
+                )
+
+            [1] => Array
+                (
+                    [product_id] => 43
+                    [name] => White Lily
+                    [price] => 60
+                    [quantity] => 1
+                    [total_price] => 60
+                )
+
+            [2] => Array
+                (
+                    [product_id] => 43
+                    [name] => White Lily
+                    [price] => 60
+                    [quantity] => 1
+                    [total_price] => 60
+                )
+
+        )
+
+)
+
+Array
+(
+    [wrapper] => Array
+        (
+            [price] => 50.00
+            [product_id] => 59
+        )
+
+    [ribbon] => Array
+        (
+            [price] => 40.00
+            [product_id] => 88
+        )
+
+    [flowers] => Array
+        (
+            [0] => Array
+                (
+                    [product_id] => 47
+                    [name] => Pink Dahlia
+                    [price] => 100
+                    [quantity] => 1
+                    [total_price] => 100
+                )
+
+        )
+
+)
+
+Array
+(
+    [wrapper] => Array
+        (
+            [price] => 50.00
+            [product_id] => 59
+        )
+
+    [ribbon] => Array
+        (
+            [price] => 40.00
+            [product_id] => 88
+        )
+
+    [flowers] => Array
+        (
+            [0] => Array
+                (
+                    [product_id] => 35
+                    [name] => Red Rose
+                    [price] => 100
+                    [quantity] => 1
+                    [total_price] => 100
+                )
+
+            [1] => Array
+                (
+                    [product_id] => 37
+                    [name] => Red Tulip
+                    [price] => 70
+                    [quantity] => 1
+                    [total_price] => 70
+                )
+
+            [2] => Array
+                (
+                    [product_id] => 43
+                    [name] => White Lily
+                    [price] => 60
+                    [quantity] => 1
+                    [total_price] => 60
+                )
+
+        )
+
+)
+
+

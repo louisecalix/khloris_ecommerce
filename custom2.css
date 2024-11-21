@@ -639,8 +639,8 @@ html, body {
     display: flex;
     width: 10%;
     height: 40%;
-    background-color: #cfb391;
-   
+    /* background-color: #cfb391;
+    */
     background-image: url('https://res.cloudinary.com/dsfcl09md/image/upload/v1726073109/flowers/ms3vruapnyhspj8hbejv.png');
     background-position: center;
     background-size: contain;

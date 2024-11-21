@@ -113,8 +113,8 @@ html, body {
     width: 100%;
     height: 100%;
     
-   
-    /* background-image:url("https://res.cloudinary.com/dsfcl09md/image/upload/v1727610828/flowers/idxv4n2mcsw7bd8gcqpm.png"); */
+/*    
+    background-image:url("https://res.cloudinary.com/dsfcl09md/image/upload/v1727610828/flowers/idxv4n2mcsw7bd8gcqpm.png"); */
     background-size: contain;
     background-position: center 4rem;
     background-repeat: no-repeat;
@@ -399,6 +399,7 @@ html, body {
     display: none;
     flex-wrap: wrap;
     flex:1 1 30rem;
+    
     border:none;
     width: 100%;
     height: 100%;
@@ -530,20 +531,20 @@ html, body {
     background-repeat: no-repeat;
     z-index: 2; 
 } */
-
+/* 
 .flower-container img{
     display: none;
     position: absolute;
-    transform: scale(0.3)  rotate(-18deg);
+    transform: scale(5)  rotate(-18deg);
     transition: transform 0.3s ease, box-shadow 0.3s ease; 
-    
+    background-color: #132814;
 
 }
 .flower-container img.active{
     display: block;
    
     
-}
+} */
 
 
 #leaves1{
@@ -584,7 +585,7 @@ html, body {
     left:20rem;
     width: 40%;
     height:20%;
-   border:1px solid #271e13;
+   /* border:1px solid #271e13; */
    display: block;
    justify-content: space-evenly;
    align-items: center;
@@ -598,7 +599,7 @@ html, body {
     left:21rem;
     width: 40%;
     height:20%;
-   border:1px solid #6ebe8c;
+   /* border:1px solid #6ebe8c; */
    display: block;
    justify-content: space-evenly;
    align-items: center;
@@ -612,7 +613,7 @@ html, body {
     left:23rem;
     width: 40%;
     height:20%;
-   border:1px solid #b93b70;
+   /* border:1px solid #b93b70; */
    display: block;
    justify-content: space-evenly;
    align-items: center;
@@ -626,7 +627,7 @@ html, body {
     left:18rem;
     width: 40%;
     height:20%;
-   border:1px solid #3c0b57;
+   /* border:1px solid #3c0b57; */
    display: block;
    justify-content: space-evenly;
    align-items: center;
@@ -639,9 +640,8 @@ html, body {
     display: flex;
     width: 10%;
     height: 40%;
-    /* background-color: #cfb391; */
-   
-    background-image: url('https://res.cloudinary.com/dsfcl09md/image/upload/v1726073109/flowers/ms3vruapnyhspj8hbejv.png');
+    /* background-color: #cfb391;
+    */
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -660,7 +660,7 @@ html, body {
     height: 40%;
     /* background-color: #cfb391; */
     z-index: 2;
-    background-image: url('https://res.cloudinary.com/dsfcl09md/image/upload/v1727787473/flowers/jphjliisocba3y8jehxr.png');
+    /* background-image: url('https://res.cloudinary.com/dsfcl09md/image/upload/v1727787473/flowers/jphjliisocba3y8jehxr.png'); */
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -1080,22 +1080,26 @@ html, body {
     display: flex;
     background-color: var(--strawberry);
     border: 1px solid rgb(224, 147, 160) ;
-    width: 16rem;
-    height: 6rem;
+    width: 20rem;
+    height: 5rem;
     border-radius: 50px ;
     justify-content: center;
     align-items: center;
+    bottom: 1rem;
+    margin-top: 1rem;
+    margin-left: 10rem;
 
 }
 .bb:hover, .bc:hover{
     transform: scale(1.1);
+    background-color: #a2b378;
 }
-
+/* 
 .bb{
     background-color: rgba(218, 214, 177, 1);
     border:1px solid #a2b378;
    
-}
+} */
 .bc i, .bb i{
   
     top:0.1rem;

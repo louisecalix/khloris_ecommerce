@@ -1,278 +1,68 @@
-[2024-11-19 13:31:35] Received POST data: Array
+Array
+(
+    [wrapper] => Array
+        (
+            [price] => 50.00
+            [product_id] => 59
+        )
+
+    [ribbon] => Array
+        (
+            [price] => 40.00
+            [product_id] => 88
+        )
+
+    [flowers] => Array
+        (
+            [0] => Array
+                (
+                    [product_id] => 58
+                    [name] => Daisy
+                    [price] => 30
+                    [quantity] => 1
+                    [total_price] => 30
+                )
+
+        )
+
+)
+[2024-11-21 01:17:07] Received POST data: Array
 (
 )
 
-[2024-11-19 13:31:56] Received POST data: Array
+[2024-11-21 01:17:07] Error: Order summary is empty.
+[2024-11-21 01:17:07] Received POST data: Array
 (
 )
 
-[2024-11-19 13:34:48] Received POST data: Array
-(
-    [deliveryMethod] => delivery
-    [address] => NINF
-    [date] => 2024-11-22
-    [email] => NI
-    [phone_num] => 12345678910
-    [orderSummary] => [{"name":"Green Flover","price":"12000.00","image":"https://res.cloudinary.com/dogrgo15f/image/upload/v1725509476/images/annivflowers/dn7ouvmkvaetdvfdhh5y.jpg","quantity":"1"}]
-)
-
-[2024-11-19 13:34:48] Error: Unknown column 'qty' in 'field list'
-[2024-11-19 13:44:01] Received POST data: Array
-(
-    [deliveryMethod] => delivery
-    [address] => NINF
-    [date] => 2024-11-22
-    [email] => NI
-    [phone_num] => 12345678910
-    [orderSummary] => [{"name":"Green Flover","price":"12000.00","image":"https://res.cloudinary.com/dogrgo15f/image/upload/v1725509476/images/annivflowers/dn7ouvmkvaetdvfdhh5y.jpg","quantity":"1"}]
-)
-
-[2024-11-19 13:44:01] Error: Unknown column 'qty' in 'field list'
-[2024-11-19 13:44:05] Received POST data: Array
+[2024-11-21 01:17:07] Error: Order summary is empty.
+[2024-11-21 01:20:50] Received POST data: Array
 (
 )
 
-[2024-11-19 13:45:41] Received POST data: Array
-(
-    [deliveryMethod] => delivery
-    [address] => nknckne
-    [date] => 2024-11-28
-    [email] => delacruzbeatrice10@gmail.com
-    [phone_num] => 12345678910
-    [orderSummary] => [{"name":"Green Flover","price":"12000.00","image":"https://res.cloudinary.com/dogrgo15f/image/upload/v1725509476/images/annivflowers/dn7ouvmkvaetdvfdhh5y.jpg","quantity":"1"}]
-)
-
-[2024-11-19 13:45:41] Error: Unknown column 'qty' in 'field list'
-[2024-11-19 13:49:02] Received POST data: Array
-(
-    [deliveryMethod] => delivery
-    [address] => apt apt apt uh aha aha
-    [date] => 2024-11-22
-    [email] => rose@gmail.com
-    [phone_num] => 12345678910
-    [orderSummary] => [{"name":"Green Flover","price":"12000.00","image":"https://res.cloudinary.com/dogrgo15f/image/upload/v1725509476/images/annivflowers/dn7ouvmkvaetdvfdhh5y.jpg","quantity":"1"}]
-)
-
-[2024-11-19 13:49:02] Error: Unknown column 'qty' in 'field list'
-[2024-11-19 13:49:52] Received POST data: Array
-(
-    [deliveryMethod] => delivery
-    [address] => apt apt apt uh aha aha
-    [date] => 2024-11-22
-    [email] => rose@gmail.com
-    [phone_num] => 12345678910
-    [orderSummary] => [{"name":"Green Flover","price":"12000.00","image":"https://res.cloudinary.com/dogrgo15f/image/upload/v1725509476/images/annivflowers/dn7ouvmkvaetdvfdhh5y.jpg","quantity":"1"}]
-)
-
-[2024-11-19 13:49:52] Error: Unknown column 'qnty' in 'field list'
-[2024-11-19 13:51:23] Received POST data: Array
-(
-    [deliveryMethod] => delivery
-    [address] => apt apt apt uh aha aha
-    [date] => 2024-11-22
-    [email] => rose@gmail.com
-    [phone_num] => 12345678910
-    [orderSummary] => [{"name":"Green Flover","price":"12000.00","image":"https://res.cloudinary.com/dogrgo15f/image/upload/v1725509476/images/annivflowers/dn7ouvmkvaetdvfdhh5y.jpg","quantity":"1"}]
-)
-
-[2024-11-19 13:51:23] Error: Unknown column 'qnty' in 'field list'
-[2024-11-19 13:51:52] Received POST data: Array
-(
-    [deliveryMethod] => delivery
-    [address] => apt apt apt uh aha aha
-    [date] => 2024-11-22
-    [email] => rose@gmail.com
-    [phone_num] => 12345678910
-    [orderSummary] => [{"name":"Green Flover","price":"12000.00","image":"https://res.cloudinary.com/dogrgo15f/image/upload/v1725509476/images/annivflowers/dn7ouvmkvaetdvfdhh5y.jpg","quantity":"1"}]
-)
-
-[2024-11-19 13:51:52] Error: Unknown column 'qnty' in 'field list'
-[2024-11-19 13:58:57] Received POST data: Array
-(
-    [deliveryMethod] => delivery
-    [address] => nanananana
-    [date] => 2024-11-22
-    [email] => justsomebody@gmail.com
-    [phone_num] => 12345678910
-    [orderSummary] => [{"name":"Green Flover","price":"12000.00","image":"https://res.cloudinary.com/dogrgo15f/image/upload/v1725509476/images/annivflowers/dn7ouvmkvaetdvfdhh5y.jpg","quantity":"1"}]
-)
-
-[2024-11-19 13:58:57] Error: Unknown column 'quantity' in 'field list'
-[2024-11-19 13:59:31] Received POST data: Array
-(
-    [deliveryMethod] => delivery
-    [address] => nanananana
-    [date] => 2024-11-22
-    [email] => justsomebody@gmail.com
-    [phone_num] => 12345678910
-    [orderSummary] => [{"name":"Green Flover","price":"12000.00","image":"https://res.cloudinary.com/dogrgo15f/image/upload/v1725509476/images/annivflowers/dn7ouvmkvaetdvfdhh5y.jpg","quantity":"1"}]
-)
-
-[2024-11-19 13:59:31] Error: Unknown column 'quantity' in 'field list'
-[2024-11-19 14:01:19] Received POST data: Array
-(
-    [deliveryMethod] => delivery
-    [address] => nanananana
-    [date] => 2024-11-22
-    [email] => justsomebody@gmail.com
-    [phone_num] => 12345678910
-    [orderSummary] => [{"name":"Green Flover","price":"12000.00","image":"https://res.cloudinary.com/dogrgo15f/image/upload/v1725509476/images/annivflowers/dn7ouvmkvaetdvfdhh5y.jpg","quantity":"1"}]
-)
-
-[2024-11-19 14:01:19] Error: Unknown column 'quantity' in 'field list'
-[2024-11-19 14:05:40] Received POST data: Array
-(
-    [deliveryMethod] => delivery
-    [address] => nanananana
-    [date] => 2024-11-22
-    [email] => justsomebody@gmail.com
-    [phone_num] => 12345678910
-    [orderSummary] => [{"name":"Green Flover","price":"12000.00","image":"https://res.cloudinary.com/dogrgo15f/image/upload/v1725509476/images/annivflowers/dn7ouvmkvaetdvfdhh5y.jpg","quantity":"1"}]
-)
-
-[2024-11-19 14:05:40] Error: Unknown column 'qnty' in 'field list'
-[2024-11-19 14:08:37] Received POST data: Array
-(
-    [deliveryMethod] => delivery
-    [address] => nanananana
-    [date] => 2024-11-22
-    [email] => justsomebody@gmail.com
-    [phone_num] => 12345678910
-    [orderSummary] => [{"name":"Green Flover","price":"12000.00","image":"https://res.cloudinary.com/dogrgo15f/image/upload/v1725509476/images/annivflowers/dn7ouvmkvaetdvfdhh5y.jpg","quantity":"1"}]
-)
-
-[2024-11-19 14:09:04] Received POST data: Array
-(
-    [deliveryMethod] => delivery
-    [address] => apt apt apt uh aha aha
-    [date] => 2024-11-26
-    [email] => rose@gmail.com
-    [phone_num] => 12345678910
-    [orderSummary] => [{"name":"Green Flover","price":"12000.00","image":"https://res.cloudinary.com/dogrgo15f/image/upload/v1725509476/images/annivflowers/dn7ouvmkvaetdvfdhh5y.jpg","quantity":"1"}]
-)
-
-[2024-11-19 14:10:43] Received POST data: Array
+[2024-11-21 01:20:50] Error: Order summary is empty.
+[2024-11-21 01:21:04] Received POST data: Array
 (
 )
 
-[2024-11-19 14:10:43] Error: Order summary is empty.
-[2024-11-19 14:11:17] Received POST data: Array
-(
-    [deliveryMethod] => pickup
-    [address] => apt apt apt uh aha aha
-    [date] => 2024-11-28
-    [email] => rose@gmail.com
-    [phone_num] => 12345678910
-    [orderSummary] => [{"name":"Pixie Dream","price":"12000.00","image":"https://res.cloudinary.com/dogrgo15f/image/upload/v1725509168/images/BIRTHDAYFLOWERS/br21gmyop5xo1f3ip4mo.jpg","quantity":"1"},{"name":"Green Flover","price":"12000.00","image":"https://res.cloudinary.com/dogrgo15f/image/upload/v1725509476/images/annivflowers/dn7ouvmkvaetdvfdhh5y.jpg","quantity":"1"}]
-)
-
-[2024-11-19 14:20:22] Received POST data: Array
+[2024-11-21 01:21:04] Error: Order summary is empty.
+[2024-11-21 01:21:04] Received POST data: Array
 (
 )
 
-[2024-11-19 14:20:22] Error: Order summary is empty.
-[2024-11-19 14:20:50] Received POST data: Array
-(
-    [deliveryMethod] => delivery
-    [address] => nohor
-    [date] => 2025-03-29
-    [email] => delacruzbeatrice10@gmail.com
-    [phone_num] => 23456789109
-    [orderSummary] => [{"name":"Pixie Dream","price":"12000.00","image":"https://res.cloudinary.com/dogrgo15f/image/upload/v1725509168/images/BIRTHDAYFLOWERS/br21gmyop5xo1f3ip4mo.jpg","quantity":"1"},{"name":"Green Flover","price":"12000.00","image":"https://res.cloudinary.com/dogrgo15f/image/upload/v1725509476/images/annivflowers/dn7ouvmkvaetdvfdhh5y.jpg","quantity":"1"}]
-)
-
-[2024-11-19 14:21:32] Received POST data: Array
+[2024-11-21 01:21:04] Error: Order summary is empty.
+[2024-11-21 01:22:36] Received POST data: Array
 (
 )
 
-[2024-11-19 14:21:32] Error: Order summary is empty.
-[2024-11-19 14:21:33] Received POST data: Array
+[2024-11-21 01:22:36] Error: Order summary is empty.
+[2024-11-21 01:22:48] Received POST data: Array
 (
 )
 
-[2024-11-19 14:21:33] Error: Order summary is empty.
-[2024-11-19 14:22:34] Received POST data: Array
-(
-    [deliveryMethod] => delivery
-    [address] => tell me tell me
-    [date] => 2025-06-13
-    [email] => jin@gmail.com
-    [phone_num] => 09
-    [orderSummary] => [{"name":"Pixie Dream","price":"12000.00","image":"https://res.cloudinary.com/dogrgo15f/image/upload/v1725509168/images/BIRTHDAYFLOWERS/br21gmyop5xo1f3ip4mo.jpg","quantity":"1"},{"name":"Green Flover","price":"12000.00","image":"https://res.cloudinary.com/dogrgo15f/image/upload/v1725509476/images/annivflowers/dn7ouvmkvaetdvfdhh5y.jpg","quantity":"1"}]
-)
-
-[2024-11-19 14:24:23] Received POST data: Array
+[2024-11-21 01:22:48] Error: Order summary is empty.
+[2024-11-21 01:22:48] Received POST data: Array
 (
 )
 
-[2024-11-19 14:24:23] Error: Order summary is empty.
-[2024-11-19 14:24:54] Received POST data: Array
-(
-    [deliveryMethod] => delivery
-    [address] => bigshitlabel
-    [date] => 2024-11-28
-    [email] => yeonjun@gmail.com
-    [phone_num] => 23456789109
-    [orderSummary] => [{"name":"Crimson Kiss","price":"11000.00","image":"https://res.cloudinary.com/dogrgo15f/image/upload/v1725509196/images/BIRTHDAYFLOWERS/b3ik1hj0ujq0ongymvgs.jpg","quantity":"1"},{"name":"Petal Poetry","price":"13000.00","image":"https://res.cloudinary.com/dogrgo15f/image/upload/v1725509186/images/BIRTHDAYFLOWERS/rjiv8evs1l0tcafoavxf.jpg","quantity":"1"},{"name":"Sunflower Bouquet","price":"12000.00","image":"https://res.cloudinary.com/dogrgo15f/image/upload/v1725509898/images/sunflower/fwso4b9f6wjmuqwwkrmb.jpg","quantity":"1"}]
-)
-
-[2024-11-19 14:27:12] Received POST data: Array
-(
-)
-
-[2024-11-19 14:27:12] Error: Order summary is empty.
-[2024-11-19 14:27:47] Received POST data: Array
-(
-    [deliveryMethod] => delivery
-    [address] => ansan
-    [date] => 2024-12-04
-    [email] => yeonjun@gmail.com
-    [phone_num] => 23456789109
-    [orderSummary] => [{"name":"Green Flover","price":"12000.00","image":"https://res.cloudinary.com/dogrgo15f/image/upload/v1725509476/images/annivflowers/dn7ouvmkvaetdvfdhh5y.jpg","quantity":"12"}]
-)
-
-[2024-11-19 17:27:52] Received POST data: Array
-(
-)
-
-[2024-11-19 17:27:52] Error: Order summary is empty.
-[2024-11-19 17:28:29] Received POST data: Array
-(
-    [deliveryMethod] => pickup
-    [address] => bunsuran 2nd pandi bulacan
-    [date] => 2024-11-30
-    [email] => delacruzbeatrice10@gmail.com
-    [phone_num] => 12345678910
-    [orderSummary] => [{"name":"Springtime Fantasy","price":"12000.00","image":"https://res.cloudinary.com/dogrgo15f/image/upload/v1725509319/images/BIRTHDAYFLOWERS/vryvirl13wmuilttqjos.jpg","quantity":"5"}]
-)
-
-[2024-11-19 17:33:52] Received POST data: Array
-(
-)
-
-[2024-11-19 17:33:52] Error: Order summary is empty.
-[2024-11-19 17:34:17] Received POST data: Array
-(
-    [deliveryMethod] => delivery
-    [address] => jabby house
-    [date] => 2024-12-07
-    [email] => delacruzbeatrice10@gmail.com
-    [phone_num] => 12345678910
-    [orderSummary] => [{"name":"Golden Sunshine Bliss","price":"10000.00","image":"https://res.cloudinary.com/dogrgo15f/image/upload/v1725509919/images/sunflower/muadbqi0e7c45vft7jpr.jpg","quantity":"1"},{"name":"Golden Glow Harmony","price":"5000.00","image":"https://res.cloudinary.com/dogrgo15f/image/upload/v1725509998/images/sunflower/fe7bc7ootsfe3kns2mdo.jpg","quantity":"1"}]
-)
-
-[2024-11-20 09:46:04] Received POST data: Array
-(
-)
-
-[2024-11-20 09:46:04] Error: Order summary is empty.
-[2024-11-20 09:46:34] Received POST data: Array
-(
-    [deliveryMethod] => delivery
-    [address] => apt apt apt uh aha aha
-    [date] => 2024-11-29
-    [email] => delacruzbeatrice10@gmail.com
-    [phone_num] => 12345678910
-    [orderSummary] => [{"name":"Pixie Dream","price":"12000.00","image":"https://res.cloudinary.com/dogrgo15f/image/upload/v1725509168/images/BIRTHDAYFLOWERS/br21gmyop5xo1f3ip4mo.jpg","quantity":"1"}]
-)
-
+[2024-11-21 01:22:48] Error: Order summary is empty.

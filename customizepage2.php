@@ -1,39 +1,17 @@
 <?php
-session_start();
-include 'php/config.php';
+// Include configuration and session handling
+include_once 'php/config.php';
+include_once 'process_customization.php'; 
+echo "Hello, World!"; // Includes the logic for processing customization
 
-// Check if the session variables for wrapper, ribbon, and flowers are set
-if (isset($_SESSION['wrapper'])) {
-    $wrapper = $_SESSION['wrapper'];  // The wrapper is stored as an object
-    $wrapperPrice = $wrapper->price;
-    $wrapperProductId = $wrapper->product_id;
-} else {
-    $wrapperPrice = null;
-    $wrapperProductId = null;
-}
-
-if (isset($_SESSION['ribbon'])) {
-    $ribbon = $_SESSION['ribbon'];  // The ribbon is stored as an object
-    $ribbonPrice = $ribbon->price;
-    $ribbonProductId = $ribbon->product_id;
-} else {
-    $ribbonPrice = null;
-    $ribbonProductId = null;
-}
-
-if (isset($_SESSION['flowers'])) {
-    $flowers = $_SESSION['flowers'];  // The flowers are stored as an array of objects
-    // Example: Accessing the first flower's price and product_id
-    $firstFlowerPrice = $flowers[0]->price;
-    $firstFlowerProductId = $flowers[0]->product_id;
-} else {
-    $flowers = [];
-    $firstFlowerPrice = null;
-    $firstFlowerProductId = null;
-}
-
-// Now you have the session variables or fallback values
+// Optionally include the checkout logic if needed here as well
+// include_once 'process_chsseckout.php';
 ?>
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -46,8 +24,7 @@ if (isset($_SESSION['flowers'])) {
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     /> 
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>    <!-- <script type="module" src="khloris3.js"></script>
+    <!-- <script type="module" src="khloris3.js"></script>
     <script type= "module" src="wrappers.js"></script>
     <script  type= "module" src="ribbon.js"></script> -->
   </head>
@@ -250,77 +227,67 @@ if (isset($_SESSION['flowers'])) {
 <script type="module"  src="flower-ttl.js"></script>
 
 <script>
-$(document).ready(function () {
-  $('.bb').on('click', function (e) {
-    e.preventDefault(); // Prevent the default button behavior
+ document.querySelector('.bb').addEventListener('click', (e) => {
+      e.preventDefault(); // Prevent the default button behavior
 
-    // Retrieve stored data from sessionStorage
-    const wrapperPrice = sessionStorage.getItem('wrapper_price');
-    const wrapperProductId = sessionStorage.getItem('wrapper_product_id');
-    const ribbonPrice = sessionStorage.getItem('ribbon_price');
-    const ribbonProductId = sessionStorage.getItem('ribbon_product_id');
-    
-    const flowerDataStr = sessionStorage.getItem('selected_flowers');
-    let flowerData = [];
-    try {
-      flowerData = flowerDataStr ? JSON.parse(flowerDataStr) : [];
-    } catch (e) {
-      console.error("Error parsing flower data:", e);
-      return;
-    }
-
-    // Check if all necessary data is available
-    if (!wrapperPrice || !wrapperProductId || !ribbonPrice || !ribbonProductId || flowerData.length === 0) {
-      console.error("Some product data is missing. Please make sure to select a wrapper, ribbon, and flower.");
-      return;
-    }
-
-    // Prepare the data to send
-    const data = {
-      wrapper: {
-        price: wrapperPrice,
-        product_id: wrapperProductId
-      },
-      ribbon: {
-        price: ribbonPrice,
-        product_id: ribbonProductId
-      },
-      flowers: flowerData.map(flower => ({
-        product_id: flower.product_id,
-        name: flower.name,
-        price: flower.price,
-        quantity: flower.qty,
-        total_price: flower.total_price
-      }))
-    };
-
-    console.log("Sending data:", data);
-    console.log("Wrapper Price:", sessionStorage.getItem('wrapper_price'));
-console.log("Wrapper Product ID:", sessionStorage.getItem('wrapper_product_id'));
-console.log("Ribbon Price:", sessionStorage.getItem('ribbon_price'));
-console.log("Ribbon Product ID:", sessionStorage.getItem('ribbon_product_id'));
-console.log("Flower Data:", sessionStorage.getItem('selected_flowers'));
-  // Log the data to inspect before sending
-
-    // Send the data via AJAX
-    $.ajax({
-      url: 'customcheckout.php', // The PHP script to process the request
-      type: 'POST',
-      contentType: 'application/json',
-      data: JSON.stringify(data), // Convert the data object to JSON
-      success: function(response) {
-        console.log('Data sent successfully:', response);
-        // Optionally handle the response from the PHP script
-        window.location.href = 'customcheckout.php'; // Redirect to checkout page
-      },
-      error: function(xhr, status, error) {
-        console.error('Error sending data:', error);
+      // Retrieve stored data from sessionStorage
+      const wrapperPrice = sessionStorage.getItem('wrapper_price');
+      const wrapperProductId = sessionStorage.getItem('wrapper_product_id');
+      const ribbonPrice = sessionStorage.getItem('ribbon_price');
+      const ribbonProductId = sessionStorage.getItem('ribbon_product_id');
+      
+      const flowerDataStr = sessionStorage.getItem('selected_flowers');
+      let flowerData = [];
+      try {
+        flowerData = flowerDataStr ? JSON.parse(flowerDataStr) : [];
+      } catch (e) {
+        console.error("Error parsing flower data:", e);
+        return;
       }
-    });
-  });
-});
 
-</script>
+      // Check if all necessary data is available
+      if (!wrapperPrice || !wrapperProductId || !ribbonPrice || !ribbonProductId || flowerData.length === 0) {
+        console.error("Some product data is missing. Please make sure to select a wrapper, ribbon, and flower.");
+        return;
+      }
+
+      const data = {
+        wrapper: {
+          price: wrapperPrice,
+          product_id: wrapperProductId
+        },
+        ribbon: {
+          price: ribbonPrice,
+          product_id: ribbonProductId
+        },
+        flowers: flowerData.map(flower => ({
+          product_id: flower.product_id,
+          name: flower.name,
+          price: flower.price,
+          quantity: flower.qty,
+          total_price: flower.total_price
+        }))
+      };
+
+      console.log(data);  // Check what the 'data' object looks like before sending
+      const jsonData = JSON.stringify(data);
+      fetch('customcheckout.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: jsonData,
+      })
+      .then(response => response.json())
+      .then(result => {
+        console.log('Data sent successfully:', result);
+        window.location.href = 'customcheckout.php';
+      })
+      .catch(error => {
+        console.error('Error sending data:', error);
+      });
+    });
+  </script>
 
 
 

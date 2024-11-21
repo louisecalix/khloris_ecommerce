@@ -128,21 +128,21 @@ function update_flower(){
 
     document.querySelectorAll('.flower-container img').forEach((img)=>{
         img.classList.remove('active');
-        img.style.transform = 'scale(1)';
+        
     });
 
     const flower =currlist[curr_flower];
     if (flower){
         const activeElement = document.getElementById(flower.id);
-        if (activeElement) {
+  
             activeElement.classList.add('active');
-            activeElement.style.transform = 'scale(2)';
+        
 
         document.getElementById('flower_num').textContent= flower.label;
     }
     }
 
-}
+
 document.getElementById('right').addEventListener('click', ()=>{
     curr_flower=(curr_flower+1)%currlist.length;
     update_flower();
@@ -225,27 +225,37 @@ update_flower()
 
 
 //Total
-let curr_total=0.0;
-let curr_flower_price=0.0;
 
+let curr_flower_price = 0;  // Initialize flower price
+let curr_total = 0;         // Initialize total
 
+// Function to handle flower selection and return the total
 const updateFlowerSelection = (flower) => {
-    let flowerElement = document.getElementById(flwrs[curr_flower].id);
+    const flowerElement = document.getElementById(flwrs[curr_flower].id);
     if (flowerElement) {
-        flowerElement.style.backgroundImage =  `url(${flower.image_url})`;
+        flowerElement.style.backgroundImage = `url(${flower.image_url})`;
         flowerElement.style.display = "block";
         const flowerPrice = parseFloat(flower.price) || 0;
-      
-        curr_flower_price =flowerPrice;
-        curr_total+=flowerPrice;
+
+        // Update current flower price
+        curr_flower_price = flowerPrice;
         
-        updateTotalPrice(); 
+        // Add to the overall total
+        curr_total += flowerPrice;
+
+        // Update the total price display
+        updateTotalPrice();
     } else {
         console.error(`${flower.name} not found`);
     }
+    
+    // Return the total price from this function
+    return curr_total;
 };
 
+// Function to update the displayed total price
 
+// Function to trigger when a flower is clicked
 const flowerClick = async (flowerName) => {
     try {
         const response = await fetch('http://localhost/khloris_/khloris_ecommerce/customize_bea/fetching.php');
@@ -258,19 +268,18 @@ const flowerClick = async (flowerName) => {
         const selectedFlower = products.find(product => product.name === flowerName);
 
         if (selectedFlower) {
-            updateFlowerSelection(selectedFlower);
-           
+            // Update flower selection and get the total
+            const total = updateFlowerSelection(selectedFlower);
+            
+            // You can use the total here, if needed
+            console.log('Updated total:', total);  // This logs the updated total to the console
         } else {
             console.error('Flower not found');
         }
-
     } catch (error) {
         console.error('Error fetching products:', error);
     }
 };
-
-
-
 
 
 

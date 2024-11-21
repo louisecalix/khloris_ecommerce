@@ -1,0 +1,131 @@
+Raw POST data: 
+Error decoding JSON: Syntax error
+Raw POST data: {"wrapper":{"price":"50.00","product_id":"59"},"ribbon":{"price":"40.00","product_id":"86"},"flowers":[{"product_id":47,"name":"Pink Dahlia","price":100,"quantity":1,"total_price":100},{"product_id":47,"name":"Pink Dahlia","price":100,"quantity":1,"total_price":100},{"product_id":47,"name":"Pink Dahlia","price":100,"quantity":1,"total_price":100},{"product_id":47,"name":"Pink Dahlia","price":100,"quantity":1,"total_price":100},{"product_id":47,"name":"Pink Dahlia","price":100,"quantity":1,"total_price":100}]}
+Decoded data: Array
+(
+    [wrapper] => Array
+        (
+            [price] => 50.00
+            [product_id] => 59
+        )
+
+    [ribbon] => Array
+        (
+            [price] => 40.00
+            [product_id] => 86
+        )
+
+    [flowers] => Array
+        (
+            [0] => Array
+                (
+                    [product_id] => 47
+                    [name] => Pink Dahlia
+                    [price] => 100
+                    [quantity] => 1
+                    [total_price] => 100
+                )
+
+            [1] => Array
+                (
+                    [product_id] => 47
+                    [name] => Pink Dahlia
+                    [price] => 100
+                    [quantity] => 1
+                    [total_price] => 100
+                )
+
+            [2] => Array
+                (
+                    [product_id] => 47
+                    [name] => Pink Dahlia
+                    [price] => 100
+                    [quantity] => 1
+                    [total_price] => 100
+                )
+
+            [3] => Array
+                (
+                    [product_id] => 47
+                    [name] => Pink Dahlia
+                    [price] => 100
+                    [quantity] => 1
+                    [total_price] => 100
+                )
+
+            [4] => Array
+                (
+                    [product_id] => 47
+                    [name] => Pink Dahlia
+                    [price] => 100
+                    [quantity] => 1
+                    [total_price] => 100
+                )
+
+        )
+
+)
+
+Wrapper data: Array
+(
+    [price] => 50.00
+    [product_id] => 59
+)
+
+Ribbon data: Array
+(
+    [price] => 40.00
+    [product_id] => 86
+)
+
+Flowers data: Array
+(
+    [0] => Array
+        (
+            [product_id] => 47
+            [name] => Pink Dahlia
+            [price] => 100
+            [quantity] => 1
+            [total_price] => 100
+        )
+
+    [1] => Array
+        (
+            [product_id] => 47
+            [name] => Pink Dahlia
+            [price] => 100
+            [quantity] => 1
+            [total_price] => 100
+        )
+
+    [2] => Array
+        (
+            [product_id] => 47
+            [name] => Pink Dahlia
+            [price] => 100
+            [quantity] => 1
+            [total_price] => 100
+        )
+
+    [3] => Array
+        (
+            [product_id] => 47
+            [name] => Pink Dahlia
+            [price] => 100
+            [quantity] => 1
+            [total_price] => 100
+        )
+
+    [4] => Array
+        (
+            [product_id] => 47
+            [name] => Pink Dahlia
+            [price] => 100
+            [quantity] => 1
+            [total_price] => 100
+        )
+
+)
+
+Raw POST data: 
+Error decoding JSON: Syntax error
