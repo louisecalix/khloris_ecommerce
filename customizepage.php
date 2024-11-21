@@ -2,9 +2,9 @@
 session_start();
 include 'php/config.php';
 
-// Check if the session variables for wrapper, ribbon, and flowers are set
+
 if (isset($_SESSION['wrapper'])) {
-    $wrapper = $_SESSION['wrapper'];  // The wrapper is stored as an object
+    $wrapper = $_SESSION['wrapper'];  
     $wrapperPrice = $wrapper->price;
     $wrapperProductId = $wrapper->product_id;
 } else {
@@ -13,7 +13,7 @@ if (isset($_SESSION['wrapper'])) {
 }
 
 if (isset($_SESSION['ribbon'])) {
-    $ribbon = $_SESSION['ribbon'];  // The ribbon is stored as an object
+    $ribbon = $_SESSION['ribbon']; 
     $ribbonPrice = $ribbon->price;
     $ribbonProductId = $ribbon->product_id;
 } else {
@@ -22,8 +22,7 @@ if (isset($_SESSION['ribbon'])) {
 }
 
 if (isset($_SESSION['flowers'])) {
-    $flowers = $_SESSION['flowers'];  // The flowers are stored as an array of objects
-    // Example: Accessing the first flower's price and product_id
+    $flowers = $_SESSION['flowers'];  
     $firstFlowerPrice = $flowers[0]->price;
     $firstFlowerProductId = $flowers[0]->product_id;
 } else {
@@ -32,7 +31,7 @@ if (isset($_SESSION['flowers'])) {
     $firstFlowerProductId = null;
 }
 
-// Now you have the session variables or fallback values
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,15 +40,14 @@ if (isset($_SESSION['flowers'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Khloris</title>
     <link rel="stylesheet" href="customize_bea/homepage_.css" />
-    <link rel="stylesheet" href="custom5.css"/>
+    <link rel="stylesheet" href="custom6.css"/>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     /> 
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>    <!-- <script type="module" src="khloris3.js"></script>
-    <script type= "module" src="wrappers.js"></script>
-    <script  type= "module" src="ribbon.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>    
+
   </head>
   <body>
     <div class="container_grid">
@@ -209,7 +207,7 @@ if (isset($_SESSION['flowers'])) {
       <div class="other">
 
         <div class="ttl">
-          <div class="total_cont">
+          <div class="total_cont" id="ttlcnt">
             
               <span>Total: </span>
               <span id="ttl_">0</span>
@@ -233,28 +231,28 @@ if (isset($_SESSION['flowers'])) {
        
       </div>
       <div class="t">
-        <div class="table_dec">here</div>
+        <div class="table_dec"></div>
       </div>
       
      
 <!-- <script src="khloris3.js"></script> -->
-     <!-- Make sure your script tags include type="module" -->
+
 <script type="module" src="customize1.js"></script>
 <script type="module" src="wrappers.js"></script>
 <script type="module" src="customize2.js"></script>
 <script type="module" src="ribbon-update.js"></script>
 <!-- <script type="module" src="main.js"></script> -->
 
-<script src="flowerSelection.js"></script>
-<!-- <script src="flower-qty.js"></script> -->
+<script src="flowerSelection1.js"></script>
+
 <script type="module"  src="flower-ttl.js"></script>
 
 <script>
 $(document).ready(function () {
   $('.bb').on('click', function (e) {
-    e.preventDefault(); // Prevent the default button behavior
+    e.preventDefault(); 
 
-    // Retrieve stored data from sessionStorage
+    
     const wrapperPrice = sessionStorage.getItem('wrapper_price');
     const wrapperProductId = sessionStorage.getItem('wrapper_product_id');
     const ribbonPrice = sessionStorage.getItem('ribbon_price');
@@ -269,13 +267,12 @@ $(document).ready(function () {
       return;
     }
 
-    // Check if all necessary data is available
     if (!wrapperPrice || !wrapperProductId || !ribbonPrice || !ribbonProductId || flowerData.length === 0) {
       console.error("Some product data is missing. Please make sure to select a wrapper, ribbon, and flower.");
       return;
     }
 
-    // Prepare the data to send
+
     const data = {
       wrapper: {
         price: wrapperPrice,
@@ -300,9 +297,7 @@ console.log("Wrapper Product ID:", sessionStorage.getItem('wrapper_product_id'))
 console.log("Ribbon Price:", sessionStorage.getItem('ribbon_price'));
 console.log("Ribbon Product ID:", sessionStorage.getItem('ribbon_product_id'));
 console.log("Flower Data:", sessionStorage.getItem('selected_flowers'));
-  // Log the data to inspect before sending
-
-    // Send the data via AJAX
+  
     $.ajax({
       url: 'customcheckout.php', // The PHP script to process the request
       type: 'POST',

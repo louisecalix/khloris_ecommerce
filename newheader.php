@@ -46,7 +46,7 @@ if ($isLoggedIn) {
     <a href="mainpage.php" class="logo">Khloris<span>.</span></a>
 
     <nav class="navbar">
-        <a href="myorder.php">Home</a>
+        <a href="mainpage.php">Home</a>
         <a href="customizepage.php">Customization</a>
 
         <!-- Dropdown for Flowers -->

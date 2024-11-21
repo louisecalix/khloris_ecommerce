@@ -1,6 +1,6 @@
 <?php 
 session_start();
-include("php/config.php"); // Move this here to avoid output before header
+include "php/config.php"; // Move this here to avoid output before header
 
 // Check if form is submitted
 if (isset($_POST['submit'])) {
@@ -8,19 +8,20 @@ if (isset($_POST['submit'])) {
     $password = mysqli_real_escape_string($con, $_POST['password']);
 
     // Perform database query
-    $result = mysqli_query($con, "SELECT * FROM users WHERE email='$email' AND Password='$password'") or die("Select Error");
+    $result = mysqli_query($con, "SELECT * FROM users WHERE email='$email'") or die("Select Error");
     $row = mysqli_fetch_assoc($result);
 
     if (is_array($row) && !empty($row)) {
+        if (password_verify($password, $row['password'])){
         // Set session variables
-        $_SESSION['valid'] = $row['email'];
-        $_SESSION['username'] = $row['username'];
-        $_SESSION['name'] = $row['name'];
-        $_SESSION['ID'] = $row['ID'];
+            $_SESSION['valid'] = $row['email'];
+            $_SESSION['password'] = $row['password'];
+            $_SESSION['name'] = $row['name'];
+            $_SESSION['ID'] = $row['ID'];
 
-        // Redirect to main page (header should be here)
-        header("Location: mainpage.php");
-        exit();
+            // Redirect to main page (header should be here)
+            header("Location: mainpage.php");
+            exit();
     } else {
         // Show error message if login fails
         echo "<div class='message'>
@@ -28,6 +29,7 @@ if (isset($_POST['submit'])) {
               </div> <br>";
         echo "<a href='login.php'><button class='btn'>Back</button></a>";
     }
+}
 }
 ?>
 

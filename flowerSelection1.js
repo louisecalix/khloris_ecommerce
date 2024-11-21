@@ -4,6 +4,8 @@ function wrapper() {
     let wrppr= document.getElementById("wrpprcont");
     let rbbn= document.getElementById("rbbncont");
     let flwrs= document.getElementById("flwrscont");
+    let ttl = document.getElementById("ttlcnt");
+    ttl.style.display= "none";
 
     flwrqty.style.display="none";
     rbbn.style.display="none";
@@ -20,11 +22,14 @@ function qty() {
     let wrppr= document.getElementById("wrpprcont");
     let rbbn= document.getElementById("rbbncont");
     let flwrs= document.getElementById("flwrscont");
+    let ttl = document.getElementById("ttlcnt");
+    ttl.style.display= "none";
 
     flwrqty.style.display="flex";
     rbbn.style.display="none";
     flwrs.style.display="none";
     wrppr.style.display="none";
+
 
   
    
@@ -37,6 +42,8 @@ function ribbon(){
     let wrppr= document.getElementById("wrpprcont");
     let rbbn= document.getElementById("rbbncont");
     let flwrs= document.getElementById("flwrscont");
+    let ttl = document.getElementById("ttlcnt");
+    ttl.style.display= "none";
 
     flwrqty.style.display="none";
     rbbn.style.display="grid";
@@ -52,6 +59,8 @@ function flowers(){
     let wrppr= document.getElementById("wrpprcont");
     let rbbn= document.getElementById("rbbncont");
     let flwrs= document.getElementById("flwrscont");
+    let ttl = document.getElementById("ttlcnt");
+    ttl.style.display= "flex";
 
     flwrqty.style.display="none";
     rbbn.style.display="none";
@@ -165,7 +174,7 @@ document.querySelectorAll('.bttn_qty').forEach(button => {
                 document.getElementById("five_qty").style.display = 'none';
                 document.getElementById("seven_qty").style.display = 'none';
                 document.getElementById("ten_qty").style.display = 'none';
-                // document.getElementById("wrapper").style.transform = 'scale(0.7)';
+                document.getElementById("wrapper").style.transform = 'scale(0.7)';
                 break;
             case 5:
                 currlist = flwr5;

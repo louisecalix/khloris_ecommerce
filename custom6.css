@@ -113,8 +113,7 @@ html, body {
     width: 100%;
     height: 100%;
     
-/*    
-    background-image:url("https://res.cloudinary.com/dsfcl09md/image/upload/v1727610828/flowers/idxv4n2mcsw7bd8gcqpm.png"); */
+    background-image:url("https://res.cloudinary.com/dsfcl09md/image/upload/v1727610828/flowers/idxv4n2mcsw7bd8gcqpm.png");
     background-size: contain;
     background-position: center 4rem;
     background-repeat: no-repeat;
@@ -399,6 +398,7 @@ html, body {
     display: none;
     flex-wrap: wrap;
     flex:1 1 30rem;
+    
     border:none;
     width: 100%;
     height: 100%;
@@ -584,7 +584,7 @@ html, body {
     left:20rem;
     width: 40%;
     height:20%;
-   border:1px solid #271e13;
+   /* border:1px solid #271e13; */
    display: block;
    justify-content: space-evenly;
    align-items: center;
@@ -598,7 +598,7 @@ html, body {
     left:21rem;
     width: 40%;
     height:20%;
-   border:1px solid #6ebe8c;
+   /* border:1px solid #6ebe8c; */
    display: block;
    justify-content: space-evenly;
    align-items: center;
@@ -612,7 +612,7 @@ html, body {
     left:23rem;
     width: 40%;
     height:20%;
-   border:1px solid #b93b70;
+   /* border:1px solid #b93b70; */
    display: block;
    justify-content: space-evenly;
    align-items: center;
@@ -626,7 +626,7 @@ html, body {
     left:18rem;
     width: 40%;
     height:20%;
-   border:1px solid #3c0b57;
+   /* border:1px solid #3c0b57; */
    display: block;
    justify-content: space-evenly;
    align-items: center;
@@ -641,7 +641,6 @@ html, body {
     height: 40%;
     /* background-color: #cfb391;
     */
-    background-image: url('https://res.cloudinary.com/dsfcl09md/image/upload/v1726073109/flowers/ms3vruapnyhspj8hbejv.png');
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -660,7 +659,7 @@ html, body {
     height: 40%;
     /* background-color: #cfb391; */
     z-index: 2;
-    background-image: url('https://res.cloudinary.com/dsfcl09md/image/upload/v1727787473/flowers/jphjliisocba3y8jehxr.png');
+    /* background-image: url('https://res.cloudinary.com/dsfcl09md/image/upload/v1727787473/flowers/jphjliisocba3y8jehxr.png'); */
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -676,7 +675,7 @@ html, body {
     height: 40%;
     /* background-color: #cfb391; */
     z-index: 2;
-    background-image: url('https://res.cloudinary.com/dsfcl09md/image/upload/v1725826753/flowers/voikv1769whr33lkm645.png');
+    /* background-image: url('https://res.cloudinary.com/dsfcl09md/image/upload/v1725826753/flowers/voikv1769whr33lkm645.png'); */
     background-position: end;
     background-size: contain;
     background-repeat: no-repeat;
@@ -695,7 +694,7 @@ html, body {
     height: 40%;
     /* background-color: #cfb391; */
    
-    background-image: url('https://res.cloudinary.com/dsfcl09md/image/upload/v1726073109/flowers/ms3vruapnyhspj8hbejv.png');
+    /* background-image: url('https://res.cloudinary.com/dsfcl09md/image/upload/v1726073109/flowers/ms3vruapnyhspj8hbejv.png'); */
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -712,7 +711,7 @@ html, body {
     height: 40%;
     /* background-color: #cfb391; */
     z-index: 2;
-    background-image: url('https://res.cloudinary.com/dsfcl09md/image/upload/v1727787473/flowers/jphjliisocba3y8jehxr.png');
+    /* background-image: url('https://res.cloudinary.com/dsfcl09md/image/upload/v1727787473/flowers/jphjliisocba3y8jehxr.png'); */
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -728,7 +727,7 @@ html, body {
         height: 40%;
         /* background-color: #cfb391; */
        
-       background-image: url('https://res.cloudinary.com/dsfcl09md/image/upload/v1726073109/flowers/ms3vruapnyhspj8hbejv.png'); 
+       /* background-image: url('https://res.cloudinary.com/dsfcl09md/image/upload/v1726073109/flowers/ms3vruapnyhspj8hbejv.png');  */
         background-position: center;
         background-size: contain;
         background-repeat: no-repeat;
@@ -745,7 +744,7 @@ html, body {
         height: 40%;
         /* background-color: #cfb391; */
         z-index: 2;
-        background-image: url('https://res.cloudinary.com/dsfcl09md/image/upload/v1726073109/flowers/ms3vruapnyhspj8hbejv.png'); 
+        /* background-image: url('https://res.cloudinary.com/dsfcl09md/image/upload/v1726073109/flowers/ms3vruapnyhspj8hbejv.png');  */
         background-position: center;
         background-size: contain;
         background-repeat: no-repeat;
@@ -763,7 +762,7 @@ html, body {
     height: 40%;
     /* background-color: #cfb391; */
    
-    background-image: url('https://res.cloudinary.com/dsfcl09md/image/upload/v1726073109/flowers/ms3vruapnyhspj8hbejv.png');
+    /* background-image: url('https://res.cloudinary.com/dsfcl09md/image/upload/v1726073109/flowers/ms3vruapnyhspj8hbejv.png'); */
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -783,7 +782,7 @@ html, body {
     /* background-color: #cfb391; */
     z-index: 2;
 
-    background-image: url('https://res.cloudinary.com/dsfcl09md/image/upload/v1726073109/flowers/ms3vruapnyhspj8hbejv.png');
+    /* background-image: url('https://res.cloudinary.com/dsfcl09md/image/upload/v1726073109/flowers/ms3vruapnyhspj8hbejv.png'); */
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -800,7 +799,7 @@ html, body {
     height: 40%;
     /* background-color: #cfb391; */
     z-index: 2;
-    background-image: url('https://res.cloudinary.com/dsfcl09md/image/upload/v1725826753/flowers/voikv1769whr33lkm645.png');
+    /* background-image: url('https://res.cloudinary.com/dsfcl09md/image/upload/v1725826753/flowers/voikv1769whr33lkm645.png'); */
     background-position: end;
     background-size: contain;
     background-repeat: no-repeat;
@@ -1034,7 +1033,7 @@ html, body {
 }
 
 #lilac{
-    background-image: url("https://medi   a.houseandgarden.co.uk/photos/627251056fc29fccf76590b4/master/w_1600%2Cc_limit/GettyImages-586151848.jpg");
+    background-image: url("https://i.pinimg.com/736x/8e/08/8f/8e088f65ab54ab16cf46a87896e302a9.jpg");
 }
 
 
@@ -1048,7 +1047,7 @@ html, body {
 /* #ttl */
 
 .total_cont{
-    display: flex;
+    display: none;
    
     border:2px solid #231c06;
     width:95%;
@@ -1060,7 +1059,7 @@ html, body {
    
     background-color: rgb(227, 225, 183);
     border-radius: 60px;
-    color: #6c4224;
+    color: #7e581b;
     
 }
 
@@ -1080,22 +1079,26 @@ html, body {
     display: flex;
     background-color: var(--strawberry);
     border: 1px solid rgb(224, 147, 160) ;
-    width: 16rem;
-    height: 6rem;
+    width: 20rem;
+    height: 5rem;
     border-radius: 50px ;
     justify-content: center;
     align-items: center;
+    bottom: 1rem;
+    margin-top: 1rem;
+    margin-left: 6rem;
 
 }
 .bb:hover, .bc:hover{
     transform: scale(1.1);
+    background-color: #a2b378;
 }
-
+/* 
 .bb{
     background-color: rgba(218, 214, 177, 1);
     border:1px solid #a2b378;
    
-}
+} */
 .bc i, .bb i{
   
     top:0.1rem;

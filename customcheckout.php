@@ -8,75 +8,85 @@ if (!isset($_SESSION['ID'])) {
     exit();
 }
 
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Capture form data
+    $userId = $_SESSION['ID'];
+    $deliveryMethod = $_POST['deliveryMethod'];
+    $address = $_POST['address'];
+    $deliveryDate = $_POST['date'];
+    $email = $_POST['email'];
+    $phoneNum = $_POST['phone_num'];
+    $orderSummary = json_decode($_POST['orderSummary'], true);
 
-$logFile = 'log.txt';
-
-// Get the raw POST data
-$data = file_get_contents('php://input');
-
-
-
-// Get the current timestamp for logging
-$timestamp = date('Y-m-d H:i:s');
-
-// Log the timestamp and raw POST data
-file_put_contents($logFile, "[$timestamp] Raw POST data: " . $data . "\n", FILE_APPEND);
-
-// Check if data is empty
-if (empty($data)) {
-    file_put_contents($logFile, "[$timestamp] No POST data received.\n", FILE_APPEND);
-} else {
-    // Decode the JSON data
-    $decodedData = json_decode($data, true);
-
-    // Check if the data is being decoded correctly
-    if ($decodedData === null) {
-        // Log error if JSON decoding fails
-        file_put_contents($logFile, "[$timestamp] Error decoding JSON: " . json_last_error_msg() . "\n", FILE_APPEND);
+    // Validate data
+    if (empty($deliveryMethod) || empty($address) || empty($deliveryDate) || empty($email) || empty($phoneNum) || empty($orderSummary)) {
+        $error = "Please fill in all required fields.";
     } else {
-        // Log the decoded data for verification
-        file_put_contents($logFile, "[$timestamp] Decoded data: " . print_r($decodedData, true) . "\n", FILE_APPEND);
+       // Start transaction
 
-        // Log additional information about specific parts of the data
-        if (isset($decodedData['wrapper'])) {
-            file_put_contents($logFile, "[$timestamp] Wrapper data: " . print_r($decodedData['wrapper'], true) . "\n", FILE_APPEND);
-        }
+        try {
+            // Insert into 'checkout' table
+            $stmt = $con->prepare("
+                INSERT INTO orders (user_id, delivery_method, address, delivery_date, phone_num, total)
+                VALUES (?, ?, ?, ?, ?, ?)
+            ");
 
-        if (isset($decodedData['ribbon'])) {
-            file_put_contents($logFile, "[$timestamp] Ribbon data: " . print_r($decodedData['ribbon'], true) . "\n", FILE_APPEND);
-        }
+            $totalPrice = array_reduce($orderSummary, function ($carry, $item) {
+                return $carry + ($item['price'] * $item['quantity']);
+            }, 0);
 
-        if (isset($decodedData['flowers'])) {
-            file_put_contents($logFile, "[$timestamp] Flowers data: " . print_r($decodedData['flowers'], true) . "\n", FILE_APPEND);
+            $stmt->bind_param(
+                "issssd",
+                $userId,
+                $deliveryMethod,
+                $address,
+                $deliveryDate,
+                $phoneNum,
+                $totalPrice
+            );
+            $stmt->execute();
+            $orderId = $con->insert_id; // Get the last inserted ID
+
+            // Insert each order item into 'order_items' table
+            $orderItemStmt = $conn->prepare("
+                INSERT INTO orders( qnty)
+                VALUES (  ?)
+            ");
+
+            foreach ($orderSummary as $item) {
+                $orderItemStmt->bind_param(
+                    "isid",
+                    $orderId,
+                    $item['name'],
+                    $item['quantity'],
+                    $item['price']
+                );
+                $orderItemStmt->execute();
+
+                // Update product stock
+                $updateProductStmt = $con->prepare("
+                    UPDATE products SET qty = qty - ? WHERE name = ?
+                ");
+                $updateProductStmt->bind_param(
+                    "is",
+                    $item['quantity'],
+                    $item['name']
+                );
+                $updateProductStmt->execute();
+            }
+
+            $con->commit(); // Commit transaction
+
+            // Redirect or display success message
+            header("Location: confirmation.php?order_id=" . $orderId);
+            exit();
+        } catch (Exception $e) {
+            $con->rollback(); // Rollback transaction
+            $error = "There was an error processing your order: " . $e->getMessage();
         }
     }
-    // Initialize the summary
-$summary = [
-    'wrapper' => $decodedData['wrapper'] ?? null,
-    'ribbon' => $decodedData['ribbon'] ?? null,
-    'flowers' => $decodedData['flowers'] ?? [],
-    'total_price' => 0
-];
-
-// Calculate total price including duplicates
-if (!empty($summary['flowers'])) {
-    foreach ($summary['flowers'] as $flower) {
-        $summary['total_price'] += $flower['total_price'];
-    }
-}
-$summary['total_price'] += ($summary['wrapper']['price'] ?? 0) + ($summary['ribbon']['price'] ?? 0);
-
-// Log the order summary for debugging
-file_put_contents('order_summary.log', print_r($summary, true), FILE_APPEND);
-
-// Output the summary (if needed for further processing)
-echo json_encode($summary);
-
-
-
 }
 ?>
-
 
 
 <!DOCTYPE html>
@@ -85,12 +95,11 @@ echo json_encode($summary);
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Khloris</title>
-    <link rel="stylesheet" href="checkout_.css" />
+    <link rel="stylesheet" href="customizeca.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   </head>
   <body>
     <!-- <header>
@@ -98,7 +107,7 @@ echo json_encode($summary);
       <label for="toggler" class="fas fa-bars"></label>
       <a href="#" class="logo">Khloris<span>.</span></a>
       <nav class="navbar">
-        <a href="#home">Home</a>
+        <a href="#home">Home</a>s
         <a href="#Customization">Customization</a>
         <a href="flowerpage.html">Flowers</a>
         <a href="#Occassions">Occassions</a>
@@ -108,7 +117,7 @@ echo json_encode($summary);
         <a href="logout.php" class="fa-solid fa-right-from-bracket" onclick="return confirmLogout()"></a>
       </div>
     </header> -->
-    <?php include 'header.php'; ?>
+    <?php include 'newheader.php'; ?>
 
 
     <section class="checkout-section">
@@ -163,9 +172,11 @@ echo json_encode($summary);
         <!-- Add dynamic order details here -->
       </div>
       <div class="totals" id="totals"></div>
+      <form action = "" method="POST">
       <div class="bttn-co">
         <button type="submit" id="checkoutBtn">Checkout Now</button>
       </div>
+      </form>
     </div>
   </div>
 </form>
@@ -220,83 +231,65 @@ echo json_encode($summary);
         </div>
       </footer>
     
-      <input type="hidden" name="orderSummary" value="">
-    </form>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // PHP data is embedded into JS
-            var orderSummary = <?php echo json_encode($orderSummary); ?>;
+      <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Example predefined data for order summary
+        const orderSummary = [
+            { name: "Sunflower", price: 100, quantity: 1, image: "https://res.cloudinary.com/dsfcl09md/image/upload/v1726073109/flowers/ms3vruapnyhspj8hbejv.png" },
+            { name: "Red Rose", price: 100, quantity: 1, image: "https://res.cloudinary.com/dsfcl09md/image/upload/v1723270009/flowers/lbxdapwfesoogo1tbi8s.png" },
+            { name: "Blue Hydrangea", price: 150, quantity: 1, image: "https://res.cloudinary.com/dsfcl09md/image/upload/v1725826067/flowers/h4v3aali5jdaw1qlhokj.png" },
             
-            const summaryContainer = document.getElementById("orders_");
-            const orderSummaryInput = document.querySelector("input[name='orderSummary']");
+            { name: "Red Anemone", price: 150, quantity: 1, image: "https://res.cloudinary.com/dsfcl09md/image/upload/v1725826753/flowers/voikv1769whr33lkm645.png" },
+            { name: "Iris", price: 70, quantity: 1, image: "https://res.cloudinary.com/dsfcl09md/image/upload/v1725824294/flowers/j52tsqq0xfvt1z4kgzwe.png" },
+            { name: "Sunflower", price: 100, quantity: 1, image: "https://res.cloudinary.com/dsfcl09md/image/upload/v1726073109/flowers/ms3vruapnyhspj8hbejv.png" },
+            { name: "Red Rose", price: 100, quantity: 1, image: "https://res.cloudinary.com/dsfcl09md/image/upload/v1723270009/flowers/lbxdapwfesoogo1tbi8s.png" },
+            { name: "Blue Hydrangea", price: 150, quantity: 1, image: "https://res.cloudinary.com/dsfcl09md/image/upload/v1725826067/flowers/h4v3aali5jdaw1qlhokj.png" },
             
-            let totalPrice = 0;
+            { name: "Red Anemone", price: 150, quantity: 1, image: "https://res.cloudinary.com/dsfcl09md/image/upload/v1725826753/flowers/voikv1769whr33lkm645.png" },
+            { name: "Iris", price: 70, quantity: 1, image: "https://res.cloudinary.com/dsfcl09md/image/upload/v1725824294/flowers/j52tsqq0xfvt1z4kgzwe.png" },
 
-            // Clear any previous order items
-            summaryContainer.innerHTML = '';  
+            { name: "Deep Blue Wrapper", price: 15, quantity: 1, image: "https://res.cloudinary.com/dsfcl09md/image/upload/v1727610826/flowers/h0ztnmomgqhj5pajrv2s.png" },
+            { name: "Barbie Ribbon", price: 10, quantity: 1, image: "https://res.cloudinary.com/dsfcl09md/image/upload/v1727610785/flowers/hfdlkhtyokgaurwoxexb.png" }
+        ];
 
-            orderSummary.forEach(item => {
-                const itemElement = document.createElement("div");
-                itemElement.classList.add("order-item");
+        const summaryContainer = document.getElementById("orders_");
+        const orderSummaryInput = document.querySelector("input[name='orderSummary']");
+        let totalPrice = 0;
 
-                // Ensure price and quantity are treated as numbers
-                const itemPrice = parseFloat(item.price); // Convert price to number
-                const itemQuantity = parseInt(item.quantity, 10); // Convert quantity to integer
+        // Clear any previous order items
+        summaryContainer.innerHTML = '';
 
-                const itemTotal = itemPrice * itemQuantity; // Calculate total for each item
-                totalPrice += itemTotal;
+        orderSummary.forEach(item => {
+            const itemElement = document.createElement("div");
+            itemElement.classList.add("order-item");
 
-                itemElement.innerHTML = `
-                    <img src="${item.image}" alt="${item.name}" class="order-img">
-                    <p id="name-product">${item.name}</p>
-                    <p> x${itemQuantity}</p>
-                    <p> P ${(itemPrice * itemQuantity).toFixed(2)}</p>
-                    <p> P ${itemTotal.toFixed(2)}</p>
-                `;
+            // Ensure price and quantity are treated as numbers
+            const itemPrice = parseFloat(item.price); // Convert price to number
+            const itemQuantity = parseInt(item.quantity, 10); // Convert quantity to integer
 
-                summaryContainer.appendChild(itemElement);
-            });
+            const itemTotal = itemPrice * itemQuantity; // Calculate total for each item
+            totalPrice += itemTotal;
 
-            const totalElement = document.getElementById("totals");
-            totalElement.classList.add("total-price");
-            totalElement.innerHTML = `<h3>Total: P ${totalPrice.toFixed(2)}</h3>`;
+            itemElement.innerHTML = `
+                <img src="${item.image}" alt="${item.name}" class="order-img">
+                <p id="name-product">${item.name}</p>
+                <p>x${itemQuantity}</p>
+                <p>P ${(itemPrice * itemQuantity).toFixed(2)}</p>
+                <p>P ${itemTotal.toFixed(2)}</p>
+            `;
 
-            // Update the hidden input field with the JSON string of the order summary
-            orderSummaryInput.value = JSON.stringify(orderSummary);
+            summaryContainer.appendChild(itemElement);
         });
 
-        // Enable checkout button based on form inputs
-        function enableCheckoutButton() {
-            const emailField = document.getElementById('email');
-            const phoneField = document.getElementById('phone-num');
-            const checkoutBtn = document.getElementById('checkoutBtn');
-            const deliveryMethods = document.querySelectorAll('input[name="deliveryMethod"]:checked').length;
+        const totalElement = document.getElementById("totals");
+        totalElement.classList.add("total-price");
+        totalElement.innerHTML = `<h3>Total: P ${totalPrice.toFixed(2)}</h3>`;
 
-            if (emailField.value !== "" && phoneField.value !== "" && deliveryMethods > 0) {
-                checkoutBtn.disabled = false; // Enable the button
-                checkoutBtn.style.opacity = "1"; // Restore full opacity
-                checkoutBtn.style.cursor = "pointer"; // Change the cursor back to pointer
-            } else {
-                checkoutBtn.disabled = true; // Keep it disabled if conditions are not met
-                checkoutBtn.style.opacity = "0.6"; // Keep it grayed out
-                checkoutBtn.style.cursor = "not-allowed"; // Keep the 'not-allowed' cursor
-            }
-        }
-
-        document.getElementById('email').addEventListener('input', enableCheckoutButton);
-        document.getElementById('phone-num').addEventListener('input', enableCheckoutButton);
-
-        document.querySelectorAll('input[name="deliveryMethod"]').forEach((radio) => {
-            radio.addEventListener('change', enableCheckoutButton);
-        });
-
-        document.getElementById("checkoutBtn").addEventListener("click", function(event) {
-            event.preventDefault(); // Prevent form submission for now
-            alert("Order successfully placed! Thank you for shopping with us.");
-            document.getElementById("checkout-details").submit();
-        });
-    </script>
+        // Update the hidden input field with the JSON string of the order summary
+        orderSummaryInput.value = JSON.stringify(orderSummary);
+    });
+</script>
 
 
   </body>

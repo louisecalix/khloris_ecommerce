@@ -2,15 +2,12 @@
 session_start();
 include 'php/config.php';
 
-// Ensure user is logged in
 if (!isset($_SESSION['ID'])) {
     header("Location: login.php");
     exit();
 }
 
-$user_id = $_SESSION['ID']; // Logged-in user's ID
-
-// Ensure POST data is set and sanitize it
+$user_id = $_SESSION['ID']; 
 $delivery_method = isset($_POST['deliveryMethod']) ? $_POST['deliveryMethod'] : '';
 $address = isset($_POST['address']) ? $_POST['address'] : '';
 $delivery_date = isset($_POST['date']) ? $_POST['date'] : '';
@@ -18,14 +15,12 @@ $email = isset($_POST['email']) ? $_POST['email'] : '';
 $phone_num = isset($_POST['phone_num']) ? $_POST['phone_num'] : '';
 $order_summary = isset($_POST['orderSummary']) ? json_decode($_POST['orderSummary'], true) : []; // Decode JSON data into PHP array
 
-// Prepare a log entry for debugging (optional)
+
 $log_entry = "[" . date("Y-m-d H:i:s") . "] Received POST data: " . print_r($_POST, true) . "\n";
 file_put_contents('checkout_log.txt', $log_entry, FILE_APPEND);
 
 try {
-    $con->begin_transaction(); // Begin transaction
-
-    // Check if the order summary is not empty
+    $con->begin_transaction();
     if (empty($order_summary)) {
         throw new Exception("Order summary is empty.");
     }
@@ -39,7 +34,6 @@ try {
         $quantity = $item['quantity'];
         $total_price = $item['price'] * $quantity;
 
-        // Query to get product_id from product name
         $stmt = $con->prepare("SELECT product_id FROM products WHERE name = ?");
         $stmt->bind_param("s", $product_name);
         $stmt->execute();
@@ -52,33 +46,35 @@ try {
             // Insert order into the database
             $stmt_order = $con->prepare("
                 INSERT INTO orders (user_id, product_id, delivery_option, qnty, address, delivery_date, total)
-                VALUES (?, ?, ?,?, ?, ?, ?)
+                VALUES (?, ?, ?, ?, ?, ?, ?)
             ");
-            $stmt_order->bind_param("iissssd", $user_id, $product_id, $delivery_method, $quantity,$address, $delivery_date, $total_price);
+            $stmt_order->bind_param("iissssd", $user_id, $product_id, $delivery_method, $quantity, $address, $delivery_date, $total_price);
             $stmt_order->execute();
 
-            // Update product quantity in stock (qnty is the correct column name here)
+            // Update product quantity in stock
             $stmt_update = $con->prepare("UPDATE products SET stock = stock - ? WHERE product_id = ?");
             $stmt_update->bind_param("ii", $quantity, $product_id);
             $stmt_update->execute();
+
+            // Delete item from cart
+            $stmt_deletecart = $con->prepare("DELETE FROM cart WHERE product_id = ? AND user_id = ?");
+            $stmt_deletecart->bind_param("ii", $product_id, $user_id);
+            $stmt_deletecart->execute();
         } else {
             throw new Exception("Product not found: $product_name");
         }
     }
 
-    $con->commit(); // Commit transaction
-    echo "Order placed successfully!";
-} catch (Exception $e) {
-    $con->rollback(); // Rollback transaction on error
-    echo "Error processing your order: " . $e->getMessage();
+    $con->commit(); 
 
-    // Log the error message
-    $log_error_entry = "[" . date("Y-m-d H:i:s") . "] Error: " . $e->getMessage() . "\n";
-    file_put_contents('checkout_log.txt', $log_error_entry, FILE_APPEND);
+   
+    header("Location: mainpage.php");
+    exit();
+} catch (Exception $e) {
+    $con->rollback();
+    echo "Failed to process order: " . $e->getMessage();
 }
 ?>
-
-
 
 
 <!DOCTYPE html>
@@ -87,7 +83,7 @@ try {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Khloris</title>
-    <link rel="stylesheet" href="checkout_.css" />
+    <link rel="stylesheet" href="newcheckout.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
@@ -109,7 +105,7 @@ try {
         <a href="logout.php" class="fa-solid fa-right-from-bracket" onclick="return confirmLogout()"></a>
       </div>
     </header> -->
-    <?php include 'header.php'; ?>
+    <?php include 'newheader.php'; ?>
 
 
     <section class="checkout-section">

@@ -24,11 +24,12 @@ if (isset($_GET['ID'])) {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Khloris</title>
-    <link rel="stylesheet" href="ui khloris/cart.css" />
+    <link rel="stylesheet" href="ui khloris/carthay.css" />
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
 </head>
 <body>
-    <?php include 'header.php'; ?>
+    <?php include 'newheader.php'; ?>
 
     <section class="cart-section">
         <div class="cart-container">
@@ -67,7 +68,7 @@ if (isset($_GET['ID'])) {
         <div class="total-container">
           <span class="total">Total: <span id="total">P 0.00</span></span>
           <p>Note: Shipping is currently available only within Pandi,Bulacan area. We are working to expand our delivery services soon.</p>
-          <button class="checkout-btn" id="checkoutBtn">Checkout</button>
+          <button class="checkout-btn" id="checkoutBtn" disabled>Checkout</button>
         </div>
 
     </section>
@@ -125,143 +126,147 @@ if (isset($_GET['ID'])) {
           }
     </script>
     <script>
-      const checkboxes = document.querySelectorAll(".item-checkbox");
-      const totalElement = document.getElementById("total");
-      const quantityInputs = document.querySelectorAll(".quantity");
-      const minusButtons = document.querySelectorAll(".minus-btn");
-      const plusButtons = document.querySelectorAll(".plus-btn");
-      const removeButtons = document.querySelectorAll(".remove-btn");
-      const updatedPrices = document.querySelectorAll(".updated-price");
+      document.addEventListener("DOMContentLoaded", () => {
+            const checkboxes = document.querySelectorAll(".item-checkbox");
+            const totalElement = document.getElementById("total");
+            const quantityInputs = document.querySelectorAll(".quantity");
+            const minusButtons = document.querySelectorAll(".minus-btn");
+            const plusButtons = document.querySelectorAll(".plus-btn");
+            const updatedPrices = document.querySelectorAll(".updated-price");
+            const checkoutBtn = document.getElementById("checkoutBtn");
 
-      function updateTotal() {
-        let total = 0;
-        checkboxes.forEach((checkbox, index) => {
-          if (checkbox.checked) {
-            const price = parseFloat(checkbox.getAttribute("data-price"));
-            const quantity = parseInt(quantityInputs[index].value);
-            total += price * quantity;
-          }
-        });
-        totalElement.textContent = `P${total.toFixed(2)}`;
-      }
+            function updateTotal() {
+                let hasCheckedItems = false;
+                let total = 0;
 
-      function updateItemPrice(index) {
-        const price = parseFloat(checkboxes[index].getAttribute("data-price"));
-        const quantity = parseInt(quantityInputs[index].value);
-        const updatedPrice = price * quantity;
-        updatedPrices[index].textContent = `P${updatedPrice.toFixed(2)}`;
-      }
+                checkboxes.forEach((checkbox, index) => {
+                    if (checkbox.checked) {
+                        const price = parseFloat(checkbox.getAttribute("data-price"));
+                        const quantity = parseInt(quantityInputs[index].value);
+                        total += price * quantity;
+                        hasCheckedItems = true;
+                    }
+                });
 
-      
-      checkboxes.forEach((checkbox, index) => {
-        checkbox.addEventListener("change", updateTotal);
-      });
+                totalElement.textContent = `P${total.toFixed(2)}`;
+                checkoutBtn.disabled = !hasCheckedItems;
+            }
 
-      quantityInputs.forEach((input, index) => {
-        input.addEventListener("input", () => {
-          updateItemPrice(index);
-          updateTotal();
-        });
-      });
+            function updateItemPrice(index) {
+                const price = parseFloat(checkboxes[index].getAttribute("data-price"));
+                const quantity = parseInt(quantityInputs[index].value);
+                const updatedPrice = price * quantity;
+                updatedPrices[index].textContent = `P${updatedPrice.toFixed(2)}`;
+            }
 
+            checkboxes.forEach((checkbox, index) => {
+                checkbox.addEventListener("change", updateTotal);
+            });
 
-      minusButtons.forEach((button, index) => {
-        button.addEventListener("click", () => {
-          const quantityInput = quantityInputs[index];
-          if (quantityInput.value > 1) {
-            quantityInput.value--;
-            updateItemPrice(index);
+            quantityInputs.forEach((input, index) => {
+                input.addEventListener("input", () => {
+                    updateItemPrice(index);
+                    updateTotal();
+                });
+            });
+
+            minusButtons.forEach((button, index) => {
+                button.addEventListener("click", () => {
+                    const quantityInput = quantityInputs[index];
+                    if (quantityInput.value > 1) {
+                        quantityInput.value--;
+                        updateItemPrice(index);
+                        updateTotal();
+                    }
+                });
+            });
+
+            plusButtons.forEach((button, index) => {
+                button.addEventListener("click", () => {
+                    const quantityInput = quantityInputs[index];
+                    quantityInput.value++;
+                    updateItemPrice(index);
+                    updateTotal();
+                });
+            });
+
             updateTotal();
-          }
-        });
-      });
 
-      plusButtons.forEach((button, index) => {
-        button.addEventListener("click", () => {
-          const quantityInput = quantityInputs[index];
-          quantityInput.value++;
-          updateItemPrice(index);
-          updateTotal();
-        });
-      });
+            checkoutBtn.addEventListener("click", () => {
+                const cartItems = document.querySelectorAll(".cart-orders-item");
+                const orderSummary = [];
 
-      
-      window.addEventListener("load", updateTotal); 
-
-      document.getElementById("checkoutBtn").addEventListener("click", function() {
-  const cartItems = document.querySelectorAll(".cart-orders-item");
-  let orderSummary = [];
-
-  cartItems.forEach(item => {
-    if (item.querySelector(".item-checkbox").checked) {
-      const name = item.getAttribute("data-name");  // Get product name
-      const price = item.getAttribute("data-price");
-      const image = item.getAttribute("data-image");
-      const quantity = item.querySelector(".quantity").value;
-      orderSummary.push({ name, price, image, quantity });
-    }
-  });
+                cartItems.forEach(item => {
+                    if (item.querySelector(".item-checkbox").checked) {
+                        const name = item.getAttribute("data-name");
+                        const price = item.getAttribute("data-price");
+                        const image = item.getAttribute("data-image");
+                        const quantity = item.querySelector(".quantity").value;
+                        orderSummary.push({ name, price, image, quantity });
+                    }
+                });
 
  
-  localStorage.setItem("orderSummary", JSON.stringify(orderSummary));
-  window.location.href = "checkout.php"; 
-});
+                localStorage.setItem("orderSummary", JSON.stringify(orderSummary));
+                window.location.href = "checkout.php"; 
+              });
+            });
 
-  </script>
- <script>
-   
-function saveCart() {
-    $.ajax({
-        url: 'customize_bea/save_cart.php',
-        type: 'POST',
-        contentType: 'application/json',
-        data: JSON.stringify(Object.values(cart)),
-        success: function(response) {
-            console.log('Cart saved:', response);
-        },
-        error: function(xhr, status, error) {
-            console.error('Error saving cart:', error);
-        }
-    });
-}
-
-
-function updateItem(productId, productName, productPrice, quantity, imageUrl) {
-    if (quantity <= 0) {
-        delete cart[productId];
-    } else {
-        cart[productId] = { 
-            product_id: productId, 
-            product_name: productName, 
-            product_price: productPrice, 
-            quantity: quantity, 
-            image_url: imageUrl 
-        };
-    }
-    saveCart(); 
-}
+                </script>
+              <script>
+                
+              function saveCart() {
+                  $.ajax({
+                      url: 'customize_bea/save_cart.php',
+                      type: 'POST',
+                      contentType: 'application/json',
+                      data: JSON.stringify(Object.values(cart)),
+                      success: function(response) {
+                          console.log('Cart saved:', response);
+                      },
+                      error: function(xhr, status, error) {
+                          console.error('Error saving cart:', error);
+                      }
+                  });
+              }
 
 
-$(document).ready(function() {
-  
-    $('.quantity').change(function() {
-        const productId = $(this).closest('.cart-orders-item').data('id'); 
-        const productName = $(this).closest('.cart-orders-item').data('name');
-        const productPrice = $(this).closest('.cart-orders-item').data('price');
-        const quantity = parseInt($(this).val());
-        const imageUrl = $(this).closest('.cart-orders-item').data('image');
-        
-        updateItem(productId, productName, productPrice, quantity, imageUrl);
-    });
+              function updateItem(productId, productName, productPrice, quantity, imageUrl) {
+                  if (quantity <= 0) {
+                      delete cart[productId];
+                  } else {
+                      cart[productId] = { 
+                          product_id: productId, 
+                          product_name: productName, 
+                          product_price: productPrice, 
+                          quantity: quantity, 
+                          image_url: imageUrl 
+                      };
+                  }
+                  saveCart(); 
+              }
 
-    // Example of removing an item
-    $('.remove-btn').click(function() {
-        const productId = $(this).data('product-id'); 
-        updateItem(productId, '', 0, 0, '');
-    });
-});
 
- </script>
+              $(document).ready(function() {
+                
+                  $('.quantity').change(function() {
+                      const productId = $(this).closest('.cart-orders-item').data('id'); 
+                      const productName = $(this).closest('.cart-orders-item').data('name');
+                      const productPrice = $(this).closest('.cart-orders-item').data('price');
+                      const quantity = parseInt($(this).val());
+                      const imageUrl = $(this).closest('.cart-orders-item').data('image');
+                      
+                      updateItem(productId, productName, productPrice, quantity, imageUrl);
+                  });
+
+                  // Example of removing an item
+                  $('.remove-btn').click(function() {
+                      const productId = $(this).data('product-id'); 
+                      updateItem(productId, '', 0, 0, '');
+                  });
+              });
+
+              </script>
 
 
 
