@@ -15,8 +15,18 @@
         }
     }
 
-    $sql = "SELECT * FROM orders";
+    // $sql = "SELECT * FROM orders";
+    // $result = mysqli_query($con, $sql);
+
+    $sql = "SELECT o.order_id, o.user_id, o.product_id, o.qnty, o.total, o.order_status, p.image_url, p.name 
+    FROM orders o
+    JOIN products p ON o.product_id = p.product_id";
     $result = mysqli_query($con, $sql);
+
+    if (!$result) {
+        die("Error fetching orders: " . mysqli_error($con));
+    }
+
 ?>
 
 <!DOCTYPE html>
@@ -50,6 +60,8 @@
 
         <table>
             <tr>
+                <th>Image</th>
+                <th>Product Name</th>
                 <th>Order ID</th>
                 <th>Customer ID</th>
                 <th>Product ID</th>
@@ -60,6 +72,10 @@
             </tr>
             <?php while ($row = mysqli_fetch_assoc($result)) { ?>
             <tr>
+                <td>
+                    <img src="<?php echo $row['image_url']; ?>" alt="Product Image" style="width: 100px; height: auto;">
+                </td>
+                <td><?php echo $row['name']; ?></td>
                 <td><?php echo $row['order_id']; ?></td>
                 <td><?php echo $row['user_id']; ?></td>
                 <td><?php echo $row['product_id']; ?></td>
@@ -71,8 +87,9 @@
                         <input type="hidden" name="order_id" value="<?php echo $row['order_id']; ?>">
                         <select name="order_status" onchange="this.form.submit()">
                             <option value="Pending" <?php echo $row['order_status'] === 'Pending' ? 'selected' : ''; ?>>Pending</option>
-                            <option value="Completed" <?php echo $row['order_status'] === 'Completed' ? 'selected' : ''; ?>>Completed</option>
-                            <option value="Cancelled" <?php echo $row['order_status'] === 'Canceled' ? 'selected' : ''; ?>>Canceled</option>
+                            <option value="Received" <?php echo $row['order_status'] === 'Received' ? 'selected' : ''; ?>>Received</option>
+                            <option value="Processing" <?php echo $row['order_status'] === 'Processing' ? 'selected' : ''; ?>>Processing</option>
+                            <option value="Ready" <?php echo $row['order_status'] === 'Ready' ? 'selected' : ''; ?>>Ready</option>
                         </select>
                     </form>
                 </td>

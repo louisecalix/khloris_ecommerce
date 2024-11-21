@@ -29,7 +29,7 @@ if (isset($_GET['ID'])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
 </head>
 <body>
-    <?php include 'header.php'; ?>
+    <?php include 'newheader.php'; ?>
 
     <section class="cart-section">
         <div class="cart-container">

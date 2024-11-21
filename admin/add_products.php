@@ -69,6 +69,7 @@ if (isset($_POST['add_product'])) {
                     <option value="">Select Category</option>
                     <option value="1">Flower</option>
                     <option value="2">Occasion</option>
+                    <option value="3">Customize</option>
                 </select><br>
                 <select id="type_id" name="type_id" required>
                     <option value="">Select Type</option>
@@ -95,10 +96,6 @@ if (isset($_POST['add_product'])) {
             {
                 value: '3',
                 text: 'Lily'
-            },
-            {
-                value: '4',
-                text: 'Tulip'
             }
         ],
         '2': [{
@@ -113,6 +110,20 @@ if (isset($_POST['add_product'])) {
                 value: '7',
                 text: 'Funeral'
             },
+        ],
+        '3': [{
+                value: '9',
+                text: 'Wrapper'
+            },
+            {
+                value: '10',
+                text: 'Ribbon'
+            },
+            {
+                value: '11',
+                text: 'Flower'
+            },
+            
         ]
     };
 
